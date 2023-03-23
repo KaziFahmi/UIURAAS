@@ -1,0 +1,15 @@
+.navigation{
+    display: flex;
+}
+
+.navbarComponent{
+    display: inline-block;
+}
+
+.background{
+    background-image: url(../Images/Login.png);
+    background-size: cover;
+    display:flex;
+    height: 98.5vh;
+    width: 98.5vw;
+}
