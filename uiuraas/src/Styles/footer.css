@@ -1,0 +1,16 @@
+.fade_rule {
+    height:3px;
+    background-color: #E6E6E6;
+    width: 66.0em;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, #FC9E04 , #14213D);
+}
+
+.footerUpperLine{
+    font-family: 'Inter', sans-serif;
+    font-size: larger;
+}
+
+.footerLowerLine{
+    font-family: 'Inter', sans-serif;
+}
