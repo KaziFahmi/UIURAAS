@@ -3,7 +3,7 @@ import '../../Styles/footer.css'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='body'>
         <div class="fade_rule"></div>
         <div className='footerUpperLine'>Stay In Touch</div>
         <div className='footerLowerLine'>self@cse.uiu.ac.bd</div>
