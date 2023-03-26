@@ -19,7 +19,7 @@ li {
 .menu{
     border:1px solid #FC9E04;
     width: 150px;
-    height:100px;
+    height:auto;
     position: absolute;
 }
 
