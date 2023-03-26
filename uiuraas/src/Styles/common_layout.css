@@ -1,14 +1,22 @@
 .sideMenu{
-    position: absolute;
-    left: 4%;
-    top: 15%;
+    padding-left: 3%;
+    padding-top: 1%;
+}
+.mainBody{
+    padding-left: 2%;
 }
 
 .footer{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 8px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.commonBody{
+    display:flex;
 }

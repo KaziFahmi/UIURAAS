@@ -1,0 +1,16 @@
+.appCardBody{
+    display: flex;
+    border: 1px solid #FC9E04;
+    margin: 2.5%;
+}
+
+.profImg{
+    width: 15%;
+}
+
+.profInfo{
+    font-size: large;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+

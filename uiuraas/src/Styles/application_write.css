@@ -10,7 +10,7 @@
 input[type="submit"]{
     width: 20%;
     padding: 10px 15px;
-    border: 2px solid #22d0ffc2;
+    border: 2px solid #14213D;
     margin-bottom: 15px;
     color: #fff;
     background-color: #14213D;
@@ -28,7 +28,7 @@ input[type="text"]
     border: 2px solid #949494;
     margin-top: 10px;
     margin-bottom: 15px;
-    color: #22d0ffc2;
+    color: #000000c2;
     font-size: 18px;
     margin-left: 50px;
 }
@@ -72,7 +72,7 @@ input[type="text"]
     border: 2px solid #949494;
     margin-top: 10px;
     margin-bottom: 15px;
-    color: #22d0ffc2;
+    color: #000000c2;
     font-size: 18px;
     margin-left: -2px;
 }

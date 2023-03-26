@@ -4,7 +4,7 @@ import { RiHome5Line } from 'react-icons/ri'
 
 const HomeButton = () => {
   return (
-    <RiHome5Line  fontSize="2.5em" className='sidebarButtons'/>
+    <a><RiHome5Line  fontSize="2.5em" className='sidebarButtons'/></a>
   )
 }
 

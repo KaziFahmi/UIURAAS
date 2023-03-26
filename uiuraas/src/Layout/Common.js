@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import Sidebar from "../Components/SideMenu/Sidebar";
+import Sidebar from "../Components/SideMenu/SidebarStudent";
 import Body from "../MiddleWare/Body";
 import "../Styles/common_layout.css";
 function Common(props) {
@@ -12,13 +12,13 @@ function Common(props) {
        
       </div>
 
-      <div>
+      <div className="commonBody">
         <div className="sideMenu">
             <Sidebar/>
         </div>
-        <Body />
-        &nbsp;
-        
+        <div className="mainBody">
+            <Body />
+        </div>
       </div>
       <div className="footer">
         <Footer/>
