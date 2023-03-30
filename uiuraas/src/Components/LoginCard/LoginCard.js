@@ -4,20 +4,18 @@ import '../../Styles/LoginCard.css'
 const LoginCard = () => {
   return (
     <div className="form">
-     <form>
+     <form className='formContainer'>
        <label className='title'>Log In</label>
        <div className="input-container">
          <input type="text" name="uname" placeholder='Enter login Id ' className='inputField' required />
        </div>
        <div className="input-container">
-         <input type="password" name="pass"  placeholder='Enter Password' className='inputField' required />
+         <input type="password" name="pass" placeholder='Enter Password ' className='inputField' required />
        </div>
-       <div className="button-container">
-         <input type="submit" className='loginButton' value='Login' />
+       <div className="input-container">
+         <button type="submit" className='loginButton'>Login</button>
        </div>
-       <div className="input-container" >
-         <a className='forgotPass'>Forgot Password?</a>
-       </div>
+       <a className='forgotPass'>Forgot Password?</a>
      </form>
    </div>
   )
