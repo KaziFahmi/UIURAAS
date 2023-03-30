@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ApplicationTypeDropdown from '../../Components/Application_Read/ApplicationTypeDropdown'
 import FieldType from '../../Components/Application_Read/FieldType'
 import { VscChecklist } from "react-icons/vsc";
@@ -9,7 +9,12 @@ import ApplicationCard from '../../Components/Application_Read/ApplicationCard';
 import ApplicationReadForm from '../../Components/Application_Read/ApplicationReadForm/ApplicationReadForm';
 import AddPeople from '../../Components/Application_Read/AddPeople';
 
+
 const ApplicationRead = () => {
+
+  const [toggle, setToggle] = useState(false)
+
+
   return (
    <div className='body'>
     <div ><h2>Application</h2></div>
@@ -19,14 +24,16 @@ const ApplicationRead = () => {
 
       <div className='applicationContainer'>
         <div className='appliContainerItems'>
-          <button className='selectAll'><VscChecklist fontSize="2em" color='#FC9E04' /></button>
+          <button className='selectAll'  onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
           <Searchbar/>
         </div>
 
-        <div className='toggleOptions'>
-          <AddPeople/>
-          <button className='removeButton'><IoTrashSharp/>Remove</button>
-        </div>
+        {toggle && (
+          <div className='toggleOptions' >
+            <AddPeople/>
+            <button className='removeButton'><IoTrashSharp/>Remove</button>
+          </div>
+        )}
 
         <div className='applicationCard'>
           <ApplicationCard/>
