@@ -1,9 +1,9 @@
 import React from "react";
-import "../../../Styles/application_read.css"
+
 
 function FormOutput(props) {
   return (
-    <div className="formOutput">
+    <div className="formOutput" style={formOutput}>
       <label className="dataLabel">{props.placeholder}</label>
       <br />
       <input type="text" value={props.value}readOnly/><br/>
@@ -12,3 +12,7 @@ function FormOutput(props) {
 }
 
 export default FormOutput;
+
+const formOutput={
+  paddingTop: "1%"
+}
