@@ -59,10 +59,14 @@ const inputContainer ={
 }
 
 const inputField={
-  height:"30px",
-  backgroundColor: "#E5E5E5",
-  border: "1px solid #C8C8C8" ,
-  fontFamily: "'Inter', sans-serif"
+  width: "75%",
+    padding: "10px 15px",
+    border: "2px solid #949494",
+    marginTop: "10px",
+    marginBottom: "15px",
+    color: "#000000c2",
+    fontSize: "18px",
+    marginLeft: "50px"
 }
 
 const loginButton={
