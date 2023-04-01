@@ -3,7 +3,6 @@ import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/SideMenu/SidebarStudent";
 import Body from "../MiddleWare/Body";
-import "../Styles/common_layout.css";
 function Common(props) {
   return (
     <>
@@ -12,15 +11,15 @@ function Common(props) {
        
       </div>
 
-      <div className="commonBody">
-        <div className="sideMenu">
+      <div className="commonBody" style={commonBody}>
+        <div className="sideMenu" style={sideMenu}>
             <Sidebar/>
         </div>
-        <div className="mainBody">
+        <div className="mainBody" style={mainBody}>
             <Body />
         </div>
       </div>
-      <div className="footer">
+      <div className="footer" style={footer}>
         <Footer/>
       </div> 
     </>
@@ -28,4 +27,27 @@ function Common(props) {
 }
 
 export default Common;
+
+const sideMenu={
+  paddingLeft: "3%",
+  paddingTop: "1%",
+}
+const mainBody={
+  paddingLeft: "2%"
+}
+
+const footer={
+  position: "relative",
+  bottom: "0",
+  left: "0",
+  right: "0",
+  padding: "8px",
+  textAlign: "center",
+  justifyContent: "center",
+  alignItems: "center"
+}
+
+const commonBody={
+  display:"flex"
+}
 

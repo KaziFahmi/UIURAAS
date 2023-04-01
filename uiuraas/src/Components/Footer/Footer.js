@@ -3,10 +3,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='body' style={FadeRule}>
-        <div class="fade_rule" style></div>
-        <div className='footerUpperLine'>Stay In Touch</div>
-        <div className='footerLowerLine'>self@cse.uiu.ac.bd</div>
+    <div className='body' >
+        <div class="fade_rule" style={FadeRule}></div>
+        <div className='footerUpperLine' style={FooterUpperLine}>Stay In Touch</div>
+        <div className='footerLowerLine' style={FooterLowerLine}>self@cse.uiu.ac.bd</div>
     </div>
   )
 }
@@ -27,6 +27,6 @@ const FooterUpperLine={
   fontSize: "larger"
 }
 
-const footerLowerLine={
+const FooterLowerLine={
   fontFamily: "'Inter', sans-serif"
 }

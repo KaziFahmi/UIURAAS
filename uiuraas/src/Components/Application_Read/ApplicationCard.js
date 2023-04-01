@@ -22,16 +22,18 @@ const appCardBody={
   display: "flex",
     border: "1px solid #FC9E04",
     margin: "2.5%",
-    position: 'relative'
+    position: 'relative',
+    height:"auto"
 }
 
 const profImg={
-  width: "15%",
+  width: "auto",
   position:"relative"
 }
 
 const profInfo={
   fontSize: "large",
   fontWeight: "600",
-  fontFamily: "'Inter', sans-serif"
+  fontFamily: "'Inter', sans-serif",
+  width:"auto"
 }

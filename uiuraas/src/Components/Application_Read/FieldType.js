@@ -1,5 +1,4 @@
 import * as React from 'react';
-import "../../Styles/application_read.css";
 import { IoIosArrowDown } from 'react-icons/io';
 
 const FieldType= () => {

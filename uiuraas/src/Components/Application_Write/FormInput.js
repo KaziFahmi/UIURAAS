@@ -5,7 +5,7 @@ function FormInput(props) {
     <div className="fromInput">
       <label style={formInputLabel}>{props.placeholder}</label>
       <br />
-      <input type="text" />
+      <input style={formInputField} type="text" />
       <br></br>
     </div>
   );
@@ -18,4 +18,16 @@ const formInputLabel={
         marginLeft: "50px",
         fontFamily: "'Inder', sans-serif"
 
+}
+
+const formInputField=
+{
+    width: "75%",
+    padding: "10px 15px",
+    border: "2px solid #949494",
+    marginTop: "10px",
+    marginBottom: "15px",
+    color: "#000000c2",
+    fontSize: "18px",
+    marginLeft: "50px"
 }

@@ -32,6 +32,17 @@ input[type="text"]
     font-size: 18px;
     margin-left: 50px;
 }
+input[type="password"]
+{
+    width: 75%;
+    padding: 10px 15px;
+    border: 2px solid #949494;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #000000c2;
+    font-size: 18px;
+    margin-left: 50px;
+}
 .fromInput label{
     
         color: #949494;
