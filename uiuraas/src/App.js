@@ -5,8 +5,8 @@ import Login from "./Pages/Login/Login";
 function App() {
   return (
     <div className="app">
-      {/* <Login/> */}
-      <Common Body={Application}/>
+      <Login/>
+      {/* <Common Body={Application}/> */}
     </div>
    
   );
