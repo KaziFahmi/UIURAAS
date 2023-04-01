@@ -19,8 +19,6 @@ const Navbar = () => {
         <SettingsButton />
         <ProfileButton />
       </div>
-
-   
   </nav>
   )
 }
