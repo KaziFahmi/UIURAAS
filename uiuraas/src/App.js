@@ -4,6 +4,7 @@ import Application from "./Pages/ApplicationWrite/Application";
 import Login from "./Pages/Login/Login";
 import ApplicationInbox from "./Components/ApplicationInbox/ApplicationInbox";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ApplicationRead from "./Pages/ApplicationRead/ApplicationRead";
 function App() {
   return (
     <div className="app">
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/application" element={<Application />} />
+          <Route path="/applicationread" element={<ApplicationRead />} />
           <Route path="/inbox" element={<ApplicationInbox />} />
           <Route path="/" element={<Common />} />
         </Routes>
