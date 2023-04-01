@@ -15,3 +15,10 @@ const Searchbar = ({keyword, onChange}) => {
   }
   
   export default Searchbar;
+
+  const searchBar={
+    width:"60%",
+    backgroundColor:"#ffffff",
+    border:"1px solid #FC9E04",
+    borderRadius: "40px"
+}

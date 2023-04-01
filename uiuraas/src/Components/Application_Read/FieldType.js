@@ -11,20 +11,17 @@ const FieldType= () => {
 
   return (
     <div className="dropdown">
-      <button onClick={handleOpen} className="dropdownButton">
+      <button onClick={handleOpen} className="dropdownButton" style={dropdownButton}>
         <label className='dropTitle'>Field</label>
         <IoIosArrowDown fontSize="1.5em" className='dropdownIcon'/>
         </button>
       {open ? (
-        <div className="menu" >
-          <div className="menu-item">
-            <button className='menuButton'>Student</button>
+        <div className="menu" style={menu} >
+          <div className="menu-item" style={menuItems}>
+            <button className='menuButton' style={menuButton}>BioInformatics</button>
           </div>
-          <div className="menu-item">
-            <button className='menuButton'>RA</button>
-          </div>
-          <div className="menu-item">
-            <button className='menuButton' >All</button>
+          <div className="menu-item" style={menuItems}>
+            <button className='menuButton' style={menuButton}>Database</button>
           </div>
         </div>
       ) : null}
@@ -33,3 +30,36 @@ const FieldType= () => {
 };
 
 export default FieldType;
+
+const dropdownButton={
+  border: "1px solid #FC9E04",
+  width: "100px",
+  height:"25px",
+  color: "#FC9E04",
+  backgroundColor: "white",
+  textAlign: "start", 
+  display: "flex",
+  justifyContent: "space-between"
+}
+
+const menu={
+  border:"1px solid #FC9E04",
+  width: "150px",
+  height:"auto",
+  position: "absolute",
+}
+
+const menuItems={
+  alignItems: "center",
+  backgroundColor: "white"
+}
+
+const menuButton={  
+  border: "none",
+  borderBottom: "1px solid #FC9E04",
+  width: "100%",
+  height:"25px",
+  color: "#FC9E04",
+  backgroundColor: "white",
+  textAlign: "start"
+}

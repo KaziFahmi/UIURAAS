@@ -1,10 +1,9 @@
 import React from "react";
-import "../../Styles/application_write.css"
 
 function FormInput(props) {
   return (
     <div className="fromInput">
-      <label>{props.placeholder}</label>
+      <label style={formInputLabel}>{props.placeholder}</label>
       <br />
       <input type="text" />
       <br></br>
@@ -13,3 +12,10 @@ function FormInput(props) {
 }
 
 export default FormInput;
+
+const formInputLabel={
+        color: "#949494",
+        marginLeft: "50px",
+        fontFamily: "'Inder', sans-serif"
+
+}
