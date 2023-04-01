@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Sidebar from '../SideMenu/SidebarStudent'
+import EmailViewCard from '../EmailView/EmailView'
+import something from '../../'
 function ApplicationInbox() {
   return (
     <>
@@ -22,6 +24,7 @@ function ApplicationInbox() {
                     </div>
                 </div>
                 <div>
+                    <EmailViewCard/>
                 </div>
             </div>
         </div>
