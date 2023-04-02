@@ -4,6 +4,6 @@
 }
 
 .navbarComponent{
-    display: inline-block;
+    display: flex;
     column-count: 3;
 }

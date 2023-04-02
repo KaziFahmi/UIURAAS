@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/SideMenu/SidebarStudent";
 import Body from "../MiddleWare/Body";
 function Common(props) {
+  
   return (
     <>
       <div className="header">
@@ -16,7 +17,7 @@ function Common(props) {
             <Sidebar/>
         </div>
         <div className="mainBody" style={mainBody}>
-            <Body />
+            <Body body={props.body} />
         </div>
       </div>
       <div className="footer" style={footer}>

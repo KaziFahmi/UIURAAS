@@ -4,7 +4,7 @@ import userImg from '../../Images/userImg.png'
 const ApplicationCard = () => {
   return (
     <div className='appCardBody' style={appCardBody}>
-        <div className='column profImg' style={profImg}><img src={userImg}/></div>
+        <div className='column profImg' style={profImg}><img src={userImg} /></div>
         <div className='column profInfo' style={profInfo}>
             <div>Shahil Yasar Haque</div>
             <div>011201021</div>

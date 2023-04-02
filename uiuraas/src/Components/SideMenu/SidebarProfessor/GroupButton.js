@@ -4,7 +4,11 @@ import { MdGroups } from 'react-icons/md'
 
 const GroupButton = () => {
   return (
-   <a> <MdGroups  fontSize="2.5em" className='sidebarButtons'/></a>
+    <button 
+   style={{backgroundColor:"transparent",border:"none"}}
+
+   >
+    <MdGroups  fontSize="2.5em" className='sidebarButtons'/></button>
   )
 }
 

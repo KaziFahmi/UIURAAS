@@ -5,14 +5,15 @@ import MailButton from './MailButton';
 import GroupButton from './SidebarProfessor/GroupButton';
 import ReadApplicationsButton from './SidebarProfessor/ReadApplicationsButton';
 import ApplicationButton from './SidebarStudent/ApplicationButton';
-const Sidebar = () => {
+const Sidebar = (props) => {
   return ( 
     <div className="sideNavigation">
       <div className="sidebarComponent">
         <div className='sidebarButtonSet'>
           
           <HomeButton/>
-          <ApplicationButton/>
+          <ApplicationButton />
+          {/* <ReadApplicationsButton /> */}
           <MailButton/>
           
         </div>

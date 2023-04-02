@@ -3,7 +3,10 @@ import '../../Styles/Sidebar.css';
 import { IoMdChatbubbles } from 'react-icons/io'
 const MailButton = () => {
   return (
-    <a><IoMdChatbubbles  fontSize="2.5em" className='sidebarButtons'/></a>
+    <button 
+   style={{backgroundColor:"transparent",border:"none"}}
+
+   ><IoMdChatbubbles  fontSize="2.5em" className='sidebarButtons'/></button>
   )
 }
 
