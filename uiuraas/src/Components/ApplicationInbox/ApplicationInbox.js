@@ -26,9 +26,9 @@ function ApplicationInbox() {
                         <br/>
                         <p style={options}>More</p>
                     </div>
-                </div>
-                <div>
-                    <EmailView/>
+                    <div>
+                        <EmailView/>
+                    </div>
                 </div>
             </div>
         </div>
