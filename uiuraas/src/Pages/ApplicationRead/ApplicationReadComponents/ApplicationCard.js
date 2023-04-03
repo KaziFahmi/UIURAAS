@@ -1,5 +1,5 @@
 import React from 'react'
-import userImg from '../../Images/userImg.png'
+import userImg from '../../../Images/userImg.png'
 
 const ApplicationCard = () => {
   return (

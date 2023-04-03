@@ -1,6 +1,6 @@
 import React from "react";
 import { IoIosAddCircle } from "react-icons/io";
-import FormInput from "../../Components/Application_Write/FormInput";
+import FormInput from "./ApplicationWriteComponents/FormInput";
 
 function Application() {
   return (

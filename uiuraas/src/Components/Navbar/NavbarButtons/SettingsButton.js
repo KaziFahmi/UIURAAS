@@ -5,10 +5,9 @@ import '../../../Styles/Navbar.css';
 const SettingsButton = () => {
   return (
     <div>
-        <button 
-        style={{backgroundColor:"transparent",border:"none"}}>
+        <a href="/" className="navbarButton">
             <img src={settingIcon}/>
-        </button>
+        </a>
     </div>
   )
 }

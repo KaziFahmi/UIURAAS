@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import ApplicationTypeDropdown from '../../Components/Application_Read/ApplicationTypeDropdown'
-import FieldType from '../../Components/Application_Read/FieldType'
+import ApplicationTypeDropdown from './ApplicationReadComponents/ApplicationTypeDropdown';
+import FieldType from './ApplicationReadComponents/FieldType';
 import { VscChecklist } from "react-icons/vsc";
 import {IoTrashSharp} from "react-icons/io5";
-import Searchbar from '../../Components/Application_Read/Searchbar';
-import ApplicationCard from '../../Components/Application_Read/ApplicationCard';
-import ApplicationReadForm from '../../Components/Application_Read/ApplicationReadForm/ApplicationReadForm';
-import AddPeople from '../../Components/Application_Read/AddPeople';
+import Searchbar from './ApplicationReadComponents/Searchbar';
+import ApplicationCard from './ApplicationReadComponents/ApplicationCard';
+import ApplicationReadForm from './ApplicationReadComponents/ApplicationReadForm/ApplicationReadForm';
+import AddPeople from './ApplicationReadComponents/AddPeople';
 
 
 const ApplicationRead = () => {

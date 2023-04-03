@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../Styles/application_card.css"
+
 
 const EmailView = () => {
   return (
