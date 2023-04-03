@@ -7,6 +7,7 @@ import Searchbar from './ApplicationReadComponents/Searchbar';
 import ApplicationCard from './ApplicationReadComponents/ApplicationCard';
 import ApplicationReadForm from './ApplicationReadComponents/ApplicationReadForm/ApplicationReadForm';
 import AddPeople from './ApplicationReadComponents/AddPeople';
+import Common from '../../Layout/Common';
 
 
 const ApplicationRead = () => {
@@ -15,6 +16,7 @@ const ApplicationRead = () => {
 
 
   return (
+    <Common>
    <div className='body'>
     <div ><h2>Application</h2></div>
     <div className='dropdownSet' style={dropdownSet}><ApplicationTypeDropdown/><FieldType/></div>
@@ -44,7 +46,7 @@ const ApplicationRead = () => {
         <div><ApplicationReadForm/></div>
       </div>
     </div>
-   </div>
+   </div></Common>
   )
 }
 

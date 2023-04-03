@@ -28,9 +28,10 @@ const AddPeople= () => {
           </div> 
           <div style={addmenuItem}>
             <button style={addmenuButton} ><MdOutlineGroupAdd fontSize="1.5em" className='dropdownIcon'/>Create Group</button>
-          </div> 
+          </div>
+
         </div>
-       
+      
       ) : null}
       
     </div>
@@ -51,10 +52,12 @@ const addmenu={
     width: "150px",
     height:"auto",
     position: "absolute",
+    backgroundColor:"White"
 }
 
 const addmenuItem={
     alignItems: "center",
+    backgroundColor:"White"
 }
 const addmenuButton={  
     border: "none",
@@ -62,8 +65,9 @@ const addmenuButton={
     width: "100%",
     height:"25px",
     color: "#14213D",
-    backgroundColor: "white",
     textAlign: "start",
+    backgroundColor:"White",
+
 }
 // addmenuButton:hover{
 //     backgroundColor:" #14213D",

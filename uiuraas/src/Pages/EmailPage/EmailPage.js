@@ -1,12 +1,14 @@
 import React from 'react'
 import ApplicationInbox from './ApplicationInbox/ApplicationInbox'
 import EmailView from './ApplicationInbox/EmailView'
+import Common from '../../Layout/Common'
 
 function EmailPage() {
   return (
+    <Common>
     <div style={body}  >
         <ApplicationInbox/>
-    </div>
+    </div></Common>
   )
 }
 export default EmailPage
