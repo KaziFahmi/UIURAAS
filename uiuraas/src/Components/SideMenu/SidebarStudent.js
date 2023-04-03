@@ -13,7 +13,7 @@ const Sidebar = (props) => {
           
           <HomeButton/>
           <ApplicationButton />
-        <ReadApplicationsButton /> 
+          {/* <ReadApplicationsButton /> */}
           <MailButton/>
           
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import Sidebar from "../Components/SideMenu/Sidebar";
+import Sidebar from "../Components/SideMenu/SidebarStudent";
 import Body from "../MiddleWare/Body";
-function Common({children}) {
+function Common(props) {
   
   return (
     <>
@@ -16,10 +16,9 @@ function Common({children}) {
         <div className="sideMenu" style={sideMenu}>
             <Sidebar/>
         </div>
-        <main className="mainBody" style={mainBody}>
-            {/* <Body body={props.body} /> */}
-            {children}
-        </main>
+        <div className="mainBody" style={mainBody}>
+            <Body body={props.body} />
+        </div>
       </div>
       <div className="footer" style={footer}>
         <Footer/>

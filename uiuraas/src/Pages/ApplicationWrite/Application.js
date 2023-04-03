@@ -1,12 +1,9 @@
 import React from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import FormInput from "./ApplicationWriteComponents/FormInput";
-import Common from "../../Layout/Common";
-import ApplicationTypeDropdown from "../ApplicationRead/ApplicationReadComponents/ApplicationTypeDropdown";
 
 function Application() {
   return (
-    <Common>
     <div style={body}>
       <div
         style={{
@@ -47,7 +44,7 @@ function Application() {
           <input type="submit" value="Apply" style={submitForm}></input>
         </form>
       </div>
-    </div></Common>
+    </div>
   );
 }
 

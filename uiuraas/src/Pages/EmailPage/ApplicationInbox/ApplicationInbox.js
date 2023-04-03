@@ -1,4 +1,6 @@
 import React from 'react'
+import Navbar from '../../../Components/Navbar/Navbar'
+import Sidebar from '../../../Components/SideMenu/SidebarStudent'
 import EmailView from './EmailView'
 function ApplicationInbox() {
   return (
@@ -41,7 +43,7 @@ const body={
 
 const emailBody={
     display:"flex",
-    justifyContent:"space-between",
+    justifyContent:"space-between"
 }
 
 const optionSet={
