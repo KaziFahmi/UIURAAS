@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
 
 const ApplicationTypeDropdown= () => {
   const [open, setOpen] = React.useState(false);
@@ -34,10 +35,10 @@ const ApplicationTypeDropdown= () => {
 export default ApplicationTypeDropdown;
 
 const dropdownButton={
-  border: "1px solid #FC9E04",
+  border: "1px solid"+PrimaryTemplate.yellow,
   width: "100px",
   height:"25px",
-  color: "#FC9E04",
+  color: PrimaryTemplate.yellow,
   backgroundColor: "white",
   textAlign: "start", 
   display: "flex",
@@ -45,7 +46,7 @@ const dropdownButton={
 }
 
 const menu={
-  border:"1px solid #FC9E04",
+  border:"1px solid"+PrimaryTemplate.yellow,
   width: "150px",
   height:"auto",
   position: "absolute",
@@ -53,7 +54,7 @@ const menu={
 
 const menuItems={
   alignItems: "center",
-  backgroundColor: "white"
+  backgroundColor: PrimaryTemplate.white
 }
 
 const menuButton={  

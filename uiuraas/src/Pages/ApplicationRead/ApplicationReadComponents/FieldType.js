@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
 
 const FieldType= () => {
   const [open, setOpen] = React.useState(false);
@@ -31,18 +32,18 @@ const FieldType= () => {
 export default FieldType;
 
 const dropdownButton={
-  border: "1px solid #FC9E04",
+  border: "1px solid "+PrimaryTemplate.yellow,
   width: "100px",
   height:"25px",
-  color: "#FC9E04",
-  backgroundColor: "white",
+  color:PrimaryTemplate.yellow,
+  backgroundColor: PrimaryTemplate.white,
   textAlign: "start", 
   display: "flex",
   justifyContent: "space-between"
 }
 
 const menu={
-  border:"1px solid #FC9E04",
+  border:"1px solid "+PrimaryTemplate.yellow,
   width: "150px",
   height:"auto",
   position: "absolute",
@@ -50,15 +51,15 @@ const menu={
 
 const menuItems={
   alignItems: "center",
-  backgroundColor: "white"
+  backgroundColor: PrimaryTemplate.white
 }
 
 const menuButton={  
   border: "none",
-  borderBottom: "1px solid #FC9E04",
+  borderBottom: "1px solid "+PrimaryTemplate.yellow,
   width: "100%",
   height:"25px",
-  color: "#FC9E04",
-  backgroundColor: "white",
+  color: PrimaryTemplate.yellow,
+  backgroundColor:PrimaryTemplate.white,
   textAlign: "start"
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import HoverBlock from '../../Components/BasicBlocks/HoverBlock';
-import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
+import HoverBlock from '../../../Components/BasicBlocks/HoverBlock';
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
 
 function RemoveButton(props) {
     

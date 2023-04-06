@@ -20,6 +20,7 @@ export default SidebarButtons
 const sidebarButtons={
     backgroundColor:"transparent",
     border:"none",
-    color: "white"
+    color: PrimaryTemplate.white,
+    
 }
   

@@ -25,7 +25,7 @@ export default ApplicationCard
 
 const appCardBody={
   display: "flex",
-    border: "1px solid #FC9E04",
+    border: "1px solid"+PrimaryTemplate.blue,
     margin: "2.5%",
     position: 'relative',
     height:"auto",

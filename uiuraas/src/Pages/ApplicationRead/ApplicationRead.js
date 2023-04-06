@@ -11,7 +11,8 @@ import ColumnBlock from '../../Components/BasicBlocks/ColumnBlock';
 import RowBlock from '../../Components/BasicBlocks/RowBlock';
 import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
 import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
-import RemoveButton from './RemoveButton';
+import RemoveButton from './ApplicationReadComponents/RemoveButton';
+import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
 
 
 
@@ -77,13 +78,13 @@ const applicationData={
 }
 
 const applicationContainer={
-  border: "1px solid #FC9E04",
+  border: "1px solid"+PrimaryTemplate.yellow,
   width:" 30%",
   height: "700px",
   overflowY: "scroll"
 }
 const selectAllToggle={
-  backgroundColor: "white",
+  backgroundColor:PrimaryTemplate.white,
   border: "none"
 }
 

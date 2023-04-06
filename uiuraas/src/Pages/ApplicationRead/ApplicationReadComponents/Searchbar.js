@@ -1,4 +1,5 @@
 import React from 'react'
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
 
 
 
@@ -13,6 +14,6 @@ const Searchbar = ({keyword, onChange}) => {
   const searchBar={
     width:"60%",
     backgroundColor:"#ffffff",
-    border:"1px solid #FC9E04",
+    border:"1px solid "+PrimaryTemplate.yellow,
     borderRadius: "40px"
 }

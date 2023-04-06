@@ -45,7 +45,7 @@ export default AddPeople;
  const addButton={
     color: PrimaryTemplate.blue,
     border:"none",
-    backgroundColor:" white"
+    backgroundColor:PrimaryTemplate.white
 };
 
 const addmenu={
@@ -60,19 +60,10 @@ const addmenuItem={
 }
 const addmenuButton={  
     border: "none",
-    borderBottom:" 1px solid #14213D",
+    borderBottom:"1px solid" + PrimaryTemplate.blue,
     width: "100%",
     height:"25px",
-    color: "#14213D",
-    backgroundColor: "white",
+    color: PrimaryTemplate.blue,
+    backgroundColor: PrimaryTemplate.white,
     textAlign: "start",
-}
-const createGroupButton={
-    color:"#949494",
-    border: "none",
-    backgroundColor: "white",
-    width: "100%",
-    height:"25px",
-    textAlign: "start"
-
 }

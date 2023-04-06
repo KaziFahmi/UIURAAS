@@ -1,5 +1,6 @@
 import React from 'react'
 import ColumnBlock from '../BasicBlocks/ColumnBlock'
+import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate'
 
 
 const Footer = () => {
@@ -17,10 +18,10 @@ export default Footer
 
 const FadeRule= {
   height:"3px",
-  backgroundColor: "#E6E6E6",
+  backgroundColor: PrimaryTemplate.whisper,
   width:" 50%",
   margin: "0 auto",
-  backgroundImage:" linear-gradient(to right, #FC9E04 , #14213D)",
+  backgroundImage:" linear-gradient(to right,"+PrimaryTemplate.yellow+","+PrimaryTemplate.blue+")",
 }
 
 const FooterUpperLine={

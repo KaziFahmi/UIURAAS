@@ -6,6 +6,7 @@ import img2 from '../../Images/loginImg2.png';
 import LoginCard from './LoginCard/LoginCard';
 import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
 import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
+import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
 
 const Login = () => {
   return (
@@ -18,7 +19,7 @@ const Login = () => {
               </a>
           </HorizontalBlock>
        </HorizontalBlock>
-       
+
        <VerticalBlock>
         <div>
           <div>
@@ -47,13 +48,7 @@ const Login = () => {
 
 export default Login
 
-const navigation={
-  display: "flex"
-}
 
-const navbarComponent={
-  display: "inline-block"
-}
 
 const img1Style={
   width:"80%",
@@ -68,7 +63,7 @@ const loginCardFrame={
   backgroundColor: "white",
   padding: "2rem",
   boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-  border:" 1px solid black",
+  border:" 1px solid "+PrimaryTemplate.black,
   position: "absolute",
   left: "35%",
   top: "25%"

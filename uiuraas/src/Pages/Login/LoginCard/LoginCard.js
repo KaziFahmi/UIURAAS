@@ -1,5 +1,6 @@
 import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
 const LoginCard = () => {
   return (
@@ -37,7 +38,7 @@ const title ={
   paddingLeft: "43%",
   fontSize: "25px",
   marginBottom: "20px",
-  color: "#FC9E04",
+  color:PrimaryTemplate.yellow,
   fontFamily: "'Inter', sans-serif"
 }
 
@@ -51,7 +52,7 @@ const inputContainer ={
 const inputField={
   width: "75%",
   padding: "15px",
-  border: "2px solid #949494",
+  border: "2px solid "+PrimaryTemplate.gray58,
   marginTop: "10px",
   marginBottom: "15px",
   color: "#000000c2",
@@ -63,13 +64,13 @@ const loginButton={
   padding:"15px",
   marginTop: "10px",
   marginBottom: "15px",
-  backgroundColor: "#14213D",
+  backgroundColor: PrimaryTemplate.blue,
   color: "white",
-  border: "1px solid #14213D",
+  border: "1px solid"+PrimaryTemplate.blue,
 }
 
 const forgotPass={
-  color:" #FC9E04",
+  color:PrimaryTemplate.yellow,
   paddingLeft: "38%",
   fontSize: "small",
   fontFamily: "'Inter', sans-serif"
