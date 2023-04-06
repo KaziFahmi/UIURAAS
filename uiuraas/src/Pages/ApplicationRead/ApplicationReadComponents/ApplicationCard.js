@@ -6,13 +6,18 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 
 const ApplicationCard = (props) => {
+  function handleClick() {
+    window.location.href = "/";
+  }
   return (
     <HorizontalBlock style={appCardBody}>
-      <HorizontalBlock>  
+      <HorizontalBlock  >  
         <div style={profImg}><img src={userImg} /></div>
         <ColumnBlock >
-            <input type="text" value="Shahil Yasar Haque " readOnly style={profInfo}/>
-            <input type="text" value="011201021" readOnly style={profInfo} />
+            <button onClick={handleClick} style={cardButton} >
+              <input type="text" value="Shahil Yasar Haque " disabled readOnly style={profInfo}/>
+              <input type="text" value="011201021" readOnly disabled style={profInfo} />
+            </button>
          </ColumnBlock>
         </HorizontalBlock>
         <input style={checkbox}  type="checkbox"/>
@@ -52,4 +57,13 @@ const profInfo={
 
 const checkbox={
   border:"1px solid"+PrimaryTemplate.yellow+"!important"
+}
+
+const cardButton={
+  border:"none",
+  backGroundColor:PrimaryTemplate.white,
+  padding: '0',
+  border: '0',
+  background: 'none',
+  boxShadow: 'none',
 }

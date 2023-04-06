@@ -2,27 +2,25 @@ import React from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/SideMenu/Sidebar";
+import VerticalBlock from "../Components/BasicBlocks/VerticalBlock";
+import HorizontalBlock from "../Components/BasicBlocks/HorizontalBlock";
 function PrimaryLayout(props) {
   
   return (
-    <>
-      <div className="header">
-       <Navbar/>
-       
-      </div>
-
-      <div className="commonBody" style={commonBody}>
+    <VerticalBlock>
+     <Navbar/>
+      <HorizontalBlock style={commonBody}>
         <div className="sideMenu" style={sideMenu}>
             <Sidebar/>
         </div>
-        <div className="mainBody" style={mainBody}>
+        <div  style={mainBody}>
             {props.body}
         </div>
-      </div>
-      <div className="footer" style={footer}>
-        <Footer/>
-      </div> 
-    </>
+      </HorizontalBlock>
+
+       <div style={footer}><Footer /></div>
+    
+    </VerticalBlock>
   );
 }
 
@@ -34,18 +32,16 @@ const sideMenu={
 }
 const mainBody={
   paddingLeft: "2%",
-  height:"850px"
+  height:"auto"
 }
 
 const footer={
   position: "relative",
-  bottom: "0",
-  left: "0",
-  right: "0",
   padding: "8px",
   textAlign: "center",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
+  marginTop:mainBody.height+"+20%"
 }
 
 const commonBody={

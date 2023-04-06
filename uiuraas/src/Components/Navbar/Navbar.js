@@ -15,9 +15,9 @@ const Navbar = () => {
         </a>
       </div>
       <div style={navbarComponent}>
-        <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>
-        <NavbarButtons body={<FiSettings fontSize={"3.5em"}/>} link="/"/>
-        <NavbarButtons body={<CgProfile fontSize={"3.5em"}/>} link="/"/>
+        <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>  {/* --Notifications-- */}
+        <NavbarButtons body={<FiSettings fontSize={"3.5em"}/>} link="/"/>  {/* --Settings-- */}
+        <NavbarButtons body={<CgProfile fontSize={"3.5em"}/>} link="/profile"/> {/* --profile-- */}
       </div>
   </nav>
   )

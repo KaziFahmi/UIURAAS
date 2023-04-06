@@ -4,6 +4,7 @@ import Login from "./Pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ApplicationRead from "./Pages/ApplicationRead/ApplicationRead";
 import EmailPage from "./Pages/EmailPage/EmailPage";
+import ProfilePage from "./Pages/Profile/ProfilePage";
 function App() {
   return (
     <div className="app">
@@ -13,6 +14,7 @@ function App() {
           <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
           <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
           <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
+          <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
           <Route path="/" element={<PrimaryLayout/>} />
         </Routes>
       </Router>
