@@ -30,6 +30,6 @@ const body={
     fontFamily: "'Inder', sans-serif",
     marginLeft:"2.3%",
     margin: "1.5%",
-    marginLeft:"2.5%",
+    marginLeft:"2.65%",
     height:"auto"
 }
