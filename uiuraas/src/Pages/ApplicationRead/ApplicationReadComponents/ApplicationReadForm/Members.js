@@ -1,17 +1,18 @@
 import React from 'react'
 import FormOutput from './FormOutput'
+import RowBlock from '../../../../Components/BasicBlocks/RowBlock'
 
 const Members = (props) => {
   return (
     <form>
         <FormOutput placeholder="Name" value="Shahil Yasar Haque" />
         <FormOutput placeholder="Student Id" value="0110201021" />
-        <div className='studentData' style={studentData}>
+        <RowBlock  style={studentData}>
             <FormOutput placeholder="CGPA" value="" />
             <FormOutput placeholder="Trimester" value="0110201021" />
-        </div>
-        <label className='dataLabel' style={dataLabel}>Links</label><br/>
-        <textarea name="postContent"  className='details' style={details} rows={4} cols={40} value="{props.value} "readOnly/>
+        </RowBlock>
+        <label  style={dataLabel}>Links</label><br/>
+        <textarea name="postContent" style={details} rows={4} cols={40} value="{props.value} "readOnly/>
         <br/>
         <br/>
         <hr/>
@@ -30,7 +31,7 @@ const dataLabel={
 }
 
 const studentData={
-  display: "flex"
+ width:"82%"
 }
 
 const details={

@@ -1,4 +1,4 @@
-import Common from "./Layout/Common";
+import PrimaryLayout from "./Layout/PrimaryLayout";
 import Application from "./Pages/ApplicationWrite/Application";
 import Login from "./Pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -10,10 +10,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/application" element={<Application />} />
-          <Route path="/applicationread" element={<ApplicationRead />} />
+          <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
+          <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
           <Route path="/inbox" element={<EmailPage />} />
-          <Route path="/" element={<Common />} />
+          <Route path="/" element={<PrimaryLayout/>} />
         </Routes>
       </Router>
     </div>

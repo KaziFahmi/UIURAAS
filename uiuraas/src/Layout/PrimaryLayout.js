@@ -1,9 +1,8 @@
 import React from "react";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import Sidebar from "../Components/SideMenu/SidebarStudent";
-import Body from "../MiddleWare/Body";
-function Common(props) {
+import Sidebar from "../Components/SideMenu/Sidebar";
+function PrimaryLayout(props) {
   
   return (
     <>
@@ -17,7 +16,7 @@ function Common(props) {
             <Sidebar/>
         </div>
         <div className="mainBody" style={mainBody}>
-            <Body body={props.body} />
+            {props.body}
         </div>
       </div>
       <div className="footer" style={footer}>
@@ -27,14 +26,15 @@ function Common(props) {
   );
 }
 
-export default Common;
+export default PrimaryLayout;
 
 const sideMenu={
   paddingLeft: "3%",
   paddingTop: "1%",
 }
 const mainBody={
-  paddingLeft: "2%"
+  paddingLeft: "2%",
+  height:"850px"
 }
 
 const footer={

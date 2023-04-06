@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../../Components/Navbar/Navbar'
-import Sidebar from '../../../Components/SideMenu/SidebarStudent'
+import Sidebar from '../../../Components/SideMenu/Sidebar'
 import EmailView from './EmailView'
 function ApplicationInbox() {
   return (

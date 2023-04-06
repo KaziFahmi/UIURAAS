@@ -1,6 +1,8 @@
 import React from "react";
 import {MdOutlineGroupAdd} from 'react-icons/md';
 import { IoIosAddCircle } from "react-icons/io";
+import PrimaryTemplate from "../../../Components/ColorTemplates/PrimaryTemplate";
+
 const AddPeople= () => {
   const [open, setOpen] = React.useState(false);
 
@@ -41,13 +43,13 @@ export default AddPeople;
 
 
  const addButton={
-    color: "#14213D",
+    color: PrimaryTemplate.blue,
     border:"none",
     backgroundColor:" white"
 };
 
 const addmenu={
-    border:"1px solid #14213D",
+    border:"1px solid" + PrimaryTemplate.blue,
     width: "150px",
     height:"auto",
     position: "absolute",
@@ -65,11 +67,6 @@ const addmenuButton={
     backgroundColor: "white",
     textAlign: "start",
 }
-// addmenuButton:hover{
-//     backgroundColor:" #14213D",
-//     color: "white"
-// },
-
 const createGroupButton={
     color:"#949494",
     border: "none",

@@ -1,18 +1,23 @@
 import React from 'react'
 import userImg from '../../../Images/userImg.png'
+import RowBlock from '../../../Components/BasicBlocks/RowBlock'
+import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
+import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 
-const ApplicationCard = () => {
+const ApplicationCard = (props) => {
   return (
-    <div className='appCardBody' style={appCardBody}>
-        <div className='column profImg' style={profImg}><img src={userImg} /></div>
-        <div className='column profInfo' style={profInfo}>
-            <div>Shahil Yasar Haque</div>
-            <div>011201021</div>
-        </div>
-        <div className='check' >
-            <input  type="checkbox"/>
-        </div>
-    </div>
+    <HorizontalBlock style={appCardBody}>
+      <HorizontalBlock>  
+        <div style={profImg}><img src={userImg} /></div>
+        <ColumnBlock >
+            <input type="text" value="Shahil Yasar Haque " readOnly style={profInfo}/>
+            <input type="text" value="011201021" readOnly style={profInfo} />
+         </ColumnBlock>
+        </HorizontalBlock>
+        <input style={checkbox}  type="checkbox"/>
+       
+    </HorizontalBlock>
   )
 }
 
@@ -23,17 +28,28 @@ const appCardBody={
     border: "1px solid #FC9E04",
     margin: "2.5%",
     position: 'relative',
-    height:"auto"
+    height:"auto",
+    alignItems:'left',
+   justifyContent:'left',
+   textAlign:'left',
+   justifyContent:"space-between"
+    
 }
 
 const profImg={
   width: "auto",
-  position:"relative"
+  position:"relative",
+  
 }
 
 const profInfo={
   fontSize: "large",
   fontWeight: "600",
   fontFamily: "'Inter', sans-serif",
-  width:"auto"
+  width:"90%",
+  border:"none",
+}
+
+const checkbox={
+  border:"1px solid"+PrimaryTemplate.yellow+"!important"
 }

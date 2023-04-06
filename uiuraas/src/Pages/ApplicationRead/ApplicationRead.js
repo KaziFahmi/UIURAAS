@@ -7,6 +7,12 @@ import Searchbar from './ApplicationReadComponents/Searchbar';
 import ApplicationCard from './ApplicationReadComponents/ApplicationCard';
 import ApplicationReadForm from './ApplicationReadComponents/ApplicationReadForm/ApplicationReadForm';
 import AddPeople from './ApplicationReadComponents/AddPeople';
+import ColumnBlock from '../../Components/BasicBlocks/ColumnBlock';
+import RowBlock from '../../Components/BasicBlocks/RowBlock';
+import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
+import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
+import RemoveButton from './RemoveButton';
+
 
 
 const ApplicationRead = () => {
@@ -15,44 +21,50 @@ const ApplicationRead = () => {
 
 
   return (
-   <div className='body'>
+   <ColumnBlock style={body}>
     <div ><h2>Application</h2></div>
-    <div className='dropdownSet' style={dropdownSet}><ApplicationTypeDropdown/><FieldType/></div>
+    <div  style={dropdownSet}><ApplicationTypeDropdown/><FieldType/></div>
     <br/>
-    <div className='applicationData' style={applicationData} >
+    <RowBlock  style={applicationData} >
 
-      <div className='applicationContainer' style={applicationContainer}>
-        <div className='appliContainerItems' style={appliContainerItems}>
-          <button className='selectAll' style={selectAll} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
+      <VerticalBlock style={applicationContainer}>
+        <RowBlock style={appliContainerItems}>
+          <button  style={selectAllToggle} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
           <Searchbar/>
-        </div>
+        </RowBlock>
 
         {toggle && (
-          <div className='toggleOptions' style={toggleOptions} >
+          <HorizontalBlock style={SelectAllToggleOptions} >
             <AddPeople/>
-            <button className='removeButton' style={removeButton}><IoTrashSharp/>Remove</button>
-          </div>
+            <RemoveButton body={<IoTrashSharp/>} text="Remove"/>
+          </HorizontalBlock>
         )}
 
-        <div className='applicationCard' >
+        <VerticalBlock>
+          {/* ------application Card------ */}
           <ApplicationCard/>
-          
-        </div>
-      </div>
+        </VerticalBlock>
+      </VerticalBlock>
 
-      <div  className='applicationForm' style={applicationForm}>
+      <div  style={applicationForm}>
+        {/* ------application Form------ */}
         <div><ApplicationReadForm/></div>
       </div>
-    </div>
-   </div>
+
+    </RowBlock>
+   </ColumnBlock>
   )
 }
 
 export default ApplicationRead
 
+const body={
+  justifyContent:"left",
+  alignItems:"left"
+}
+
 const dropdownSet={
   display: "flex",
-  paddingLeft:"0.5%"
 }
 // .gap{
 //   color: white;
@@ -70,20 +82,16 @@ const applicationContainer={
   height: "700px",
   overflowY: "scroll"
 }
-const selectAll={
+const selectAllToggle={
   backgroundColor: "white",
   border: "none"
 }
 
-const toggleOptions={
+const SelectAllToggleOptions={
   display:"flex",
 }
 
-const removeButton={
-  backgroundColor: "white",
-  color: "#14213D",
-  border: "none"
-}
+
 
 const applicationForm={
   border: "1px solid #FC9E04",

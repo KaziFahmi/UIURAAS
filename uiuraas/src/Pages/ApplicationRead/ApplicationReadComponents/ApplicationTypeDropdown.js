@@ -9,21 +9,21 @@ const ApplicationTypeDropdown= () => {
   };
 
   return (
-    <div className="dropdown">
-      <button onClick={handleOpen} className="dropdownButton" style={dropdownButton}>
-        <div><label className='dropTitle'>Student</label></div>
+    <div >
+      <button onClick={handleOpen}  style={dropdownButton}>
+        <div><label >Student</label></div>
         <div><IoIosArrowDown fontSize="1.5em" className='dropdownIcon'/></div>
       </button>
       {open ? (
-        <div className="menu" style={menu}>
-          <div className="menu-item" style={menuItems}> 
-            <button className='menuButton' style={menuButton}>Student</button>
+        <div  style={menu}>
+          <div style={menuItems}> 
+            <button  style={menuButton}>Student</button>
           </div>
-          <div className="menu-item" style={menuItems}>
-            <button className='menuButton' style={menuButton}>RA</button>
+          <div style={menuItems}>
+            <button style={menuButton}>RA</button>
           </div>
-          <div className="menu-item" style={menuItems}>
-            <button className='menuButton' style={menuButton} >All</button>
+          <div  style={menuItems}>
+            <button  style={menuButton} >All</button>
           </div>
         </div>
       ) : null}

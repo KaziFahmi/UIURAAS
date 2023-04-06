@@ -4,14 +4,7 @@ import React from 'react'
 
 const Searchbar = ({keyword, onChange}) => {
     return (
-      <input 
-       style={searchBar}
-       className='searchBar'
-       key="search-bar"
-       value={keyword}
-       placeholder={"search"}
-       onChange={(e) => onChange(e.target.value) }
-      />
+      <input style={searchBar} key="search-bar" value={keyword} placeholder={"search"}  />
     );
   }
   

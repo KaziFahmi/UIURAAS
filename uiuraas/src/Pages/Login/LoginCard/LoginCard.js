@@ -1,22 +1,23 @@
 import React from 'react'
+import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 
 const LoginCard = () => {
   return (
-    <div className="form" style={form}>
-     <form className='formContainer' style={formContainer}>
-       <label className='title' style={title}>Log In</label>
-       <div className="input-container" style={inputContainer}>
-         <input type="text" name="uname" placeholder='Enter login Id ' className='inputField' style={inputField} required />
+    <VerticalBlock style={form}>
+     <form  style={formContainer}>
+       <label  style={title}>Log In</label>
+       <div  style={inputContainer}>
+         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required />
        </div>
-       <div className="input-container" style={inputContainer}>
-         <input type="password" name="pass" placeholder='Enter Password ' className='inputField' style={inputField} required />
+       <div  style={inputContainer}>
+         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required />
        </div>
-       <div className="input-container" style={inputContainer}>
-         <button type="submit" className='loginButton' style={loginButton}>Login</button>
+       <div  style={inputContainer}>
+         <button type="submit" style={loginButton}>Login</button>
        </div>
-       <a className='forgotPass' style={forgotPass}>Forgot Password?</a>
+       <a  style={forgotPass}>Forgot Password?</a>
      </form>
-   </div>
+   </VerticalBlock>
   )
 }
 
@@ -25,17 +26,6 @@ export default LoginCard
 const form={
   justifyContent: "center",
   alignItems:"center"
-}
-
-const buttonContainer ={
-  display: "flex",
-  justifyContent: "center"
-}
-
-const loginForm ={
-  backgroundColor: "white",
-  padding: "2rem",
-  boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
 }
 
 const formContainer={
@@ -60,22 +50,22 @@ const inputContainer ={
 
 const inputField={
   width: "75%",
-    padding: "10px 15px",
-    border: "2px solid #949494",
-    marginTop: "10px",
-    marginBottom: "15px",
-    color: "#000000c2",
-    fontSize: "18px",
-    marginLeft: "50px"
+  padding: "15px",
+  border: "2px solid #949494",
+  marginTop: "10px",
+  marginBottom: "15px",
+  color: "#000000c2",
+  fontSize: "18px",
 }
 
 const loginButton={
   width:"82%",
-  height:"40px",
+  padding:"15px",
+  marginTop: "10px",
+  marginBottom: "15px",
   backgroundColor: "#14213D",
   color: "white",
   border: "1px solid #14213D",
-  marginLeft: "10%"
 }
 
 const forgotPass={
@@ -85,6 +75,3 @@ const forgotPass={
   fontFamily: "'Inter', sans-serif"
 }
 
-// .forgotPass:hover{
-//   color:#b47003
-// }

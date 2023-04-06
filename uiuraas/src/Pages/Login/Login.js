@@ -4,41 +4,44 @@ import raasLogo from '../../Images/raasLogo.png';
 import img1 from '../../Images/loginImg1.png';
 import img2 from '../../Images/loginImg2.png';
 import LoginCard from './LoginCard/LoginCard';
+import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
+import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
 
 const Login = () => {
   return (
-    <div>
-        <div className="navigation" style={navigation}>
-          <div className="navbarComponent" style={navbarComponent}>
-              <a href="/" className="logo">
+    <VerticalBlock>
+        <HorizontalBlock  >
+          <HorizontalBlock  >
+              <a href="/" >
               <img src={uiuLogo}/>
               <img src={raasLogo}/>
               </a>
-          </div>
-       </div>
-       <div className='loginBody'>
-        <div className='ImgFrame'>
+          </HorizontalBlock>
+       </HorizontalBlock>
+       
+       <VerticalBlock>
+        <div>
           <div>
-            <img src={img1} className='img1' style={img1Style}/>
+            <img src={img1} style={img1Style}/>
           </div>
         </div>
 
-        <div className='ImgFrame'>
+        <div >
           <div>
-            <img src={img2} className='img2'/>
+            <img src={img2} style={img2Style} />
           </div>
         </div>
 
-        <div className='loginCardFrame' style={loginCardFrame}>
+        <div  style={loginCardFrame}>
           <LoginCard/>
         </div>
-       </div>
+       </VerticalBlock>
 
        
     <div >
 
     </div>
-  </div>
+  </VerticalBlock>
   )
 }
 
@@ -53,7 +56,11 @@ const navbarComponent={
 }
 
 const img1Style={
-  paddingLeft: "33.5%"
+  width:"80%",
+  paddingLeft: "20%"
+}
+const img2Style={
+  width:"80%",
 }
 
 const loginCardFrame={

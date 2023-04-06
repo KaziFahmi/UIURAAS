@@ -1,13 +1,14 @@
 import React from 'react'
+import ColumnBlock from '../BasicBlocks/ColumnBlock'
 
 
 const Footer = () => {
   return (
-    <div className='body' >
+    <ColumnBlock>
         <div class="fade_rule" style={FadeRule}></div>
         <div className='footerUpperLine' style={FooterUpperLine}>Stay In Touch</div>
         <div className='footerLowerLine' style={FooterLowerLine}>self@cse.uiu.ac.bd</div>
-    </div>
+    </ColumnBlock>
   )
 }
 

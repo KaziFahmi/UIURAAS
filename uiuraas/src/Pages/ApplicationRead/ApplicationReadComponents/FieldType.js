@@ -9,18 +9,18 @@ const FieldType= () => {
   };
 
   return (
-    <div className="dropdown">
-      <button onClick={handleOpen} className="dropdownButton" style={dropdownButton}>
-        <label className='dropTitle'>Field</label>
-        <IoIosArrowDown fontSize="1.5em" className='dropdownIcon'/>
+    <div >
+      <button onClick={handleOpen}  style={dropdownButton}>
+        <label >Field</label>
+        <IoIosArrowDown fontSize="1.5em" />
         </button>
       {open ? (
-        <div className="menu" style={menu} >
-          <div className="menu-item" style={menuItems}>
-            <button className='menuButton' style={menuButton}>BioInformatics</button>
+        <div  style={menu} >
+          <div  style={menuItems}>
+            <button  style={menuButton}>BioInformatics</button>
           </div>
-          <div className="menu-item" style={menuItems}>
-            <button className='menuButton' style={menuButton}>Database</button>
+          <div  style={menuItems}>
+            <button  style={menuButton}>Database</button>
           </div>
         </div>
       ) : null}
