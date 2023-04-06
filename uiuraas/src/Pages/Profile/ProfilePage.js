@@ -9,7 +9,7 @@ import Papers from './ProfilePageComponents/Papers'
 
 function ProfilePage() {
   return (
-   <VerticalBlock>
+   <VerticalBlock style={profileBody}>
      <ProfileCard/>
      <HorizontalBlock style={{paddingLeft:"2.5%"}}>
         <UserInfo />
@@ -23,8 +23,6 @@ function ProfilePage() {
 
 export default ProfilePage
 
-const userIdentity={
-    border:"1px solid"+PrimaryTemplate.yellow,
-    width:"90%",
-    backgroundColor:"Red"
+const profileBody={
+    justifyContent:"center"
 }
