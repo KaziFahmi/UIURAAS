@@ -24,7 +24,7 @@ const ApplicationRead = () => {
   return (
    <ColumnBlock style={body}>
     <div ><h2>Application</h2></div>
-    <div  style={dropdownSet}><ApplicationTypeDropdown/><FieldType/></div>
+    <div  style={dropdownSet}><ApplicationTypeDropdown/>&nbsp;<FieldType/></div>
     <br/>
     <RowBlock  style={applicationData} >
 
