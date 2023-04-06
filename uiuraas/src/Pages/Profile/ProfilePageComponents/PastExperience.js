@@ -21,5 +21,6 @@ const body={
     width:"70%",
     border:"1px solid"+PrimaryTemplate.yellow,
     fontFamily: "'Inder', sans-serif",
-    marginLeft:"2.3%"
+    marginLeft:"2.3%",
+    overflowY:"scroll"
 }
