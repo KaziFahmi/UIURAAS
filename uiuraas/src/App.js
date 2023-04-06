@@ -12,7 +12,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
           <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
-          <Route path="/inbox" element={<EmailPage />} />
+          <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
           <Route path="/" element={<PrimaryLayout/>} />
         </Routes>
       </Router>
