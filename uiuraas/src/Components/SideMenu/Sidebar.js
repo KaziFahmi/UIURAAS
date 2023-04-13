@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
-import { MdEditDocument , MdGroups} from 'react-icons/md'
+import { MdEditDocument , MdGroups,MdLogout} from 'react-icons/md'
 import { RiHome5Line } from 'react-icons/ri';
 import { IoDocumentTextSharp } from 'react-icons/io5';
 import { IoMdChatbubbles } from 'react-icons/io';
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 import SidebarButtons from './SidebarButtons';
+import LogoutButton from './LogoutButton';
 
 const Sidebar = (props) => {
   const [account, setAccount] = useState("Student");
@@ -18,6 +19,7 @@ const Sidebar = (props) => {
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/"/>
+          {/* <LogoutButton body={<MdLogout fontSize="2.5em"/>} link="/"/> */}
         
           
           {/* 

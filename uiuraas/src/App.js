@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ApplicationRead from "./Pages/ApplicationRead/ApplicationRead";
 import EmailPage from "./Pages/EmailPage/EmailPage";
 import ProfilePage from "./Pages/Profile/ProfilePage";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <div className="app">

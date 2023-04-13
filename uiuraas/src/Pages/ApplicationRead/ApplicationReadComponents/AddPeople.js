@@ -53,6 +53,8 @@ const addmenu={
     width: "150px",
     height:"auto",
     position: "absolute",
+    backgroundColor:PrimaryTemplate.white,
+    zIndex:"100",
 }
 
 const addmenuItem={
