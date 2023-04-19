@@ -27,10 +27,14 @@ function FindCard() {
 export default FindCard
 
 const body={
-    width:"55%",
-    height:"550px",
-    border:"1px solid"+PrimaryTemplate.yellow,
-    fontFamily: "'Inder', sans-serif",
-    marginLeft:"2.5%",
-    overflowY:"Scroll"
+  border: "1px solid"+PrimaryTemplate.yellow,
+  margin: "2.5%",
+  position: 'relative',
+  height:"550px",
+  width:"95%",
+  alignItems:'left',
+ justifyContent:'left',
+ textAlign:'left',
+ justifyContent:"space-between",
+ marginTop:".5%"
 }

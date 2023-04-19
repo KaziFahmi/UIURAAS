@@ -5,8 +5,8 @@ import  { useState, useRef , useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
-import { userLogin } from '../../../Store/auth/authActions'
-import Error from '../../../Store/auth/Errors'
+import { userLogin } from '../../../Redux/Slices/Auth/authActions'
+import Error from '../../../Components/Errors'
 
 
 

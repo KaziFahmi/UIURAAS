@@ -7,8 +7,8 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { RiNotification2Line } from 'react-icons/ri';
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useGetDetailsQuery } from '../../Services/auth/authService'
-import { logout, setCredentials } from '../../Store/auth/authSlice'
+import { useGetDetailsQuery } from '../../Redux/Slices/Auth/authService';
+import { logout, setCredentials } from '../../Redux/Slices/authSlice'
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
