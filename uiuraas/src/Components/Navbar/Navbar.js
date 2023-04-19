@@ -3,9 +3,26 @@ import uiuLogo from '../../Images/uiuLogo.png';
 import raasLogo from '../../Images/raasLogo.png';
 import {CgProfile} from "react-icons/cg"
 import NavbarButtons from './NavbarButtons';
-import { FiSettings } from 'react-icons/fi';
+import { AiOutlineLogout } from 'react-icons/ai';
 import { RiNotification2Line } from 'react-icons/ri';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useGetDetailsQuery } from '../../Services/auth/authService'
+import { logout, setCredentials } from '../../Store/auth/authSlice'
+
 const Navbar = () => {
+  const { userInfo } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+
+  // automatically authenticate user if token is found
+  const { data, isFetching } = useGetDetailsQuery('userDetails', {
+    pollingInterval: 900000, // 15mins
+  })
+
+  useEffect(() => {
+    if (data) dispatch(setCredentials(data))
+  }, [data, dispatch])
+
   return ( 
     <nav  style={navigation}>
       <div  style={navbarComponent}>
@@ -15,8 +32,8 @@ const Navbar = () => {
         </a>
       </div>
       <div style={navbarComponent}>
-        <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>  {/* --Notifications-- */}
-        <NavbarButtons body={<FiSettings fontSize={"3.5em"}/>} link="/"/>  {/* --Settings-- */}
+        <NavbarButtons body={<AiOutlineLogout fontSize={"3.5em"}/>} link="/" onClick={() => dispatch(logout())}/>  {/* --Logout-- */}
+        <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>  {/* --Notifications-- */}  
         <NavbarButtons body={<CgProfile fontSize={"3.5em"}/>} link="/profile"/> {/* --profile-- */}
       </div>
   </nav>

@@ -1,107 +1,52 @@
 import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-import  { useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate  } from 'react-router-dom';
-import { login } from "../../../Store/Actions/auth";
+import  { useState, useRef , useEffect} from "react";
+import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
+import { userLogin } from '../../../Store/auth/authActions'
+import Error from '../../../Store/auth/Errors'
 
-
-const required = (value) => {
-  if (!value) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This field is required!
-      </div>
-    );
-  }
-};
 
 
 
 const LoginCard = () => {
 
-  let navigate = useNavigate();
+  const { loading, userInfo, error } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
 
-  const form = useRef();
-  const checkBtn = useRef();
+  const { register, handleSubmit } = useForm()
 
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
 
-  const { isLoggedIn } = useSelector(state => state.auth);
-  const { message } = useSelector(state => state.message);
-
-  const dispatch = useDispatch();
-
-  const onChangeId = (e) => {
-    const id = e.target.value;
-    setId(id);
-  };
-
-  const onChangePassword = (e) => {
-    const password = e.target.value;
-    setPassword(password);
-  };
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-
-    
-    console.log(form);
-    
-    form.current.validateAll();
-
-    if (checkBtn.current.context._errors.length === 0) {
-      dispatch(login(id, password))
-        .then(() => {
-          navigate("/profile");
-          window.location.reload();
-        })
-        .catch(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(false);
+  // redirect authenticated user to profile screen
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/user-profile')
     }
-  };
+  }, [navigate, userInfo])
 
-  if (isLoggedIn) {
-    return <Navigate to="/profile" />;
+  const submitForm = (data) => {
+    dispatch(userLogin(data))
   }
-
-
-
 
   return (
     <VerticalBlock style={form}>
-     <form  style={formContainer} onSubmit={handleLogin} ref={form} >
+     <form  style={formContainer} onSubmit={handleSubmit(submitForm)} >
+      {error && <Error>{error}</Error>}
        <label  style={title}>Log In</label>
        <div  style={inputContainer}>
-         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required  value={id} onChange={onChangeId} validations={[required]}/>
+         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required {...register('id')} />
        </div>
        <div  style={inputContainer}>
-         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required  value={password} onChange={onChangePassword} validations={[required]}/>
+         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required   {...register('password')} />
        </div>
        <div  style={inputContainer}>
-         <button type="submit" style={loginButton} disabled={loading}>  
-            {loading && (
-                    <span className="spinner-border spinner-border-sm"></span>
-                  )}
-                  <span>Login</span>
+         <button type="submit" style={loginButton} disabled={loading} >  
+         {loading ? <span className="spinner-border spinner-border-sm"></span>: 'Login'}
          </button>
        </div>
-       
-       {message && (
-            <div className="form-group">
-              <div className="alert alert-danger" role="alert">
-                {message}
-              </div>
-            </div>
-          )}
 
        <a  style={forgotPass}>Forgot Password?</a>
      </form>
