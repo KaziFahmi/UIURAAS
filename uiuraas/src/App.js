@@ -7,6 +7,7 @@ import EmailPage from "./Pages/EmailPage/EmailPage";
 import ProfilePage from "./Pages/Profile/ProfilePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import HomePage from "./Pages/Homepage/HomePage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
           <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
           <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
+          <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
           <Route path="/" element={<PrimaryLayout/>} />
            {/* Temporary setup */}
            

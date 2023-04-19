@@ -41,7 +41,7 @@ const footer={
   textAlign: "center",
   justifyContent: "center",
   alignItems: "center",
-  marginTop:mainBody.height+"+20%"
+  marginTop:"2%"
 }
 
 const commonBody={

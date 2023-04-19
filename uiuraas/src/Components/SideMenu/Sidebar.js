@@ -14,7 +14,7 @@ const Sidebar = (props) => {
       <div className="sidebarComponent" style={sidebarComponent}>
         <div className='sidebarButtonSet' style={sidebarButtonSet}>
 
-          <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/"/> 
+          <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/home"/> 
           <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
