@@ -1,18 +1,16 @@
 import React from 'react'
 import HoverBlock from '../BasicBlocks/HoverBlock'
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate'
+import { Link } from 'react-router-dom'
 
 const NavbarButtons=(props)=> {
 
-  function handleClick() {
-    window.location.href = props.link;
-  }
 
   return (
    <HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}>
-      <button style={navbarButton} onClick={handleClick}> 
+      <Link to={props.link}><button style={navbarButton}> 
          {props.body}
-      </button>
+    </button></Link>
     </HoverBlock> 
   )
 }

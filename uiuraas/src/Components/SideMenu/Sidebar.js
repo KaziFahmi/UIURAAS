@@ -5,7 +5,6 @@ import { IoDocumentTextSharp } from 'react-icons/io5';
 import { IoMdChatbubbles } from 'react-icons/io';
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 import SidebarButtons from './SidebarButtons';
-import LogoutButton from './LogoutButton';
 
 const Sidebar = (props) => {
   const [account, setAccount] = useState("Student");

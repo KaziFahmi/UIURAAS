@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useGetDetailsQuery } from '../../Services/auth/authService'
 import { logout, setCredentials } from '../../Store/auth/authSlice'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { userInfo } = useSelector((state) => state.auth)
@@ -32,7 +33,7 @@ const Navbar = () => {
         </a>
       </div>
       <div style={navbarComponent}>
-        <NavbarButtons body={<AiOutlineLogout fontSize={"3.5em"}/>} link="/" onClick={() => dispatch(logout())}/>  {/* --Logout-- */}
+        <Link><button style={logoutButton} onClick={() => dispatch(logout())}><AiOutlineLogout fontSize={"3.5em"}/></button></Link>  {/* --Logout-- */}
         <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>  {/* --Notifications-- */}  
         <NavbarButtons body={<CgProfile fontSize={"3.5em"}/>} link="/profile"/> {/* --profile-- */}
       </div>
@@ -50,4 +51,10 @@ const navigation={
 const navbarComponent={
   display: "flex",
   columnCount: "3"
+}
+
+const logoutButton={
+  backgroundColor:"transparent",
+  border:"none",
+  
 }
