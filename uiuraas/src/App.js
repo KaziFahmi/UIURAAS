@@ -16,22 +16,23 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           {/* Temporary setup */}
-          <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
+          {/* <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
           <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
           <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
           <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
           <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
-          <Route path="/" element={<PrimaryLayout/>} />
+          <Route path="/" element={<PrimaryLayout/>} /> */}
            {/* Temporary setup */}
            
           {/* Permanent setup */}
-          {/* <Route element={<ProtectedRoute />}>
+          <Route element={<ProtectedRoute />}>
             <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
             <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
             <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
             <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
+            <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
             <Route path="/" element={<PrimaryLayout/>} />
-          </Route> */}
+          </Route>
           {/* Permanent setup */}
         </Routes>
       </Router>

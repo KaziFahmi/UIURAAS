@@ -23,11 +23,12 @@ const LoginCard = () => {
   // redirect authenticated user to profile screen
   useEffect(() => {
     if (userInfo) {
-      navigate('/user-profile')
+      navigate('/profile')
     }
   }, [navigate, userInfo])
 
   const submitForm = (data) => {
+    console.log(data)
     dispatch(userLogin(data))
   }
 
