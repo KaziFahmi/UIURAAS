@@ -7,11 +7,11 @@ const NavbarButtons=(props)=> {
 
 
   return (
-   <HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}>
-      <Link to={props.link}><button style={navbarButton}> 
+   <Link to={props.link}><HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}>
+      <button style={navbarButton}> 
          {props.body}
-    </button></Link>
-    </HoverBlock> 
+    </button>
+    </HoverBlock> </Link>
   )
 }
 

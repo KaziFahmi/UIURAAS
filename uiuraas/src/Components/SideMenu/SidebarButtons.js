@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 function SidebarButtons(props) {
   return (
-    <HoverBlock hover={{ color: PrimaryTemplate.yellow }}>
-        <Link to={props.link}><button style={sidebarButtons}> 
+    <Link to={props.link}><HoverBlock hover={{ color: PrimaryTemplate.yellow }}>
+        <button style={sidebarButtons}> 
          {props.body}
-    </button></Link>
-   </HoverBlock>
+    </button>
+   </HoverBlock></Link>
   )
 }
 

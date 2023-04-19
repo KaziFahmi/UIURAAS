@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useGetDetailsQuery } from '../../Redux/Slices/Auth/authService';
 import { logout, setCredentials } from '../../Redux/Slices/authSlice'
 import { Link } from 'react-router-dom';
+import HoverBlock from '../BasicBlocks/HoverBlock';
+import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 
 const Navbar = () => {
   const { userInfo } = useSelector((state) => state.auth)
@@ -33,7 +35,7 @@ const Navbar = () => {
         </a>
       </div>
       <div style={navbarComponent}>
-        <Link><button style={logoutButton} onClick={() => dispatch(logout())}><AiOutlineLogout fontSize={"3.5em"}/></button></Link>  {/* --Logout-- */}
+        <Link><HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}><button style={logoutButton} onClick={() => dispatch(logout())}><AiOutlineLogout fontSize={"3.5em"}/></button></HoverBlock></Link>  {/* --Logout-- */}
         <NavbarButtons body={<RiNotification2Line fontSize={"3.5em"}/>} link="/"/>  {/* --Notifications-- */}  
         <NavbarButtons body={<CgProfile fontSize={"3.5em"}/>} link="/profile"/> {/* --profile-- */}
       </div>
