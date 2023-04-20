@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { MdEditDocument , MdGroups} from 'react-icons/md'
+import { MdEditDocument , MdGroups,MdLogout} from 'react-icons/md'
 import { RiHome5Line } from 'react-icons/ri';
 import { IoDocumentTextSharp } from 'react-icons/io5';
 import { IoMdChatbubbles } from 'react-icons/io';
@@ -13,11 +13,12 @@ const Sidebar = (props) => {
       <div className="sidebarComponent" style={sidebarComponent}>
         <div className='sidebarButtonSet' style={sidebarButtonSet}>
 
-          <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/"/> 
+          <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/home"/> 
           <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/"/>
+          {/* <LogoutButton body={<MdLogout fontSize="2.5em"/>} link="/"/> */}
         
           
           {/* 

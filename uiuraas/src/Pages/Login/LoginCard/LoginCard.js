@@ -1,21 +1,54 @@
 import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
+import  { useState, useRef , useEffect} from "react";
+import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
+import { userLogin } from '../../../Redux/Slices/Auth/authActions'
+import Error from '../../../Components/Errors'
+
+
+
 
 const LoginCard = () => {
+
+  const { loading, userInfo, error } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+
+  const { register, handleSubmit } = useForm()
+
+  const navigate = useNavigate()
+
+  // redirect authenticated user to profile screen
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/profile')
+    }
+  }, [navigate, userInfo])
+
+  const submitForm = (data) => {
+    console.log(data)
+    dispatch(userLogin(data))
+  }
+
   return (
     <VerticalBlock style={form}>
-     <form  style={formContainer}>
+     <form  style={formContainer} onSubmit={handleSubmit(submitForm)} >
+      {error && <Error>{error}</Error>}
        <label  style={title}>Log In</label>
        <div  style={inputContainer}>
-         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required />
+         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required {...register('id')} />
        </div>
        <div  style={inputContainer}>
-         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required />
+         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required   {...register('password')} />
        </div>
        <div  style={inputContainer}>
-         <button type="submit" style={loginButton}>Login</button>
+         <button type="submit" style={loginButton} disabled={loading} >  
+         {loading ? <span className="spinner-border spinner-border-sm"></span>: 'Login'}
+         </button>
        </div>
+
        <a  style={forgotPass}>Forgot Password?</a>
      </form>
    </VerticalBlock>

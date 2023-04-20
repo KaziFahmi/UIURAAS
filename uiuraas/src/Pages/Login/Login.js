@@ -51,8 +51,9 @@ export default Login
 
 
 const img1Style={
-  width:"80%",
-  paddingLeft: "20%"
+  width:"100%",
+  paddingLeft: "20%",
+  marginBottom:"20px"
 }
 const img2Style={
   width:"80%",

@@ -5,17 +5,35 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ApplicationRead from "./Pages/ApplicationRead/ApplicationRead";
 import EmailPage from "./Pages/EmailPage/EmailPage";
 import ProfilePage from "./Pages/Profile/ProfilePage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import HomePage from "./Pages/Homepage/HomePage";
+
 function App() {
   return (
     <div className="app">
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
+          {/* Temporary setup */}
+          {/* <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
           <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
           <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
           <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
-          <Route path="/" element={<PrimaryLayout/>} />
+          <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
+          <Route path="/" element={<PrimaryLayout/>} /> */}
+           {/* Temporary setup */}
+           
+          {/* Permanent setup */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
+            <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
+            <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
+            <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
+            <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
+            <Route path="/" element={<PrimaryLayout/>} />
+          </Route>
+          {/* Permanent setup */}
         </Routes>
       </Router>
     </div>
