@@ -1,12 +1,10 @@
 import React from 'react'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
-import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
 function PaperCard(props) {
     function handleClick() {
-        window.location.href = props.link;
-        console.log("Pressed")
+      window.open(props.link);
       }
     
 
@@ -33,9 +31,11 @@ const paperBox={
 
 const paperButton={
     border:"none",
-    backGroundColor:PrimaryTemplate.white,
     padding: '0',
     border: '0',
     background: 'none',
     boxShadow: 'none',
+    height:"100%",
+    width:"90vw",
+    textAlign:"left"
 }

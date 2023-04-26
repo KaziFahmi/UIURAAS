@@ -1,10 +1,9 @@
 import React from 'react'
-import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import PaperCard from './PaperCard'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
-import {MdOutlineAddCircleOutline} from 'react-icons/md'
+
 
 function Papers(props) {
   return (

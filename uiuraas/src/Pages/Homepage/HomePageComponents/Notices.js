@@ -7,12 +7,12 @@ import InfoCard from './InfoCard'
 function Notices() {
   return (
     <VerticalBlock style={body}>
-    <RowBlock style={{padding:"1%"}}>
-      <h2 style={{paddingLeft:"1%"}}>Notices</h2>
-    </RowBlock>
-    <InfoCard data="Maintenance notice"/>
-    
-</VerticalBlock>
+      <RowBlock style={{padding:"1%"}}>
+        <h2 style={{paddingLeft:"1%"}}>Notices</h2>
+      </RowBlock>
+      <InfoCard data="Maintenance notice"/>
+      <InfoCard data="Maintenance notice"/>
+   </VerticalBlock>
   )
 }
 
