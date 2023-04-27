@@ -5,7 +5,7 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import RemoveButton from './RemoveButton'
 import {IoTrashSharp} from "react-icons/io5";
-
+//a clickable block used to get data of forms to bve displayed in ApplicationReadForm
 const ApplicationCard = (props) => {
   
 // form id to find names
@@ -22,12 +22,15 @@ const handleClick = () => {
         <div style={profImg}><img src={userImg} /></div>
         <ColumnBlock >
             <button onClick={handleClick}style={cardButton} >
+              {/* shows data of form submittees */}
               <input type="text" value={props.name} disabled readOnly style={profInfo}/>
               <input type="text" value={props.formId} readOnly disabled style={profInfo}/>
             </button>
          </ColumnBlock>
         </HorizontalBlock>
+        {/* to check mark data */}
         <input style={checkbox}   type="checkbox"/>
+        {/* to delete data */}
         <RemoveButton formId={props.formId} body={<IoTrashSharp/>}/>
        
     </HorizontalBlock>

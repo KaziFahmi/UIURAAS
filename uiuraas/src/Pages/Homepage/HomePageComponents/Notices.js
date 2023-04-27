@@ -2,15 +2,15 @@ import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-import InfoCard from './InfoCard'
 import DataModal from '../../../Components/DataModal'
-
+//Holds the notices
 function Notices() {
   return (
     <VerticalBlock style={body}>
       <RowBlock style={{padding:"1%"}}>
         <h2 style={{paddingLeft:"1%"}}>Notices</h2>
       </RowBlock>
+      {/* Uses DataModal To display notice data */}
       <DataModal name="Maintenance notice" data="hello world"/>
       <DataModal name="Maintenance notice" data="hello world"/>
    </VerticalBlock>

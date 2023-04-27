@@ -2,22 +2,22 @@ import React from 'react'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-// used for creating notices
-function CreateNotice(props) {
+//used for creating news
+function CreateNews(props) {
   return (
     <VerticalBlock style={profCardBody}>
         <VerticalBlock>
         <form>
-            <h2 style={{paddingLeft:"1%"}}>Create Notice</h2>
-           <label style={title} >Title</label>{/* Title of Notice*/}
+            <h2 style={{paddingLeft:"1%"}}>Create News</h2>
+           <label style={title} >Title</label>{/* Title of news*/}
            <br/>
-           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} />{/* Title of Notice*/}
+           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} />{/* Title of news*/}
            <br/>
-           <label style={title} >Detail</label>{/* Details of Notice*/}
+           <label style={title} >Link</label>{/* Link of news*/}
            <br/>
-           <textarea name="postContent" className='details'style={inputField} rows={4} cols={40}/>{/* Details of Notice*/}
+           <input type="text" name="uname" placeholder='Enter Link '  style={inputField} />{/* Link of news*/}
            <br/>
-           <button type="submit" style={saveButton}>Send</button>
+           <button type="submit" style={saveButton}>Publish</button>
         </form>
         </VerticalBlock>
 
@@ -27,14 +27,14 @@ function CreateNotice(props) {
   )
 }
 
-export default CreateNotice
+export default CreateNews
 
 const profCardBody={
     display: "flex",
     border: "1px solid"+PrimaryTemplate.yellow,
     margin: "2.5%",
     position: 'relative',
-    height:"43vh",
+    height:"33vh",
     width:"83vw",
     alignItems:'left',
     textAlign:'left',

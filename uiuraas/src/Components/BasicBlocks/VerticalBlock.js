@@ -1,3 +1,4 @@
+// A block to simply vertically place items
 import React from 'react'
 
 function VerticalBlock(props) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import HoverBlock from '../../../Components/BasicBlocks/HoverBlock';
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
-
+//To remove data . requires a delete function
 function RemoveButton(props) {
     
       return (

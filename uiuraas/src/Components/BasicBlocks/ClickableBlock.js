@@ -1,3 +1,4 @@
+//A block to make certain components clickable and perform functions
 import React from 'react'
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate'
 

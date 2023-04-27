@@ -4,8 +4,7 @@ import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate'
 import { Link } from 'react-router-dom'
 
 const NavbarButtons=(props)=> {
-
-
+  //reusable component for navbar buttons
   return (
    <Link to={props.link}><HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}>
       <button style={navbarButton}> 

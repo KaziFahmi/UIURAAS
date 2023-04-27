@@ -5,6 +5,8 @@ import Searchbar  from './Searchbar'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import ProfessorsCards from './ProfessorsCards'
 
+// To locate cards for professors
+
 function FindCard() {
     
   return (

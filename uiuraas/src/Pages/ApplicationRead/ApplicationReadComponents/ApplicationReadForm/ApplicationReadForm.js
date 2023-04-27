@@ -1,6 +1,6 @@
 import React from 'react'
 import Members from './Members'
-
+//Displays form data 
 const ApplicationReadForm = (props) => {
   console.log(props.formId)
   return (

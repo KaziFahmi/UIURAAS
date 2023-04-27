@@ -14,12 +14,13 @@ import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
 import RemoveButton from './ApplicationReadComponents/RemoveButton';
 import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
 
+//Page that holds all components of this section
 
 const ApplicationRead = () => {
 
   const [toggle, setToggle] = useState(false)
   const [applicationData, setApplicationData] = useState({});
-
+  // An attempt at sending application data to necessary components
   const handleApplicationData = (data) => {
     setApplicationData(data);
   }
@@ -33,16 +34,19 @@ const ApplicationRead = () => {
 
       <VerticalBlock style={applicationContainer}>
         <RowBlock style={appliContainerItems}>
+          {/* Button to toggle certain options */}
           <button  style={selectAllToggle} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
           <Searchbar/>
         </RowBlock>
 
+        {/* To toggle the listed options */}
         {toggle && (
           <HorizontalBlock style={SelectAllToggleOptions} >
             <AddPeople/>
             <RemoveButton body={<IoTrashSharp/>} text="Remove"/>
           </HorizontalBlock>
         )}
+
 
         <VerticalBlock>
           {/* ------application Card------ */}

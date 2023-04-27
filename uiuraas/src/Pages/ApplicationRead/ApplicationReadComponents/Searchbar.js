@@ -1,7 +1,7 @@
 import React from 'react'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
 
-
+//Search bar to search through applications. Dont know how to implement this
 
 const Searchbar = ({keyword, onChange}) => {
     return (

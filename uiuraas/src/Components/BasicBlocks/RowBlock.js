@@ -1,3 +1,4 @@
+//A block to horizontally place items with space between them
 import React from 'react'
 
 function RowBlock(props) {

@@ -2,8 +2,9 @@ import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import GroupCard from './GroupCard'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-
+//List holding all the group cards
 function GroupList({ onGroupSelect }) {
+  // to pass data of groups to GroupMemberList
   const handleSelect = (group) => {
     onGroupSelect(group);
   };

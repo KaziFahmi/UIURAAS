@@ -1,5 +1,5 @@
 import React from "react";
-
+//reusable component to output form data
 
 function FormOutput(props) {
   return (

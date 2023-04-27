@@ -1,7 +1,7 @@
 import React from 'react'
 import FormOutput from './FormOutput'
 import RowBlock from '../../../../Components/BasicBlocks/RowBlock'
-
+//Displays eperate data of individual(s) who submitted a form
 const Members = (props) => {
   return (
     <form>

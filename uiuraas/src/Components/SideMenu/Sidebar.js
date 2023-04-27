@@ -5,6 +5,7 @@ import { IoDocumentTextSharp } from 'react-icons/io5';
 import { IoMdChatbubbles } from 'react-icons/io';
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 import SidebarButtons from './SidebarButtons';
+import {RiAdminFill} from 'react-icons/ri'
 
 const Sidebar = (props) => {
   const [account, setAccount] = useState("Professor");
@@ -18,8 +19,10 @@ const Sidebar = (props) => {
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
-          <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/adminpanel"/>
-          {/* <LogoutButton body={<MdLogout fontSize="2.5em"/>} link="/"/> */}
+          <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
+
+
+          {/* Permanent setup will be used to change types of button accessible to  users depending on account type */}
             
           {/* {account =='Student' && (
             <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
@@ -29,7 +32,12 @@ const Sidebar = (props) => {
             )} 
           {account =='Professor' && (
             <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
-            )}  */}
+            )} 
+          {account =='Admin' && (
+            <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
+            )}
+             */}
+          {/* Permanent setup */}
 
             
         </div>

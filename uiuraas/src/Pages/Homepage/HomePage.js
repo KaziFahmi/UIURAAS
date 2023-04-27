@@ -6,7 +6,7 @@ import ProfileCard from './HomePageComponents/ProfileCard'
 import FindCard from './HomePageComponents/FindCard'
 import WhatsNew from './HomePageComponents/WhatsNew'
 import Notices from './HomePageComponents/Notices'
-
+//Holds the components of this section. Might require additional functions depending on situation
 function HomePage() {
   return (
    <VerticalBlock>

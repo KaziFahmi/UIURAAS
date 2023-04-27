@@ -4,6 +4,7 @@ import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate'
 
 
 const Footer = () => {
+  //A simple footer
   return (
     <ColumnBlock>
         <div class="fade_rule" style={FadeRule}></div>

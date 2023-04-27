@@ -6,7 +6,7 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import ProfileEditButton from './ProfileEditButton'
 import {FaUserEdit} from "react-icons/fa"
 import { Link } from 'react-router-dom'
-
+//Holds user profile data
 function ProfileCard(props) {
   return (
     <HorizontalBlock style={profCardBody}>

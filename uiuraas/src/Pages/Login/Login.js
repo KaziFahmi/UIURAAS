@@ -7,7 +7,7 @@ import LoginCard from './LoginCard/LoginCard';
 import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
 import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
 import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
-
+//Holds LoginCard and images for login 
 const Login = () => {
   return (
     <VerticalBlock>

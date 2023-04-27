@@ -1,5 +1,5 @@
 import React from 'react'
-
+// A reusable componentr to output data
 function UserDataOutput(props) {
   return (
     <div  style={formOutput}>

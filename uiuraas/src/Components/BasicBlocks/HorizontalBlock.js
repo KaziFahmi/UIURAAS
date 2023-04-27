@@ -1,3 +1,4 @@
+// A block to simply place items side by side
 import React from 'react'
 
 function HorizontalBlock(props) {

@@ -4,9 +4,10 @@ import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock'
 import GroupList from './GroupComponents/GroupList'
 import GroupMemberList from './GroupComponents/GroupMemberList'
 
-
+//Holds all the components of this section
 
 function Group() {
+  //To transfer selected group data from GroupList to GroupMemberList
   const [selectedGroup, setSelectedGroup] = useState('');
 
   const handleGroupSelect = (group) => {

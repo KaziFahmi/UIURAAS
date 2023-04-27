@@ -3,7 +3,7 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import ClickableBlock from '../../../Components/BasicBlocks/ClickableBlock'
-
+//Holds the data of past experiences
 function handleClick() {
     console.log('You clicked submit.');
   }

@@ -6,7 +6,7 @@ import UserInfo from './ProfilePageComponents/UserInfo'
 import PastExperience from './ProfilePageComponents/PastExperience'
 import Papers from './ProfilePageComponents/Papers'
 import { useSelector } from 'react-redux'
-
+//Holds all the components for profile data display
 function ProfilePage() {
   const user = useSelector((state) => state.auth)
   console.log(user)

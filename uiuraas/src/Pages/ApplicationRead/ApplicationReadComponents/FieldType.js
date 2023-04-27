@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
-
+// a dropdown to display the fields for the form
 const FieldType= () => {
   const [open, setOpen] = React.useState(false);
 
@@ -15,6 +15,7 @@ const FieldType= () => {
         <label >Field</label>
         <IoIosArrowDown fontSize="1.5em" />
         </button>
+        {/* Dummy data */}
       {open ? (
         <div  style={menu} >
           <div  style={menuItems}>

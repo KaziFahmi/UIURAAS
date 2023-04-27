@@ -4,6 +4,7 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 
+//Displays all the papers
 
 function Papers(props) {
   return (

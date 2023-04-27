@@ -1,18 +1,18 @@
 import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-import  { useState, useRef , useEffect} from "react";
+import  { useEffect} from "react";
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin } from '../../../Redux/Slices/Auth/authActions'
 import Error from '../../../Components/Errors'
 
-
+//The login form 
 
 
 const LoginCard = () => {
-
+//To get and authenticate data from redux
   const { loading, userInfo, error } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
 

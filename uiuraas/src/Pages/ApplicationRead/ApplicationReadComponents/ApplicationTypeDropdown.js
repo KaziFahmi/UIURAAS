@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
-
+// A dropdown to display form types
 const ApplicationTypeDropdown= () => {
   const [open, setOpen] = React.useState(false);
 
@@ -15,6 +15,7 @@ const ApplicationTypeDropdown= () => {
         <div><label >Student</label></div>
         <div><IoIosArrowDown fontSize="1.5em" className='dropdownIcon'/></div>
       </button>
+      {/* Dummy data */}
       {open ? (
         <div  style={menu}>
           <div style={menuItems}> 

@@ -3,8 +3,9 @@ import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import groupImg from '../../../Images/userImg.png'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-import { Link } from 'react-router-dom'
 
+
+//A block to get data of groups to be displayed in GroupMemberList
 const GroupCard = (props) => {
   return (
     <HorizontalBlock style={groupBody}>

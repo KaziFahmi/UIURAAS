@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { IoIosAddCircle } from 'react-icons/io'
 import Modal from 'react-bootstrap/Modal';
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate';
-
+//For adding past work experiences.Requires function
 function AddPastExperience(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
@@ -12,10 +12,11 @@ function AddPastExperience(props) {
   const handleShow = () => setShow(true);
   return (
     <>
+    {/* The button that calls the modal to add past work */}
     <button onClick={handleShow} style={{...SendMailButton, backgroundColor: isHovered ?PrimaryTemplate.lightBlue : SendMailButton.backgroundColor} } onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           <IoIosAddCircle/>
       </button>
-
+{/* The modal where you perform the add past work experience process */}
     <Modal show={show} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter"centered>
     <Modal.Header closeButton>
     <Modal.Title>Add Paper</Modal.Title>

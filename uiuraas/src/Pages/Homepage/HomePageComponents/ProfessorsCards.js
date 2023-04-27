@@ -1,11 +1,10 @@
 import React from 'react'
 import userImg from '../../../Images/userImg.png'
-import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import {Link} from 'react-router-dom'
-
+//Cards holding professor relevant data. requires some functions
 const ProfessorsCards = (props) => {
   return (
     <HorizontalBlock style={appCardBody}>

@@ -1,3 +1,4 @@
+//A block to vertical align items in center
 import React from 'react'
 
 function ColumnBlock(props) {

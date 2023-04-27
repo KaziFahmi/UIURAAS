@@ -14,6 +14,7 @@ import HoverBlock from '../BasicBlocks/HoverBlock';
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 
 const Navbar = () => {
+  // to get data through redux
   const { userInfo } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
 
@@ -30,8 +31,9 @@ const Navbar = () => {
     <nav  style={navigation}>
       <div  style={navbarComponent}>
         <a href="/" className="logo">
-          <img src={uiuLogo}/>
-          <img src={raasLogo}/>
+         
+          <img src={uiuLogo}/> {/* UIU Logo */}
+          <img src={raasLogo}/>{/* RAAS Logo */}
         </a>
       </div>
       <div style={navbarComponent}>

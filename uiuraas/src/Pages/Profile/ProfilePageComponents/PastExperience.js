@@ -2,7 +2,7 @@ import React from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import Experiences from './Experiences'
-
+//Displays all past work experiences
 function PastExperience(props) {
   return (
     <VerticalBlock style={{...body,...props.style}}>

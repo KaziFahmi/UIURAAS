@@ -1,3 +1,4 @@
+//For errors
 const Error = ({ children, ...props }) => {
     return (
       <div

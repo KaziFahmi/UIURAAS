@@ -1,3 +1,4 @@
+// A block to change color of components when hovering over them
 import React, { useState } from "react";
 
 function HoverBlock(props) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
-
+//Holds the data of papers
 function PaperCard(props) {
     function handleClick() {
       window.open(props.link);

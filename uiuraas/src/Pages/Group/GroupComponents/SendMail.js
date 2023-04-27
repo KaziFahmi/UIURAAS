@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
-
+//a button to generate all group member emails. Requires function to make it possible
 function SendMail(props) { 
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(false);

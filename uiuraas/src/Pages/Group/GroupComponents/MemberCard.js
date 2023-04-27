@@ -4,7 +4,7 @@ import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import groupImg from '../../../Images/userImg.png'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import {Link} from 'react-router-dom'
-
+//Displays data of members
 const MemberCard = (props) => {
   return (
     <HorizontalBlock style={groupBody}>

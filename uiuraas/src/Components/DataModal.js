@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import PrimaryTemplate from './ColorTemplates/PrimaryTemplate';
-
+//A Modal used for showing specific data
 function DataModal(props) {
   const [show, setShow] = useState(false);
 

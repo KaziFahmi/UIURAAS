@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import UserDataOutput from './UserDataOutput'
-
+//Other data of User
 function UserInfo(props) {
   const [account, setAccount] = useState("Student");
   return (
