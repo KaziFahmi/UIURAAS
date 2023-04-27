@@ -18,6 +18,7 @@ const Sidebar = (props) => {
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
+          <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/adminpanel"/>
           {/* <LogoutButton body={<MdLogout fontSize="2.5em"/>} link="/"/> */}
             
           {/* {account =='Student' && (

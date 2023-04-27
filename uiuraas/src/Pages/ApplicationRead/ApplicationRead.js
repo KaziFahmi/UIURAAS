@@ -15,7 +15,6 @@ import RemoveButton from './ApplicationReadComponents/RemoveButton';
 import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
 
 
-
 const ApplicationRead = () => {
 
   const [toggle, setToggle] = useState(false)

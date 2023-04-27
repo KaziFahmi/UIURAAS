@@ -10,6 +10,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import HomePage from "./Pages/Homepage/HomePage";
 import Group from "./Pages/Group/Group";
 import EditProfile from "./Pages/Profile/EditProfile";
+import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
             <Route path="/group" element={<PrimaryLayout body={<Group/>}/>} />
             <Route path="/editprofile" element={<PrimaryLayout body={<EditProfile />}/>} />
+            <Route path="/adminpanel" element={<PrimaryLayout body={<AdminPanel />}/>} />
             <Route path="/" element={<PrimaryLayout/>} />
           </Route>
           {/* Permanent setup */}
