@@ -2,9 +2,9 @@ import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 
-const backendURL = 'http://103.87.215.12:5000'
+const backendURL = 'http://192.168.1.107:3000'
 export const userLogin = createAsyncThunk(
-  'auth/login',
+  '/test',
   async ({ id, password }, { rejectWithValue }) => {
     try {
       // configure header's Content-Type as JSON\
@@ -15,7 +15,7 @@ export const userLogin = createAsyncThunk(
         },
       }
       const { data } = await axios.post(
-        `${backendURL}/auth/login`,
+        `${backendURL}/test`,
         { id, password },
         config
       )

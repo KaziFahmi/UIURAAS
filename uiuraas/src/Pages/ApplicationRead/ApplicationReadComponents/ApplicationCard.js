@@ -1,26 +1,34 @@
 import React from 'react'
 import userImg from '../../../Images/userImg.png'
-import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
+import RemoveButton from './RemoveButton'
+import {IoTrashSharp} from "react-icons/io5";
 
 const ApplicationCard = (props) => {
-  function handleClick() {
-    window.location.href = "/";
-  }
+  
+// form id to find names
+const handleClick = () => {
+  const data = {
+    id:props.formId
+  };
+  props.handleApplicationData(data);
+}
+
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
         <div style={profImg}><img src={userImg} /></div>
         <ColumnBlock >
-            <button onClick={handleClick} style={cardButton} >
-              <input type="text" value="Shahil Yasar Haque " disabled readOnly style={profInfo}/>
-              <input type="text" value="011201021" readOnly disabled style={profInfo} />
+            <button onClick={handleClick}style={cardButton} >
+              <input type="text" value={props.name} disabled readOnly style={profInfo}/>
+              <input type="text" value={props.formId} readOnly disabled style={profInfo}/>
             </button>
          </ColumnBlock>
         </HorizontalBlock>
-        <input style={checkbox}  type="checkbox"/>
+        <input style={checkbox}   type="checkbox"/>
+        <RemoveButton formId={props.formId} body={<IoTrashSharp/>}/>
        
     </HorizontalBlock>
   )

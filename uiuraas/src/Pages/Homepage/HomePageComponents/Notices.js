@@ -3,6 +3,7 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import InfoCard from './InfoCard'
+import DataModal from '../../../Components/DataModal'
 
 function Notices() {
   return (
@@ -10,8 +11,8 @@ function Notices() {
       <RowBlock style={{padding:"1%"}}>
         <h2 style={{paddingLeft:"1%"}}>Notices</h2>
       </RowBlock>
-      <InfoCard data="Maintenance notice"/>
-      <InfoCard data="Maintenance notice"/>
+      <DataModal name="Maintenance notice" data="hello world"/>
+      <DataModal name="Maintenance notice" data="hello world"/>
    </VerticalBlock>
   )
 }

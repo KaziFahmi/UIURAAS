@@ -2,13 +2,14 @@ import React from 'react'
 import Members from './Members'
 
 const ApplicationReadForm = (props) => {
+  console.log(props.formId)
   return (
     <div>
       <form className='formDataOutput' style={formBody}>
           <label className='dataLabel' style={dataLabel}>Topic</label><br/>
-          <input type="text" value="{props.value}" readOnly style={formOutputField}/><br/>
+          <input type="text" value={props.formId.id} readOnly style={formOutputField}/><br/>
           <label className='dataLabel' style={dataLabel}>Detail</label><br/>
-          <textarea name="postContent" className='details'   style={details} rows={4} cols={40} value="{props.value} "readOnly/>
+          <textarea name="postContent" className='details'   style={details} rows={4} cols={40} value={props.id} readOnly/>
           <br/>
           <br/>
           <br/>

@@ -19,7 +19,11 @@ import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
 const ApplicationRead = () => {
 
   const [toggle, setToggle] = useState(false)
+  const [applicationData, setApplicationData] = useState({});
 
+  const handleApplicationData = (data) => {
+    setApplicationData(data);
+  }
 
   return (
    <ColumnBlock style={body}>
@@ -43,13 +47,14 @@ const ApplicationRead = () => {
 
         <VerticalBlock>
           {/* ------application Card------ */}
-          <ApplicationCard/>
+          <ApplicationCard formId="011201021" handleApplicationData={handleApplicationData} toggle={toggle} />
+          <ApplicationCard  formId="01120" handleApplicationData={handleApplicationData} toggle={toggle}/>
         </VerticalBlock>
       </VerticalBlock>
 
       <div  style={applicationForm}>
         {/* ------application Form------ */}
-        <div><ApplicationReadForm/></div>
+        <div><ApplicationReadForm formId={applicationData} /></div>
       </div>
 
     </RowBlock>
@@ -61,7 +66,8 @@ export default ApplicationRead
 
 const body={
   justifyContent:"left",
-  alignItems:"left"
+  alignItems:"left",
+  width:"83vw"
 }
 
 const dropdownSet={

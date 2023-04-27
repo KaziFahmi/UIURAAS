@@ -4,16 +4,14 @@ import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
+import {Link} from 'react-router-dom'
 
 const ProfessorsCards = (props) => {
-  function handleClick() {
-    window.location.href = "/";
-  }
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
         <div style={profImg}><img src={userImg} /></div>
-        <button onClick={handleClick} style={cardButton} >
+        <Link to='/profile' style={cardButton} >
         <ColumnBlock >
             
               <input type="text" value={props.name} disabled readOnly style={profInfo}/>
@@ -23,7 +21,7 @@ const ProfessorsCards = (props) => {
                 </HorizontalBlock>
            
          </ColumnBlock>
-          </button>
+          </Link>
         </HorizontalBlock>
        
     </HorizontalBlock>

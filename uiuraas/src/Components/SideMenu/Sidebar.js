@@ -7,7 +7,7 @@ import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 import SidebarButtons from './SidebarButtons';
 
 const Sidebar = (props) => {
-  const [account, setAccount] = useState("Student");
+  const [account, setAccount] = useState("Professor");
   return ( 
     <div className="sideNavigation" style={sideNavigation}>
       <div className="sidebarComponent" style={sidebarComponent}>
@@ -19,17 +19,18 @@ const Sidebar = (props) => {
           <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
           {/* <LogoutButton body={<MdLogout fontSize="2.5em"/>} link="/"/> */}
-        
-          
-          {/* 
-        // {state =='Student' && (
-    
-        //   )} 
-        // {state =='Professor' && (
-        //     
-        //   )}  */}
+            
+          {/* {account =='Student' && (
+            <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
+            )} 
+          {account =='Professor' && (
+            <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
+            )} 
+          {account =='Professor' && (
+            <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
+            )}  */}
 
-          
+            
         </div>
       </div>
 

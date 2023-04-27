@@ -5,11 +5,14 @@ import ProfileCard from './ProfilePageComponents/ProfileCard'
 import UserInfo from './ProfilePageComponents/UserInfo'
 import PastExperience from './ProfilePageComponents/PastExperience'
 import Papers from './ProfilePageComponents/Papers'
+import { useSelector } from 'react-redux'
 
 function ProfilePage() {
+  const user = useSelector((state) => state.auth)
+  console.log(user)
   return (
    <VerticalBlock style={profileBody}>
-     <ProfileCard name="Shahil Yasar Haque" id="011201021"/>
+     <ProfileCard name={user.name} id={user.id}/>
      <HorizontalBlock style={{paddingLeft:"2.5%"}}>
         <UserInfo />
         <PastExperience/>

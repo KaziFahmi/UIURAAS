@@ -3,6 +3,7 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import InfoCard from './InfoCard'
+import DataModal from '../../../Components/DataModal'
 
 function WhatsNew() {
   return (
@@ -10,7 +11,7 @@ function WhatsNew() {
         <RowBlock style={{padding:"1%"}}>
           <h2 style={{paddingLeft:"1%"}}>Whats New ?</h2>
         </RowBlock>
-        <InfoCard data="InceptionV3 update"/>
+        <DataModal  name="InceptionV3 update" data="Hello world"/>
         
     </VerticalBlock>
   )

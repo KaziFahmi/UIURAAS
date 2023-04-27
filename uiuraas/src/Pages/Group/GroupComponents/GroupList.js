@@ -3,10 +3,15 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import GroupCard from './GroupCard'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
-function GroupList() {
+function GroupList({ onGroupSelect }) {
+  const handleSelect = (group) => {
+    onGroupSelect(group);
+  };
+
   return (
     <VerticalBlock style={groupBody}>
-      <GroupCard  name="Group 1" topic="Computer Vision"/>
+      <GroupCard groupId='1' name="Group 1" topic="Computer Vision" onSelect={() => handleSelect({ name: "Group 1", topic: "Computer Vision",groupId:'1' })}/>
+      <GroupCard groupId='2' name="Group 2" topic="Computer Vision" onSelect={() => handleSelect({ name: "Group 2", topic: "Computer Vision",groupId:'2' })}/>
     </VerticalBlock>
   )
 }

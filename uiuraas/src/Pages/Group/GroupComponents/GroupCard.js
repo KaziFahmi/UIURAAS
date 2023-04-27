@@ -11,7 +11,7 @@ const GroupCard = (props) => {
     <HorizontalBlock  >  
       <div style={profImg}><img src={groupImg} /></div>
       <ColumnBlock >
-          <button style={cardButton} >
+          <button style={cardButton} onClick={props.onSelect}>
             <input type="text" value={props.name} disabled readOnly style={profInfo}/>
             <input type="text" value={props.topic} readOnly disabled style={profInfo} />
           </button>

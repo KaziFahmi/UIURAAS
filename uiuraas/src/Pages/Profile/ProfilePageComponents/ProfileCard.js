@@ -31,7 +31,7 @@ const profCardBody={
     margin: "2.5%",
     position: 'relative',
     height:"20vh",
-    width:"95%",
+    width:"83vw",
     alignItems:'left',
     textAlign:'left',
     justifyContent:"space-between",

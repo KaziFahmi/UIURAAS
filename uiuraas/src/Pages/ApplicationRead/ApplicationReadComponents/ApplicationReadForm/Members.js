@@ -5,14 +5,14 @@ import RowBlock from '../../../../Components/BasicBlocks/RowBlock'
 const Members = (props) => {
   return (
     <form>
-        <FormOutput placeholder="Name" value="Shahil Yasar Haque" />
-        <FormOutput placeholder="Student Id" value="0110201021" />
+        <FormOutput placeholder="Name" value={props.name} />
+        <FormOutput placeholder="Student Id" value={props.id} />
         <RowBlock  style={studentData}>
-            <FormOutput placeholder="CGPA" value="" />
-            <FormOutput placeholder="Trimester" value="0110201021" />
+            <FormOutput placeholder="CGPA" value={props.cgpa} />
+            <FormOutput placeholder="Trimester" value={props.trimester} />
         </RowBlock>
         <label  style={dataLabel}>Links</label><br/>
-        <textarea name="postContent" style={details} rows={4} cols={40} value="{props.value} "readOnly/>
+        <textarea name="postContent" style={details} rows={4} cols={40} value={props.link} readOnly/>
         <br/>
         <br/>
         <hr/>
