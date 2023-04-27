@@ -16,6 +16,7 @@ function Papers(props) {
      <PaperCard link="/inbox"/>
      <PaperCard link="/inbox"/>
      <PaperCard link="/inbox"/>
+     {props.body}
     
    </VerticalBlock>
   )

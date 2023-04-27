@@ -5,6 +5,7 @@ import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import ProfileEditButton from './ProfileEditButton'
 import {FaUserEdit} from "react-icons/fa"
+import { Link } from 'react-router-dom'
 
 function ProfileCard(props) {
   return (
@@ -16,7 +17,7 @@ function ProfileCard(props) {
         <br/>
         <label >{props.id}</label>
        </VerticalBlock>
-       <div style={profileEdit}><ProfileEditButton icon={<FaUserEdit/>} /></div> 
+       <div style={profileEdit}><Link to='/editprofile'><ProfileEditButton icon={<FaUserEdit/>} /></Link></div> 
       </HorizontalBlock>
      
   </HorizontalBlock>

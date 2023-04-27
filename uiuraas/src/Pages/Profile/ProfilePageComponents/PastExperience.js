@@ -5,11 +5,13 @@ import Experiences from './Experiences'
 
 function PastExperience(props) {
   return (
-    <VerticalBlock style={body}>
+    <VerticalBlock style={{...body,...props.style}}>
     <h2 style={{paddingLeft:"2.5%"}}>Activities & Experience</h2>
     <br/>
     <Experiences/>
     <Experiences/>
+    <br/>
+    {props.body}
     
 </VerticalBlock>
   )

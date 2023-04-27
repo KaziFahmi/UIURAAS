@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import HomePage from "./Pages/Homepage/HomePage";
 import Group from "./Pages/Group/Group";
+import EditProfile from "./Pages/Profile/EditProfile";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
             <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
             <Route path="/group" element={<PrimaryLayout body={<Group/>}/>} />
+            <Route path="/editprofile" element={<PrimaryLayout body={<EditProfile />}/>} />
             <Route path="/" element={<PrimaryLayout/>} />
           </Route>
           {/* Permanent setup */}
