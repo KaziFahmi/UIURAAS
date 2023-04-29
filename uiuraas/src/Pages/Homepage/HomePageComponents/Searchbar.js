@@ -5,7 +5,7 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
 const Searchbar = ({keyword, onChange}) => {
     return (
-      <input style={searchBar} key="search-bar" value={keyword} placeholder={"search"}  />
+      <input style={searchBar} key="search-bar" value={keyword} placeholder={"search"}  onChange={onChange} />
     );
   }
   

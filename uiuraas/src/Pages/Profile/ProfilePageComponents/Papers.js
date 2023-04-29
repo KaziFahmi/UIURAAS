@@ -7,6 +7,12 @@ import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 //Displays all the papers
 
 function Papers(props) {
+  const [papers,setPapers]=React.useState([])
+  React.useEffect(() => {
+    fetch('http://localhost:3001/paper/byauthor/'+localStorage.getItem('userToken'))
+    .then(res=>res.json())
+    .then(data=>setPapers(data))
+  }, [])
   return (
   <VerticalBlock style={body}>
     <RowBlock>
@@ -14,9 +20,9 @@ function Papers(props) {
     </RowBlock>
     
      <br/>
-     <PaperCard link="/inbox"/>
-     <PaperCard link="/inbox"/>
-     <PaperCard link="/inbox"/>
+     {papers.map(paper=>(
+       <PaperCard key={paper.id} title={paper.title} keywords={paper.keywords} abstract={paper.abstract}/>
+      ))}
      {props.body}
     
    </VerticalBlock>

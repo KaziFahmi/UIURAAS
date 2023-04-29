@@ -6,12 +6,17 @@ import ProfileCard from './HomePageComponents/ProfileCard'
 import FindCard from './HomePageComponents/FindCard'
 import WhatsNew from './HomePageComponents/WhatsNew'
 import Notices from './HomePageComponents/Notices'
+import { useSelector } from 'react-redux'
 //Holds the components of this section. Might require additional functions depending on situation
 function HomePage() {
+  const {userInfo,loading} = useSelector((state) => state.auth)
+  if(loading){
+    return <div>Loading...</div>
+  }
   return (
    <VerticalBlock>
     <HorizontalBlock>
-      <ProfileCard/>
+      <ProfileCard userInfo={userInfo}/>
       <Notices/>
     </HorizontalBlock>
      

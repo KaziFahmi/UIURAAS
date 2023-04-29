@@ -14,11 +14,11 @@ function Experiences(props) {
         <RowBlock style={experienceBox}>
             <HorizontalBlock>
             <button style={cardButton}> &nbsp;Worked at &nbsp;
-                <span style={{fontWeight:"bold"}}>Imaginery.BD</span> &nbsp;
-                as Product Manager</button>
+                <span style={{fontWeight:"bold"}}>{props.experience.company}</span> &nbsp;
+                as {props.experience.title}</button>
             </HorizontalBlock> 
             <div>
-                Jan 2017 - Jan 2022&nbsp;
+                {props.experience.startDate} - {props.experience.endDate}&nbsp;
             </div> 
     </RowBlock>
    </ClickableBlock>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import userImg from '../../../Images/userImg.png'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
@@ -6,17 +6,25 @@ import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import {Link} from 'react-router-dom'
 //Cards holding professor relevant data. requires some functions
 const ProfessorsCards = (props) => {
+  const [keyword, setKeyword] = useState('')
+
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
         <div style={profImg}><img src={userImg} /></div>
-        <Link to='/profile' style={cardButton} >
+        <Link to={`/profile/${props.id}`} style={cardButton} >
         <ColumnBlock >
             
               <input type="text" value={props.name} disabled readOnly style={profInfo}/>
               <HorizontalBlock style={{marginLeft:"1%"}}>
                 <label >Keyword: </label>
-                <input type="text" value={props.keyword} disabled readOnly style={keyword} />
+                {props.keywords.map((keyword, index) => (
+                  <div key={index}>
+                    <a href="#" onClick={() => setKeyword(keyword)}>{keyword},</a>
+                    &nbsp;
+                  </div>
+                ))}
+                {/* <input type="text" value={keyword} disabled readOnly style={input_keyword} /> */}
                 </HorizontalBlock>
            
          </ColumnBlock>
@@ -56,7 +64,7 @@ const profInfo={
   width:"90%",
   border:"none",
 }
-const keyword={
+const input_keyword={
     fontFamily: "'Inter', sans-serif",
     width:"90%",
     border:"none",

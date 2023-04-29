@@ -4,23 +4,23 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import UserDataOutput from './UserDataOutput'
 //Other data of User
 function UserInfo(props) {
-  const [account, setAccount] = useState("Student");
+  // const [account, setAccount] = useState("Student");
   return (
     <VerticalBlock style={body}>
         <h2 style={{paddingLeft:"10%"}}>User Details</h2>
         <br/>
-        <UserDataOutput placeholder="Email" value={props.email}/>
+        <UserDataOutput placeholder="Email" value={props.user.email}/>
         <br/>
-        {account =='Student' && (
-           <UserDataOutput placeholder="CGPA" value={props.cgpa}/>)
+        {props.user.type =='student' && (
+           <UserDataOutput placeholder="CGPA" value={props.user.cgpa}/>)
          }
-         {account =='Student' && (
+         {props.user.type =='student' && (
               <br/>
           )}
-         {account =='Student' && (
-             <UserDataOutput placeholder="Current Trimester" value={props.trimester}/>
+         {props.user.type =='student' && (
+             <UserDataOutput placeholder="Current Trimester" value={props.user.current_trimester}/>
          )}
-         {account =='Student' && (
+         {props.user.type =='student' && (
               <br/>
           )}
         <UserDataOutput placeholder="Country" value={props.country}/>

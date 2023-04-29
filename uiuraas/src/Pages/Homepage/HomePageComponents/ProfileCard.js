@@ -10,8 +10,8 @@ function ProfileCard(props) {
     <HorizontalBlock>  
       <img src={userImg} style={profImg} />
       <VerticalBlock >
-          <input type="text" value="Shahil Yasar Haque " readOnly style={profInfo}/>
-          <input type="text" value="011201021" readOnly style={profInfo} />
+          <input type="text" value={props.userInfo.name} readOnly style={profInfo}/>
+          <input type="text" value={props.userInfo.id} readOnly style={profInfo} />
        </VerticalBlock>
       </HorizontalBlock>
      

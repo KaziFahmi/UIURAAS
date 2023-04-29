@@ -1,17 +1,22 @@
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { NavLink, Outlet,Navigate,Route } from 'react-router-dom'
-
+import { getUserProfile } from '../Redux/Slices/Auth/authActions'
 
 const ProtectedRoute = () => {
-  const { userInfo } = useSelector((state) => state.auth)
+  const { userToken,loading,userInfo } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
 
-  // show unauthorized screen if no user is found in redux store
-  if (!userInfo) {
+  if (!userToken) {
     return (
         <Navigate to={{pathname:'/login'}}/>
     )
   }
-
+  if(!userInfo && !loading){
+    dispatch(getUserProfile());
+  }
+  if(loading){
+    return <div>Loading...</div>
+  }
   return <Outlet />
 }
 

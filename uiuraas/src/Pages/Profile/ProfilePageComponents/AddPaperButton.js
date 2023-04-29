@@ -6,10 +6,40 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 function AddPaperButton(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
+  const [title, setTitle] = useState('');
+  const [link, setLink] = useState('');
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    //Add paper function
+    fetch('http://localhost:3001/paper/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: JSON.stringify({ title, link,author:localStorage.getItem('userToken') }),
+    })
+      .then(res => res.json())  
+      .then(data => {
+        // console.log(data)
+        if (data.success) {
+          alert('Paper added successfully');
+          window.location.reload();
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      }
+      )
+
+  }
+
   return (
     <>
     {/* The button that calls the modal to add paper */}
@@ -22,9 +52,9 @@ function AddPaperButton(props) {
     <Modal.Title>Add Paper</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-     <form> 
-        <input type="text" name="uname" placeholder='Enter Paper Title '  style={inputField} />
-        <input type="text" name="uname" placeholder='Enter Paper Link '  style={inputField} />
+     <form onSubmit={onSubmit}>
+        <input type="text" name="uname" placeholder='Enter Paper Title '  style={inputField} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" name="uname" placeholder='Enter Paper Link '  style={inputField} onChange={(e) => setLink(e.target.value)} />
         <br/>
         <button type="submit" style={{...SendMailButton, backgroundColor: isHovered2?PrimaryTemplate.lightBlue : SendMailButton.backgroundColor} } onMouseEnter={() => setIsHovered2(true)} onMouseLeave={() => setIsHovered2(false)}>Add</button>
     </form>

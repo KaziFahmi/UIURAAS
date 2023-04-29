@@ -10,7 +10,7 @@ function PaperCard(props) {
 
   return (
     <RowBlock role="button" tabIndex='0' style={paperBox}  >
-     <button onClick={handleClick} style={paperButton}> &nbsp; InceptionV3 on Histological Images &nbsp; </button> 
+     <button onClick={handleClick} style={paperButton}> &nbsp; {props.title} &nbsp; </button> 
    </RowBlock>
   )
 }

@@ -7,9 +7,40 @@ function AddPastExperience(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [show, setShow] = useState(false);
-
+  const [title, setTitle] = useState('');
+  const [company, setCompany] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    //Add past work experience function
+    fetch('http://localhost:3001/pastwork/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: JSON.stringify({ title, company,startDate,endDate,author:localStorage.getItem('userToken') }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data)
+        if (data.success) {
+          alert('Past Work Experience added successfully');
+          window.location.reload();
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      }
+      )
+    }
+
+
   return (
     <>
     {/* The button that calls the modal to add past work */}
@@ -22,11 +53,11 @@ function AddPastExperience(props) {
     <Modal.Title>Add Paper</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-     <form> 
-        <input type="text" name="uname" placeholder='Enter Job Title '  style={inputField} />
-        <input type="text" name="uname" placeholder='Enter Company Name'  style={inputField} />
-        <input type="Date" name="uname" placeholder='Enter Start Date '  style={inputField} />
-        <input type="Date" name="uname" placeholder='Enter End Date '  style={inputField} />
+     <form onSubmit={onSubmit}>
+        <input type="text" name="uname" placeholder='Enter Job Title '  style={inputField} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" name="uname" placeholder='Enter Company Name'  style={inputField} onChange={(e) => setCompany(e.target.value)} />
+        <input type="Date" name="uname" placeholder='Enter Start Date '  style={inputField} onChange={(e) => setStartDate(e.target.value)} />
+        <input type="Date" name="uname" placeholder='Enter End Date '  style={inputField} onChange={(e) => setEndDate(e.target.value)} />
         <br/>
         <button type="submit" style={{...SendMailButton, backgroundColor: isHovered2?PrimaryTemplate.lightBlue : SendMailButton.backgroundColor} } onMouseEnter={() => setIsHovered2(true)} onMouseLeave={() => setIsHovered2(false)}>Add</button>
     </form>

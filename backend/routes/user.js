@@ -17,16 +17,16 @@ router.get("/users", async (req, res) => {
         res.send(users);
     }
 });
-router.get("/:userId", async (req, res) => {
-    const userId = req.params.userId;
-    const userRef = db.collection("users").doc(userId);
-    const doc = await userRef.get();
-    if (!doc.exists) {
-        res.status(404).send("User not found");
-    } else {
-        res.send(doc.data());
-    }
-});
+// router.get("/:userId", async (req, res) => {
+//     const userId = req.params.userId;
+//     const userRef = db.collection("users").doc(userId);
+//     const doc = await userRef.get();
+//     if (!doc.exists) {
+//         res.status(404).send("User not found");
+//     } else {
+//         res.send(doc.data());
+//     }
+// });
 
 router.post("/create", async (req, res) => {
     const user = req.body;
@@ -51,7 +51,6 @@ router.put("/update", async (req, res) => {
         res.send("User updated");
     }
 });
-
 router.delete("/delete", async (req, res) => {
     const user = req.body;
     const userRef = db.collection("users").doc(user.id);
@@ -63,6 +62,49 @@ router.delete("/delete", async (req, res) => {
         res.send("User deleted");
     }
 });
+router.get("/professors", async (req, res) => {
+    const professorsRef = db.collection("users").where("type", "==", "professor");
+    // console.log(professorsRef)
+    const snapshot = await professorsRef.get();
+    if (snapshot.empty) {
+        res.status(404).send("No professors found");
+    } else {
+        const professors = [];
+        snapshot.forEach(doc => {
+            professors.push(doc.data());
+        });
+        res.send(professors);
+    }
+});
+router.get("/students", async (req, res) => {
+    const studentsRef = db.collection("users").where("type", "==", "student");
+    const snapshot = await studentsRef.get();
+    if (snapshot.empty) {
+        res.status(404).send("No students found");
+    } else {
+        const students = [];
+        snapshot.forEach(doc => {
+            students.push(doc.data());
+        });
+        res.send(students);
+    }
+});
+router.get("/querybyid/:userId", async (req, res) => {
+    const userId = req.params.userId;
+    const userRef = db.collection("users").where("id", "==", userId);
+    const doc = await userRef.get();
+    if (doc.empty) {
+        res.status(404).send("User not found");
+    } else {
+        let user = {};
+        doc.forEach(doc => {
+            user = doc.data();
+        });
+        res.send(user);
+    }
+});
+
+
 
 
 

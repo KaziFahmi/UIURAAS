@@ -17,7 +17,8 @@ function ProfileCard(props) {
         <br/>
         <label >{props.id}</label>
        </VerticalBlock>
-       <div style={profileEdit}><Link to='/editprofile'><ProfileEditButton icon={<FaUserEdit/>} /></Link></div> 
+       {props.isEditable &&
+       <div style={profileEdit}><Link to='/editprofile'><ProfileEditButton icon={<FaUserEdit/>} /></Link></div> }
       </HorizontalBlock>
      
   </HorizontalBlock>
