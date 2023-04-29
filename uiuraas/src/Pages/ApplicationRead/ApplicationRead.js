@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect, useRef } from 'react'
 import ApplicationTypeDropdown from './ApplicationReadComponents/ApplicationTypeDropdown';
 import FieldType from './ApplicationReadComponents/FieldType';
 import { VscChecklist } from "react-icons/vsc";
@@ -24,6 +24,17 @@ const ApplicationRead = () => {
   const handleApplicationData = (data) => {
     setApplicationData(data);
   }
+  const [count,setCount] = useState(0)
+  useEffect(()=>{
+    if(count==0)
+    {
+      setToggle(false)
+    }
+    else
+    {
+      setToggle(true)
+    }
+  },[count])
 
   return (
    <ColumnBlock style={body}>
@@ -50,8 +61,8 @@ const ApplicationRead = () => {
 
         <VerticalBlock>
           {/* ------application Card------ */}
-          <ApplicationCard formId="011201021" handleApplicationData={handleApplicationData} toggle={toggle} />
-          <ApplicationCard  formId="01120" handleApplicationData={handleApplicationData} toggle={toggle}/>
+          <ApplicationCard formId="011201021" handleApplicationData={handleApplicationData} setToggle={setToggle} count={count} setCount={setCount}/>
+          <ApplicationCard  formId="01120" handleApplicationData={handleApplicationData} setToggle={setToggle} count={count} setCount={setCount}/>
         </VerticalBlock>
       </VerticalBlock>
 

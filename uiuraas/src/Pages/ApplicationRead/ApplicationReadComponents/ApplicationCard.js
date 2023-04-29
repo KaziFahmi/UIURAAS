@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import userImg from '../../../Images/userImg.png'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
@@ -16,6 +16,8 @@ const handleClick = () => {
   props.handleApplicationData(data);
 }
 
+const [checked,setChecked]=useState(false)
+
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
@@ -29,7 +31,10 @@ const handleClick = () => {
          </ColumnBlock>
         </HorizontalBlock>
         {/* to check mark data */}
-        <input style={checkbox}   type="checkbox"/>
+        <input style={checkbox} onChange={(e)=>{
+          props.setCount(e.target.checked?props.count+1:props.count-1)
+          console.log(props.count)
+        }}  type="checkbox"/>
         {/* to delete data */}
         <RemoveButton formId={props.formId} body={<IoTrashSharp/>}/>
        
