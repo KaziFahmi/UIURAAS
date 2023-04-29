@@ -9,15 +9,21 @@ import {IoTrashSharp} from "react-icons/io5";
 const ApplicationCard = (props) => {
   
 // form id to find names
-const handleClick = () => {
-  const data = {
-    id:props.formId
-  };
-  props.handleApplicationData(data);
-}
-
-const [checked,setChecked]=useState(false)
-
+  const handleClick = () => {
+    props.handleApplicationData(props.application);
+  }
+  const [user,setUser]=useState({})
+  useEffect(()=>{
+    fetch("http://localhost:3001/user/querybyid/"+props.application.from)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setUser(data);
+    });
+  },[])
+  if(user==null){
+  return <div></div>
+  }
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
@@ -25,15 +31,22 @@ const [checked,setChecked]=useState(false)
         <ColumnBlock >
             <button onClick={handleClick}style={cardButton} >
               {/* shows data of form submittees */}
-              <input type="text" value={props.name} disabled readOnly style={profInfo}/>
-              <input type="text" value={props.formId} readOnly disabled style={profInfo}/>
+              <input type="text" value={props.application.topic} disabled readOnly style={profInfo}/>
+              <input type="text" value={user.id} readOnly disabled style={profInfo}/>
             </button>
          </ColumnBlock>
         </HorizontalBlock>
         {/* to check mark data */}
         <input style={checkbox} onChange={(e)=>{
           props.setCount(e.target.checked?props.count+1:props.count-1)
-          console.log(props.count)
+          if(e.target.checked){
+            // console.log(e.target.checked)
+            props.setSelected([...props.selected,props.formId])
+            // console.log(props.selected)
+          }else{
+            props.setSelected(props.selected.filter((id)=>id!==props.application.formId))
+          }
+          // console.log(props.count)
         }}  type="checkbox"/>
         {/* to delete data */}
         <RemoveButton formId={props.formId} body={<IoTrashSharp/>}/>

@@ -9,10 +9,10 @@ import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 function Papers(props) {
   const [papers,setPapers]=React.useState([])
   React.useEffect(() => {
-    fetch('http://localhost:3001/paper/byauthor/'+localStorage.getItem('userToken'))
+    fetch('http://localhost:3001/paper/byauthor/'+props.id)
     .then(res=>res.json())
     .then(data=>setPapers(data))
-  }, [])
+  }, [props.id])
   return (
   <VerticalBlock style={body}>
     <RowBlock>

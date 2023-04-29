@@ -39,7 +39,7 @@ const Navbar = () => {
       <div style={navbarComponent}>
         <Link><HoverBlock hover={{ color: PrimaryTemplate.lightBlue}}><button style={logoutButton} onClick={() => dispatch(logout())}><AiOutlineLogout fontSize={"2.5em"}/></button></HoverBlock></Link>  {/* --Logout-- */}
         <NavbarButtons body={<RiNotification2Line fontSize={"2.5em"}/>} link="/"/>  {/* --Notifications-- */}  
-        <NavbarButtons body={<CgProfile fontSize={"2.5em"}/>} link="/profile"/> {/* --profile-- */}
+        <NavbarButtons body={<CgProfile fontSize={"2.5em"}/>} link={`/profile/${userInfo.id}`}/> {/* --profile-- */}
       </div>
   </nav>
   )

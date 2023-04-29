@@ -4,12 +4,13 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import Experiences from './Experiences'
 //Displays all past work experiences
 function PastExperience(props) {
+  // console.log(props.id)
   const [experiences,setExperiences]=React.useState([])
   React.useEffect(() => {
-    fetch('http://localhost:3001/pastwork/pastworks/'+localStorage.getItem('userToken'))
+    fetch('http://localhost:3001/pastwork/pastworks/'+props.id)
     .then(res=>res.json())
     .then(data=>setExperiences(data))
-  }, [])
+  }, [props.id])
 
   return (
     <VerticalBlock style={{...body,...props.style}}>

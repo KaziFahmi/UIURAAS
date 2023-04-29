@@ -23,7 +23,7 @@ const LoginCard = () => {
   // redirect authenticated user to profile screen
   useEffect(() => {
     if (userInfo) {
-      navigate('/profile')
+      navigate(`/profile/${userInfo.id}`)
     }
   }, [navigate, userInfo])
 

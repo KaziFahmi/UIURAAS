@@ -33,7 +33,7 @@ function App() {
             <Route path="/application" element={<PrimaryLayout body={<Application/>}/>} />
             <Route path="/applicationread" element={<PrimaryLayout body={<ApplicationRead/>}/>} />
             <Route path="/inbox" element={<PrimaryLayout body={<EmailPage/>}/>} />
-            <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} />
+            {/* <Route path="/profile" element={<PrimaryLayout body={<ProfilePage/>}/>} /> */}
             <Route path="/profile/:id" element={<PrimaryLayout body={<ProfilePage/>}/>} />
             <Route path="/home" element={<PrimaryLayout body={<HomePage/>}/>} />
             <Route path="/group" element={<PrimaryLayout body={<Group/>}/>} />

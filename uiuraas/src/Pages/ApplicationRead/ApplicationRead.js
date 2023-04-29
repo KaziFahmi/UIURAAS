@@ -13,17 +13,64 @@ import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock';
 import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock';
 import RemoveButton from './ApplicationReadComponents/RemoveButton';
 import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate';
-
+import { useSelector } from 'react-redux';
 //Page that holds all components of this section
 
 const ApplicationRead = () => {
 
   const [toggle, setToggle] = useState(false)
-  const [applicationData, setApplicationData] = useState({});
+  const [applicationFormData, setApplicationData] = useState({});
+  const [applications,setApplications]=useState([])
+  const [filtedApplications,setFilteredApplications]=useState([])
+  const {userInfo} = useSelector((state) => state.auth)
+  const [search,setSearch]=useState("")
+  const [selected,setSelected]=useState([])
+
+
+  useEffect(()=>{
+    fetch("http://localhost:3001/application/getApplications",
+    {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({id:userInfo.id})
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      setApplications(data);
+    });
+  },[])
+  useEffect(()=>{
+    setFilteredApplications(applications.filter((application)=>{
+      return application.topic.toLowerCase().includes(search.toLowerCase()) || application.from.toLowerCase().includes(search.toLowerCase())
+    }))
+  },[search,applications])
+  useEffect(()=>{
+    console.log(selected)
+  },[selected])
+  const onClickRemove=()=>{
+    console.log("herehere")
+    console.log(selected)
+      fetch('http://localhost:3001/application/deleteApplications', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ids:selected})
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          window.alert("Application Deleted");
+          window.location.reload();
+        });
+  }
   // An attempt at sending application data to necessary components
   const handleApplicationData = (data) => {
     setApplicationData(data);
-  }
+  };
+
   const [count,setCount] = useState(0)
   useEffect(()=>{
     if(count==0)
@@ -47,28 +94,31 @@ const ApplicationRead = () => {
         <RowBlock style={appliContainerItems}>
           {/* Button to toggle certain options */}
           <button  style={selectAllToggle} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
-          <Searchbar/>
+          <Searchbar onChange={setSearch} />
         </RowBlock>
 
         {/* To toggle the listed options */}
         {toggle && (
           <HorizontalBlock style={SelectAllToggleOptions} >
-            <AddPeople/>
-            <RemoveButton body={<IoTrashSharp/>} text="Remove"/>
+            <AddPeople />
+            <RemoveButton body={<IoTrashSharp/>} text="Remove" onClick={onClickRemove} type={2} />
           </HorizontalBlock>
         )}
 
 
         <VerticalBlock>
           {/* ------application Card------ */}
-          <ApplicationCard formId="011201021" handleApplicationData={handleApplicationData} setToggle={setToggle} count={count} setCount={setCount}/>
-          <ApplicationCard  formId="01120" handleApplicationData={handleApplicationData} setToggle={setToggle} count={count} setCount={setCount}/>
+          {filtedApplications.map((application)=>{
+            return <ApplicationCard key={application.formId} formId={application.formId} application={application} handleApplicationData={handleApplicationData} setCount={setCount} count={count} selected={selected} setSelected={setSelected}/>
+          })}
         </VerticalBlock>
       </VerticalBlock>
 
       <div  style={applicationForm}>
         {/* ------application Form------ */}
-        <div><ApplicationReadForm formId={applicationData} /></div>
+        {
+          applicationFormData && <ApplicationReadForm applicationFormData={applicationFormData} setCount={setCount} count={count}/>
+        }
       </div>
 
     </RowBlock>
@@ -77,7 +127,6 @@ const ApplicationRead = () => {
 }
 
 export default ApplicationRead
-
 const body={
   justifyContent:"left",
   alignItems:"left",

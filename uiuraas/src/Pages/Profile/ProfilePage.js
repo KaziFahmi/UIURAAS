@@ -21,18 +21,18 @@ function ProfilePage() {
           setUser(data);
         });
     }
-  }, []);
+  }, [id]);
 
-  // console.log(user)
+  console.log(user)
   return (
     <VerticalBlock style={profileBody}>
-      <ProfileCard name={user.name} id={user.id} isEditable={id==null} />
+      <ProfileCard name={user.name} id={user.id} isEditable={id==user.id} />
       <HorizontalBlock style={{ paddingLeft: "2.5%" }}>
         <UserInfo user={user} />
-        <PastExperience />
+        <PastExperience id={user.refId} />
       </HorizontalBlock>
       <br />
-      <Papers />
+      <Papers id={user.refId} />
     </VerticalBlock>
   );
 }

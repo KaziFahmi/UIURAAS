@@ -7,12 +7,14 @@ import PastExperience from './ProfilePageComponents/PastExperience'
 import AddPaperButton from './ProfilePageComponents/AddPaperButton'
 import AddPastExperience from './ProfilePageComponents/AddPastExperience'
 import RowBlock from "../../Components/BasicBlocks/RowBlock"
+import { useSelector } from "react-redux";
 
 //To updata user data. hold necessary components to update data
 
 function EditProfile(props){
+  const user=useSelector((state) => state.auth.userInfo);
     const [userImg, setUserImg] = useState(Img);
-  
+    console.log(user)
     const handleFileSelect = (event) => {
       const file = event.target.files[0];
   
@@ -22,7 +24,7 @@ function EditProfile(props){
       };
       reader.readAsDataURL(file);
     };
-  
+    
     return (
       <>
       <h2 style={{paddingLeft:"2%"}}>Update User Data</h2>
@@ -51,8 +53,8 @@ function EditProfile(props){
             <button type="submit" style={saveButton}>Save</button>
           </form>{/* To get change password */}
         </RowBlock>
-        <PastExperience style={pastexp} body={<AddPastExperience/>}/>
-        <Papers body={<AddPaperButton/>}/>
+        <PastExperience style={pastexp} body={<AddPastExperience/>} id={user.userToken}/>
+        <Papers body={<AddPaperButton/>} id={user.userToken}/>
 
       </VerticalBlock> 
       </>
