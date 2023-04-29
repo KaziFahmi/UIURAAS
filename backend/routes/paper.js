@@ -67,7 +67,7 @@ router.get("/byauthor/:author", async (req, res) => {
     } else {
         let paper = [];
         snapshot.forEach(doc => {
-            paper.push(doc.data());
+            paper.push({...doc.data(),refId: doc.id});
         });
         res.send(paper);
     }

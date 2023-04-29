@@ -10,7 +10,7 @@ router.get("/pastworks/:id", async (req, res) => {
     } else {
         const pastworks = [];
         snapshot.forEach(doc => {
-            pastworks.push(doc.data());
+            pastworks.push({...doc.data(),refId: doc.id});
         });
         res.send(pastworks);
     }

@@ -17,6 +17,7 @@ const paperAPI = require("./routes/paper");
 const authAPI = require("./routes/auth");
 const keywordAPI = require("./routes/keyword");
 const pastworkAPI = require("./routes/pastwork");
+const applicationAPI = require("./routes/application");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +27,7 @@ app.use("/email", integrityCheckMiddleware, emailAPI);
 app.use("/paper", paperAPI);
 app.use("/keyword", keywordAPI);
 app.use("/pastwork", pastworkAPI);
+app.use("/application", applicationAPI);
 //Default route
 app.get("/", (req, res) => {
     res.send("Hello World!");

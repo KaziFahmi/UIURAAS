@@ -17,14 +17,18 @@ router.get("/users", async (req, res) => {
         res.send(users);
     }
 });
-// router.get("/:userId", async (req, res) => {
+// router.get("/querybyid/:userId", async (req, res) => {
 //     const userId = req.params.userId;
-//     const userRef = db.collection("users").doc(userId);
+//     const userRef = db.collection("users").where("id", "==", userId);
 //     const doc = await userRef.get();
-//     if (!doc.exists) {
+//     if (doc.empty) {
 //         res.status(404).send("User not found");
 //     } else {
-//         res.send(doc.data());
+//         let user = {};
+//         doc.forEach(doc => {
+//             user = doc.data();
+//         });
+//         res.send(user);
 //     }
 // });
 
@@ -98,7 +102,7 @@ router.get("/querybyid/:userId", async (req, res) => {
     } else {
         let user = {};
         doc.forEach(doc => {
-            user = doc.data();
+            user = {...doc.data(),refId:doc.id};
         });
         res.send(user);
     }
