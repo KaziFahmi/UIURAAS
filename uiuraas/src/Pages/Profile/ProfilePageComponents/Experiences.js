@@ -34,7 +34,8 @@ const experienceBox={
     alignItems:"center",
     margin:"2%" ,
     marginTop:"-2%",
-    marginBottom:"2.5%"
+    marginBottom:"2.5%",
+    width:"30vw"
 }
 const cardButton={
     border:"none",

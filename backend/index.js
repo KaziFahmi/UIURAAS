@@ -18,6 +18,7 @@ const authAPI = require("./routes/auth");
 const keywordAPI = require("./routes/keyword");
 const pastworkAPI = require("./routes/pastwork");
 const applicationAPI = require("./routes/application");
+const groupAPI = require('./routes/group')
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +29,7 @@ app.use("/paper", paperAPI);
 app.use("/keyword", keywordAPI);
 app.use("/pastwork", pastworkAPI);
 app.use("/application", applicationAPI);
+app.use("/groups",groupAPI);
 //Default route
 app.get("/", (req, res) => {
     res.send("Hello World!");

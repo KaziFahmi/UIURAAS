@@ -86,7 +86,7 @@ const ApplicationRead = () => {
   return (
    <ColumnBlock style={body}>
     <div ><h2>Application</h2></div>
-    <div  style={dropdownSet}><ApplicationTypeDropdown/>&nbsp;<FieldType/></div>
+    {/* <div  style={dropdownSet}><ApplicationTypeDropdown/>&nbsp;<FieldType/></div> */}
     <br/>
     <RowBlock  style={applicationData} >
 
@@ -100,7 +100,7 @@ const ApplicationRead = () => {
         {/* To toggle the listed options */}
         {toggle && (
           <HorizontalBlock style={SelectAllToggleOptions} >
-            <AddPeople />
+            <AddPeople selected={selected} />
             <RemoveButton body={<IoTrashSharp/>} text="Remove" onClick={onClickRemove} type={2} />
           </HorizontalBlock>
         )}

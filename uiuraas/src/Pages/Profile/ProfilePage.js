@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 function ProfilePage() {
   const { id } = useParams();
   const [user,setUser] = useState(useSelector((state) => state.auth.userInfo));
+  const {userInfo} = useSelector(state=>state.auth)
   useEffect(() => {
     if (id != null) {
       console.log(id);
@@ -23,10 +24,10 @@ function ProfilePage() {
     }
   }, [id]);
 
-  console.log(user)
+  console.log(userInfo)
   return (
     <VerticalBlock style={profileBody}>
-      <ProfileCard name={user.name} id={user.id} isEditable={id==user.id} />
+      <ProfileCard name={user.name} id={user.id} isEditable={id==userInfo.id} />
       <HorizontalBlock style={{ paddingLeft: "2.5%" }}>
         <UserInfo user={user} />
         <PastExperience id={user.refId} />

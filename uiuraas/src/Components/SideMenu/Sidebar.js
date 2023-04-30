@@ -17,7 +17,6 @@ const Sidebar = (props) => {
           <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/home"/> 
           <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
-          <SidebarButtons body={<IoMdChatbubbles  fontSize="2.5em"/>} link="/inbox"/>
           <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
           <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
 
