@@ -7,31 +7,42 @@ import FindCard from './HomePageComponents/FindCard'
 import WhatsNew from './HomePageComponents/WhatsNew'
 import Notices from './HomePageComponents/Notices'
 import { useSelector } from 'react-redux'
+import Spinner from 'react-bootstrap/esm/Spinner'
 //Holds the components of this section. Might require additional functions depending on situation
 function HomePage() {
   const {userInfo,loading} = useSelector((state) => state.auth)
-  if(loading){
-    return <div>Loading...</div>
-  }
+   if(loading)
+   {
+    return(
+      <div className="d-flex justify-content-center align-items-center vh-100">
+      <Spinner animation="border" variant="primary" />
+    </div>
+    )
+   }
+   else
+   {
   return (
-   <VerticalBlock>
+   <VerticalBlock style={homeBody}>
     <HorizontalBlock>
       <ProfileCard userInfo={userInfo}/>
-      <Notices/>
+      
     </HorizontalBlock>
      
      <HorizontalBlock>
         <FindCard/>
-        <WhatsNew/>
+        <VerticalBlock>
+          <Notices/> 
+          <WhatsNew/>
+        </VerticalBlock>
+       
      </HorizontalBlock>
    </VerticalBlock>
   )
+   }
 }
 
 export default HomePage
 
-const userIdentity={
-    border:"1px solid"+PrimaryTemplate.yellow,
-    width:"90%",
-    backgroundColor:"Red"
-}
+const homeBody = {
+  width: "77vw",
+};

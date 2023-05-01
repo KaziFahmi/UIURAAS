@@ -7,6 +7,7 @@ import PastExperience from "./ProfilePageComponents/PastExperience";
 import Papers from "./ProfilePageComponents/Papers";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import PrimaryTemplate from "../../Components/ColorTemplates/PrimaryTemplate";
 //Holds all the components for profile data display
 function ProfilePage() {
   const { id } = useParams();
@@ -30,7 +31,7 @@ function ProfilePage() {
       <ProfileCard name={user.name} id={user.id} isEditable={id==userInfo.id} />
       <HorizontalBlock style={{ paddingLeft: "2.5%" }}>
         <UserInfo user={user} />
-        <PastExperience id={user.refId} />
+        <PastExperience id={user.refId} location="profile" width="50vw" />
       </HorizontalBlock>
       <br />
       <Papers id={user.refId} />
@@ -42,5 +43,5 @@ export default ProfilePage;
 
 const profileBody = {
   justifyContent: "center",
-  width: "85vw",
+  width: "77vw",
 };

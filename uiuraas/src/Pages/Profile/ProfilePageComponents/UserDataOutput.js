@@ -1,4 +1,5 @@
 import React from 'react'
+import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 // A reusable componentr to output data
 function UserDataOutput(props) {
   return (
@@ -18,7 +19,7 @@ const formOutput={
   
   
   const dataLabel={
-    color: "#949494",
+    color: PrimaryTemplate.blue,
     marginLeft: "10%",
     fontFamily: "'Inder', sans-serif"
   }

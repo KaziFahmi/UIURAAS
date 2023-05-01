@@ -14,28 +14,34 @@ function Papers(props) {
     .then(data=>setPapers(data))
   }, [props.id])
   return (
-  <VerticalBlock style={body}>
-    <RowBlock>
-        < h2 style={{paddingLeft:"2.5%"}}>Papers</h2>
-    </RowBlock>
-    
-     <br/>
-     {papers.map(paper=>(
-       <PaperCard key={paper.id} title={paper.title} keywords={paper.keywords} abstract={paper.abstract}/>
-      ))}
-     {props.body}
-    
-   </VerticalBlock>
+   <VerticalBlock style={body}>
+     < h2 style={{paddingLeft:"2.5%"}}>Papers</h2>
+      <VerticalBlock style={paperHolder} >
+        <br/>
+        {papers.map(paper=>(
+          <PaperCard key={paper.id} title={paper.title} keywords={paper.keywords} abstract={paper.abstract}/>
+          ))}
+       
+        
+      </VerticalBlock>
+       {props.body}
+   </VerticalBlock> 
   )
 }
 
 export default Papers
 
 const body={
-    width:"83vw",
-    border:"1px solid"+PrimaryTemplate.yellow,
+    width:"75vw",
+    border:"1px solid"+PrimaryTemplate.borders,
     fontFamily: "'Inder', sans-serif",
     margin: "1.5%",
     marginLeft:"2.5%",
     height:"auto",
+    backgroundColor:PrimaryTemplate.white
+}
+const paperHolder={
+  overflow:"auto",
+  backgroundColor:PrimaryTemplate.white,
+  height:"28vh",
 }

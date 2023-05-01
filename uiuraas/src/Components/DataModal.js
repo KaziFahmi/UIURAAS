@@ -28,10 +28,10 @@ export default DataModal
 
 const appCardBody={
   display: "flex",
-  border: "1px solid"+PrimaryTemplate.yellow,
+  border: "1px solid"+PrimaryTemplate.borders,
   margin: "2.5%",
   position: 'relative',
-  height:"auto",
+  height:"40px",
   alignItems:'center',
   justifyContent:'center',
   textAlign:'center',
@@ -42,5 +42,4 @@ const appCardBody={
 }
 
 const modalStyle={
-  border: "1px solid"+PrimaryTemplate.yellow,
 }

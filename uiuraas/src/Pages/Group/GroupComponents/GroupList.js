@@ -20,8 +20,10 @@ function GroupList({ onGroupSelect }) {
 export default GroupList
 
 const groupBody={
-  border: "1px solid"+PrimaryTemplate.yellow,
+  border: "1px solid"+PrimaryTemplate.borders,
   width:" 30%",
-  overflowY: "scroll"
+  overflow: "auto",
+  backgroundColor:PrimaryTemplate.white,
+  marginRight:"1vw"
 }
 

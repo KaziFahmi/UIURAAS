@@ -75,7 +75,9 @@ const SendMailButton={
     textAlign:"center",
     justifyContent:"center",
     alignItems:"center",
-    marginBottom:"1%"
+    margin:"1%",
+    marginLeft:"1.7%"
+    
 
   }
   const inputField={

@@ -9,14 +9,17 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 const GroupCard = (props) => {
   return (
     <HorizontalBlock style={groupBody}>
-    <HorizontalBlock  >  
-      <div style={profImg}><img src={groupImg} /></div>
+    <HorizontalBlock  > 
+      <button style={cardButton} onClick={props.onSelect}> 
+      <HorizontalBlock>
+      <img src={groupImg}style={profImg} />
       <ColumnBlock >
-          <button style={cardButton} onClick={props.onSelect}>
+          
             <input type="text" value={props.name} disabled readOnly style={profInfo}/>
             <input type="text" value={props.topic} readOnly disabled style={profInfo} />
-          </button>
-       </ColumnBlock>
+          
+       </ColumnBlock></HorizontalBlock>
+       </button>
       </HorizontalBlock>
      
   </HorizontalBlock>
@@ -27,18 +30,19 @@ export default GroupCard
 
 const groupBody={
     display: "flex",
-    border: "1px solid"+PrimaryTemplate.yellow,
+    border: "1px solid"+PrimaryTemplate.borders,
     margin: "2.5%",
     position: 'relative',
     height:"auto",
     alignItems:'left',
     textAlign:'left',
     justifyContent:"space-between",
-    marginTop:"4%"
+    marginTop:"4%",
+    backgroundColor:PrimaryTemplate.white
   }
   
   const profImg={
-    width: "auto",
+    width: "5vw",
     position:"relative",
     
   }
@@ -46,9 +50,10 @@ const groupBody={
   const profInfo={
     fontSize: "large",
     fontWeight: "600",
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inder', sans-serif",
     width:"90%",
     border:"none",
+    background:"none"
   }
   
   

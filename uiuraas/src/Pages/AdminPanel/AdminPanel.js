@@ -6,7 +6,8 @@ import CreateAccount from './AdminPanelComponent/CreateAccount'
 function AdminPanel() {
   return (
     <>
-    <CreateAccount/>
+    <div ><h2 style={{marginTop:"11px",paddingLeft:"2%"}}>Admin Panel</h2></div>
+   <CreateAccount/>
    <CreateNotice/>
    <CreateNews/>
    </>

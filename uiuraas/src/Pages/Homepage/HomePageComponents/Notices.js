@@ -20,10 +20,13 @@ function Notices() {
 export default Notices
 
 const body={
-    width:"60%",
-    border:"1px solid"+PrimaryTemplate.yellow,
+    width:"23vw",
+    height:"250px",
+    border:"1px solid"+PrimaryTemplate.borders,
     fontFamily: "'Inder', sans-serif",
-    margin: "2.5%",
-    overflowY:"Scroll",
-    marginLeft:".5%"
+    overflow:"auto",
+    marginLeft:".5%",
+    backgroundColor:PrimaryTemplate.white,
+    marginTop:"1.5%",
+    marginBottom:"5%"
 }

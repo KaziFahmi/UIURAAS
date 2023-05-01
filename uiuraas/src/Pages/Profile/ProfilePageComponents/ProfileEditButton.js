@@ -19,5 +19,5 @@ const editButton={
     backgroundColor:"transparent",
     border:"none",
     color:PrimaryTemplate.blue,
-    fontSize:"300%"
+    fontSize:"200%"
 }

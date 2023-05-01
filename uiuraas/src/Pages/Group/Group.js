@@ -31,7 +31,7 @@ export default Group
 const body={
   justifyContent:"left",
   alignItems:"left",
-  width:"85vw",
+  width:"77vw",
 }
 
 const listContainer={

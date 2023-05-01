@@ -13,6 +13,6 @@ const Searchbar = ({keyword, onChange}) => {
   const searchBar={
     width:"60%",
     backgroundColor:"#ffffff",
-    border:"1px solid "+PrimaryTemplate.yellow,
+    border:"1px solid "+PrimaryTemplate.borders,
     borderRadius: "40px"
 }

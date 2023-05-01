@@ -8,14 +8,16 @@ import {Link} from 'react-router-dom'
 const MemberCard = (props) => {
   return (
     <HorizontalBlock style={groupBody}>
-    <HorizontalBlock  >  
-      <div style={profImg}><img src={groupImg} /></div>
+    <HorizontalBlock  > 
+      <Link  style={cardButton} > 
+      <HorizontalBlock>
+      <img src={groupImg} style={profImg} />
       <ColumnBlock >
-          <Link  style={cardButton} >
+          
             <input type="text" value={props.name} disabled readOnly style={profInfo}/>
             <input type="text" value={props.id} readOnly disabled style={profInfo} />
-          </Link>
-       </ColumnBlock>
+          
+       </ColumnBlock></HorizontalBlock></Link>
       </HorizontalBlock>
      
   </HorizontalBlock>
@@ -26,7 +28,7 @@ export default MemberCard
 
 const groupBody={
     display: "flex",
-    border: "1px solid"+PrimaryTemplate.yellow,
+    border: "1px solid"+PrimaryTemplate.borders,
     margin: "2.5%",
     position: 'relative',
     height:"auto",
@@ -39,15 +41,18 @@ const groupBody={
   const profImg={
     width: "auto",
     position:"relative",
+    width: "5vw",
+    
     
   }
   
   const profInfo={
     fontSize: "large",
     fontWeight: "600",
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inder', sans-serif",
     width:"90%",
     border:"none",
+    background:"none"
   }
   
   
@@ -57,4 +62,6 @@ const groupBody={
     padding: '0',
     background: 'none',
     boxShadow: 'none',
+    textDecoration:"none",
+    width:"23vw"
   }
