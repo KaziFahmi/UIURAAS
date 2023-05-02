@@ -7,11 +7,22 @@ import FindCard from './HomePageComponents/FindCard'
 import WhatsNew from './HomePageComponents/WhatsNew'
 import Notices from './HomePageComponents/Notices'
 import { useSelector } from 'react-redux'
+import ClipLoader from "react-spinners/ClipLoader"
 //Holds the components of this section. Might require additional functions depending on situation
 function HomePage() {
   const {userInfo,loading} = useSelector((state) => state.auth)
+  // const {userInfo,loading} = useSelector((state) => state.auth)
   if(loading){
-    return <div>Loading...</div>
+    return <>
+      <div style={{height: "100vh", width:"100vw", display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <ClipLoader style={{
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+}} loading={loading} size={150} aria-label="Loading Spinner" data-testid="loader" />
+      </div>
+    </>
+  
   }
   return (
    <VerticalBlock>

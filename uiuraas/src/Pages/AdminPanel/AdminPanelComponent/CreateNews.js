@@ -34,7 +34,7 @@ const profCardBody={
     border: "1px solid"+PrimaryTemplate.yellow,
     margin: "2.5%",
     position: 'relative',
-    height:"33vh",
+    height:"auto",
     width:"83vw",
     alignItems:'left',
     textAlign:'left',

@@ -4,8 +4,18 @@ import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/SideMenu/Sidebar";
 import VerticalBlock from "../Components/BasicBlocks/VerticalBlock";
 import HorizontalBlock from "../Components/BasicBlocks/HorizontalBlock";
+import ClipLoader from "react-spinners/ClipLoader"
+import { useSelector } from "react-redux";
 function PrimaryLayout(props) {
+  const {userInfo,loading} = useSelector((state) => state.auth)
+  if(loading){
+    return <>
+      <div style={{height: "100vh", width:"100vw", display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <ClipLoader loading={loading} />
+      </div>
+    </>
   
+  }
   return (
     <VerticalBlock>
      <Navbar/>
