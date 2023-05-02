@@ -32,8 +32,9 @@ function GroupMemberList(props) {
 export default GroupMemberList
 
 const groupBody={
-  border: "1px solid"+PrimaryTemplate.yellow,
+  border: "1px solid"+PrimaryTemplate.borders,
   overflowY: "scroll",
-  width: "90%",
-  fontFamily: "'Inder', sans-serif"
+  width: "80%",
+  fontFamily: "'Inder', sans-serif",
+  backgroundColor:PrimaryTemplate.white
 }

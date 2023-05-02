@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Members from "./Members";
 import { set } from "react-hook-form";
+import PrimaryTemplate from "../../../../Components/ColorTemplates/PrimaryTemplate";
 //Displays form data
 const ApplicationReadForm = (props) => {
   console.log(props.applicationFormData);
@@ -65,29 +66,30 @@ export default ApplicationReadForm;
 
 const formBody = {
   paddingTop: "2%",
+  backgroundColor:PrimaryTemplate.white
 };
 
 const dataLabel = {
-  color: "#949494",
+  color:PrimaryTemplate.blue,
   marginLeft: "50px",
   fontFamily: "'Inder', sans-serif",
 };
 
 const details = {
-  color: "#949494",
-  border: "2px solid #949494",
+  color: PrimaryTemplate.grey,
+  border:  "1px solid "+PrimaryTemplate.borders,
   marginLeft: "50px",
-  width: "78%",
+  width: "90%",
   fontFamily: "'Inder', sans-serif",
 };
 
 const formOutputField = {
-  width: "75%",
+  width: "90%",
   padding: "10px 15px",
-  border: "2px solid #949494",
+  border: "1px solid "+PrimaryTemplate.borders,
   marginTop: "10px",
   marginBottom: "15px",
-  color: "#000000c2",
+  color: PrimaryTemplate.grey,
   fontSize: "18px",
   marginLeft: "50px",
 };

@@ -50,7 +50,7 @@ function AddPastExperience(props) {
 {/* The modal where you perform the add past work experience process */}
     <Modal show={show} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter"centered>
     <Modal.Header closeButton>
-    <Modal.Title>Add Paper</Modal.Title>
+    <Modal.Title>Add Activities & Experiences</Modal.Title>
     </Modal.Header>
     <Modal.Body>
      <form onSubmit={onSubmit}>
@@ -70,7 +70,6 @@ function AddPastExperience(props) {
 export default AddPastExperience
 
 const SendMailButton={
-    marginLeft:"2.5%",
     background: "none" ,
     color:PrimaryTemplate.blue ,
     border:"none",
@@ -78,8 +77,8 @@ const SendMailButton={
     textAlign:"center",
     justifyContent:"center",
     alignItems:"center",
-    marginBottom:"1%"
-
+    margin:"1%",
+    marginLeft:"1.6%"
   }
   const inputField={
     width: "75%",

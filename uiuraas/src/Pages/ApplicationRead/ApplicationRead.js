@@ -85,7 +85,7 @@ const ApplicationRead = () => {
 
   return (
    <ColumnBlock style={body}>
-    <div ><h2>Application</h2></div>
+    <div ><h2 style={{marginTop:"11px"}}>Application</h2></div>
     {/* <div  style={dropdownSet}><ApplicationTypeDropdown/>&nbsp;<FieldType/></div> */}
     <br/>
     <RowBlock  style={applicationData} >
@@ -93,7 +93,7 @@ const ApplicationRead = () => {
       <VerticalBlock style={applicationContainer}>
         <RowBlock style={appliContainerItems}>
           {/* Button to toggle certain options */}
-          <button  style={selectAllToggle} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color='#FC9E04' /></button>
+          <button  style={selectAllToggle} onClick={() => setToggle(!toggle)} ><VscChecklist fontSize="2em" color={PrimaryTemplate.blue} /></button>
           <Searchbar onChange={setSearch} />
         </RowBlock>
 
@@ -106,16 +106,16 @@ const ApplicationRead = () => {
         )}
 
 
-        <VerticalBlock>
+        <VerticalBlock style={{backgroundColor:PrimaryTemplate.white}}>
           {/* ------application Card------ */}
           {filtedApplications.map((application)=>{
             return <ApplicationCard key={application.formId} formId={application.formId} application={application} handleApplicationData={handleApplicationData} setCount={setCount} count={count} selected={selected} setSelected={setSelected}/>
           })}
         </VerticalBlock>
       </VerticalBlock>
-
       <div  style={applicationForm}>
         {/* ------application Form------ */}
+        <AddPeople selected={selected} />
         {
           applicationFormData && <ApplicationReadForm applicationFormData={applicationFormData} setCount={setCount} count={count}/>
         }
@@ -130,11 +130,7 @@ export default ApplicationRead
 const body={
   justifyContent:"left",
   alignItems:"left",
-  width:"83vw"
-}
-
-const dropdownSet={
-  display: "flex",
+  width:"75vw"
 }
 // .gap{
 //   color: white;
@@ -147,10 +143,13 @@ const applicationData={
 }
 
 const applicationContainer={
-  border: "1px solid"+PrimaryTemplate.yellow,
+  border: "1px solid"+PrimaryTemplate.borders,
   width:" 30%",
   height: "700px",
-  overflowY: "scroll"
+  overflow: "auto",
+  backgroundColor:PrimaryTemplate.white,
+  marginRight:"1vw"
+
 }
 const selectAllToggle={
   backgroundColor:PrimaryTemplate.white,
@@ -164,11 +163,13 @@ const SelectAllToggleOptions={
 
 
 const applicationForm={
-  border: "1px solid #FC9E04",
-  width: "70%",
+  border: "1px solid"+PrimaryTemplate.borders,
+  width: "60%",
   height: "700px",
-  overflowY: "scroll",
-  fontFamily: "'Inder', sans-serif"
+  overflow: "auto",
+  fontFamily: "'Inder', sans-serif",
+  backgroundColor:PrimaryTemplate.white,
+  
 }
 
 const appliContainerItems={

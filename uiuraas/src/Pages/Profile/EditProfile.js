@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Img from '../../Images/userImg.png'
 import VerticalBlock from '../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../Components/ColorTemplates/PrimaryTemplate'
@@ -24,40 +24,67 @@ function EditProfile(props){
       };
       reader.readAsDataURL(file);
     };
+
+    const [numColumns, setNumColumns] = useState(2);
+
+
+    useEffect(() => {
+      function handleResize() {
+        const windowWidth = window.innerWidth;
+
+            if (windowWidth < 768) {
+            setNumColumns(1);
+          } else  {
+            setNumColumns(2);
+          } 
+        
+      }
+
+      window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+    // cleanup function to remove event listener on component unmount
+  }, []);
     
     return (
-      <>
-      <h2 style={{paddingLeft:"2%"}}>Update User Data</h2>
+      <div >
+      <h2 style={{paddingLeft:"2%",paddingTop:"1%"}}>Update User Data</h2>
       <VerticalBlock> 
-        <RowBlock style={profCardBody}>
-          <VerticalBlock style={{paddingLeft:"3%"}}>{/* To get image from pc and updata data */}
-            <h5>Change Profile Picture</h5><br/>
-            <img src={userImg} style={profImg} /> 
-            <br/>
-         
-            <input
-            style={profileEdit}
-            type="file"
-            id="upload"
-            accept="image/*"
-            onChange={handleFileSelect}
-            />
-             <button type="submit" style={{...saveButton,marginTop:"1%"}}>Save</button>
+        <RowBlock style={{...profCardBody,display: "grid", gridTemplateColumns: `repeat(${numColumns}, 1fr)`}}>
+          <VerticalBlock style={{paddingLeft:"3%",paddingTop:"2%"}}>{/* To get image from pc and updata data */}
+          <form>
+              <h5>Change Profile Picture</h5><br/>
+              <img src={userImg} style={profImg} /> 
+              <br/>
+          
+              <input
+              style={profileEdit}
+              type="file"
+              id="upload"
+              accept="image/*"
+              onChange={handleFileSelect}
+              />
+              <br/>
+              <button type="submit" style={{...saveButton,marginTop:"1%"}}>Save</button>
+             </form>
             
-            </VerticalBlock>{/* To get image from pc and updata data */}
-          <form >{/* To get change password */}
-            <h5>Change Password</h5><br/>
-            <input type="text" name="uname" placeholder='Enter Old Password '  style={inputField}  />
-            <input type="text" name="uname" placeholder='Enter New Password '  style={inputField}  />
-            <br/>
-            <button type="submit" style={saveButton}>Save</button>
-          </form>{/* To get change password */}
+            </VerticalBlock >{/* To get image from pc and updata data */}
+            <VerticalBlock style={{paddingLeft:"3%",paddingTop:"2%"}}>
+              <form >{/* To get change password */}
+                <h5>Change Password</h5><br/>
+                <input type="password" name="uname" placeholder='Enter Old Password '  style={{...inputField,marginTop:"-12px"}}  />
+                <input type="password" name="uname" placeholder='Enter New Password '  style={inputField}  />
+                <input type="password" name="uname" placeholder='Confirm New Password '  style={inputField}  />
+                <br/>
+                <button type="submit" style={saveButton}>Save</button>
+              </form>{/* To get change password */}
+          </VerticalBlock>
         </RowBlock>
-        <PastExperience style={pastexp} body={<AddPastExperience/>} id={user.userToken}/>
+        <PastExperience style={pastexp} body={<AddPastExperience/>} id={user.userToken} location="edit" width="75vw"/>
         <Papers body={<AddPaperButton/>} id={user.userToken}/>
 
       </VerticalBlock> 
-      </>
+      </div >
     );
   }
 
@@ -66,19 +93,19 @@ export default EditProfile
 
 const profCardBody={
     display: "flex",
-    border: "1px solid"+PrimaryTemplate.yellow,
+    border: "1px solid"+PrimaryTemplate.borders,
     margin: "2.5%",
     position: 'relative',
-    height:"30vh",
-    width:"83vw",
+    height:"auto",
+    width:"75vw",
     alignItem:"center",
-    justifyContent:"space-between"
+    justifyContent:"space-between",
+    backgroundColor:PrimaryTemplate.white
       
   }
   
   const profImg={
-    width: "7.5vw",
-    height:'14vh',
+    width: "200px",
   }
   
   const inputField={
@@ -102,7 +129,6 @@ const profCardBody={
     width:"120px",
     height:"50px",
     padding:"15px",
-    marginLeft:"2.5%",
     marginBottom:"5px",
     backgroundColor:  PrimaryTemplate.blue ,
     color: "white",
@@ -114,5 +140,6 @@ const profCardBody={
   }
 
   const pastexp={
-    width:'83.5vw'
+    width:'83.5vw',
+    height:"auto"
   }

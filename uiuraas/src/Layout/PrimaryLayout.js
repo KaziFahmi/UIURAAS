@@ -1,29 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Components/Footer/Footer";
-import Navbar from "../Components/Navbar/Navbar";
+import Navigationbar from "../Components/Navbar/Navigationbar";
 import Sidebar from "../Components/SideMenu/Sidebar";
 import VerticalBlock from "../Components/BasicBlocks/VerticalBlock";
 import HorizontalBlock from "../Components/BasicBlocks/HorizontalBlock";
-import ClipLoader from "react-spinners/ClipLoader"
+import PrimaryTemplate from "../Components/ColorTemplates/PrimaryTemplate";
 import { useSelector } from "react-redux";
+import Spinner from 'react-bootstrap/Spinner';
 function PrimaryLayout(props) {
-  const {userInfo,loading} = useSelector((state) => state.auth)
-  if(loading){
-    return <>
-      <div style={{height: "100vh", width:"100vw", display: "flex", alignItems: "center", justifyContent: "center"}}>
-        <ClipLoader loading={loading} />
-      </div>
-    </>
-  
-  }
+
+
   return (
-    <VerticalBlock>
-     <Navbar/>
+     
+    <VerticalBlock style={layoutBody}>
+      
+     <Navigationbar/>
       <HorizontalBlock style={commonBody}>
         <div className="sideMenu" style={sideMenu}>
             <Sidebar/>
         </div>
         <div  style={mainBody}>
+         
             {props.body}
         </div>
       </HorizontalBlock>
@@ -33,8 +30,9 @@ function PrimaryLayout(props) {
     </VerticalBlock>
   );
 }
-
 export default PrimaryLayout;
+const layoutBody={
+}
 
 const sideMenu={
   paddingLeft: "3%",
@@ -51,10 +49,13 @@ const footer={
   textAlign: "center",
   justifyContent: "center",
   alignItems: "center",
-  marginTop:"2%"
+  backgroundColor:PrimaryTemplate.primeBackground
 }
 
 const commonBody={
-  display:"flex"
+  display:"flex",
+  height:"auto",
+  backgroundColor:PrimaryTemplate.primeBackground
+  
 }
 

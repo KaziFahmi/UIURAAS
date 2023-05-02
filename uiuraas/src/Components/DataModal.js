@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import PrimaryTemplate from './ColorTemplates/PrimaryTemplate';
+import VerticalBlock from './BasicBlocks/VerticalBlock';
 //A Modal used for showing specific data
 function DataModal(props) {
   const [show, setShow] = useState(false);
@@ -16,7 +17,9 @@ function DataModal(props) {
 
       <Modal show={show} style={modalStyle} onHide={handleClose} size="lg"aria-labelledby="contained-modal-title-vcenter"centered>
         <Modal.Header closeButton>
-        <Modal.Title>{props.name}</Modal.Title>
+        <Modal.Title>
+          <label>{props.name}</label>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>{props.data}</Modal.Body>
       </Modal>
@@ -28,10 +31,10 @@ export default DataModal
 
 const appCardBody={
   display: "flex",
-  border: "1px solid"+PrimaryTemplate.yellow,
+  border: "1px solid"+PrimaryTemplate.borders,
   margin: "2.5%",
   position: 'relative',
-  height:"auto",
+  height:"40px",
   alignItems:'center',
   justifyContent:'center',
   textAlign:'center',
@@ -42,5 +45,4 @@ const appCardBody={
 }
 
 const modalStyle={
-  border: "1px solid"+PrimaryTemplate.yellow,
 }

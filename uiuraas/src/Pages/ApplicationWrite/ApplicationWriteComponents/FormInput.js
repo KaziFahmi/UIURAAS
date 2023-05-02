@@ -1,4 +1,5 @@
 import React from "react";
+import PrimaryTemplate from "../../../Components/ColorTemplates/PrimaryTemplate";
 
 function FormInput(props) {
   return (
@@ -14,20 +15,20 @@ function FormInput(props) {
 export default FormInput;
 
 const formInputLabel={
-        color: "#949494",
-        marginLeft: "50px",
+        color: PrimaryTemplate.blue,
+        marginLeft: "3.5%",
         fontFamily: "'Inder', sans-serif"
 
 }
 
 const formInputField=
 {
-    width: "75%",
+    width: "90%",
     padding: "10px 15px",
-    border: "2px solid #949494",
+    border: "1px solid"+PrimaryTemplate.borders,
     marginTop: "10px",
     marginBottom: "15px",
     color: "#000000c2",
     fontSize: "18px",
-    marginLeft: "50px"
+    marginLeft: "3.5%",
 }

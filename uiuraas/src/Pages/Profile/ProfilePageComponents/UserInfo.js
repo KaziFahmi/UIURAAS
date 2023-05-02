@@ -23,10 +23,7 @@ function UserInfo(props) {
          {props.user.type =='student' && (
               <br/>
           )}
-        <UserDataOutput placeholder="Country" value={props.country}/>
-        <br/>
-        <UserDataOutput placeholder="City" value={props.city}/>
-        <br/>
+          <br/>
     </VerticalBlock>
   )
 }
@@ -35,6 +32,7 @@ export default UserInfo
 
 const body={
     width:"25vw",
-    border:"1px solid"+PrimaryTemplate.yellow,
-    fontFamily: "'Inder', sans-serif"
+    border:"1px solid"+PrimaryTemplate.borders,
+    fontFamily: "'Inder', sans-serif",
+    backgroundColor:PrimaryTemplate.white
 }

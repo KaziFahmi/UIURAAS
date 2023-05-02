@@ -8,7 +8,7 @@ function CreateAccount(props) {
     <VerticalBlock style={profCardBody}>
         <VerticalBlock>
         <form>
-           <h2 style={{paddingLeft:"1%"}}>Create Account</h2>
+           <h2 style={{paddingLeft:"1%",marginBottom:"1%",marginTop:"1%"}}>Create Account</h2>
            <label style={title} >Account Type</label>{/* Link of news*/}
            <br/>
            <input type="text" name="uname" placeholder='Enter Account Type '  style={inputField} />
@@ -41,32 +41,34 @@ export default CreateAccount
 
 const profCardBody={
     display: "flex",
-    border: "1px solid"+PrimaryTemplate.yellow,
+    border: "1px solid"+PrimaryTemplate.borders,
     margin: "2.5%",
     position: 'relative',
     height:"auto",
-    width:"83vw",
+    width:"77vw",
     alignItems:'left',
     textAlign:'left',
     justifyContent:"space-between",
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inder', sans-serif",
+    backgroundColor:PrimaryTemplate.white
       
   }
   
   const inputField={
-    width: "75vw",
-    border: "2px solid "+PrimaryTemplate.gray58,
+    width: "70vw",
+    border: "1px solid "+PrimaryTemplate.borders,
     marginBottom: "15px",
     color: "#000000c2",
     fontSize: "18px",
-    marginLeft:"15px"
+    marginLeft:"15px",
+    height:"50px"
   }
 
   const title ={
     fontSize: "20px",
     marginBottom: "20px",
     color:PrimaryTemplate.blue,
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inder', sans-serif",
     marginLeft:"15px"
   }
 
@@ -74,8 +76,8 @@ const profCardBody={
     width:"120px",
     height:"50px",
     padding:"15px",
-    marginLeft:"2.5%",
-    marginBottom:"5px",
+    marginLeft:"1%",
+    marginBottom:"10px",
     backgroundColor:  PrimaryTemplate.blue ,
     color: "white",
     border: "1px solid"+PrimaryTemplate.blue,

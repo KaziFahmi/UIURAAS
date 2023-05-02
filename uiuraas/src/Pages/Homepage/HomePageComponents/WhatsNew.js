@@ -19,11 +19,13 @@ function WhatsNew() {
 export default WhatsNew
 
 const body={
-  width:"60%",
-  border:"1px solid"+PrimaryTemplate.yellow,
+  width:"23vw",
+  border:"1px solid"+PrimaryTemplate.borders,
   fontFamily: "'Inder', sans-serif",
   margin: "2.5%",
-  overflowY:"Scroll",
+  overflow:"auto",
   marginLeft:".5%",
-  marginTop:".5%"
+  marginTop:".5%",
+  backgroundColor:PrimaryTemplate.white,
+  height:"328px"
 }

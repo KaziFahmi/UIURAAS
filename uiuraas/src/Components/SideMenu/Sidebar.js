@@ -14,11 +14,11 @@ const Sidebar = (props) => {
       <div className="sidebarComponent" style={sidebarComponent}>
         <div className='sidebarButtonSet' style={sidebarButtonSet}>
 
-          <SidebarButtons body={<RiHome5Line  fontSize="2.5em"/>} link="/home"/> 
-          <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
-          <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
-          <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
-          <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
+          <SidebarButtons body={<RiHome5Line  fontSize="3em"/>} link="/home"/> 
+          <SidebarButtons body={<MdEditDocument  fontSize="3em"/>} link="/application"/>
+          <SidebarButtons body={<IoDocumentTextSharp  fontSize="3em" />} link="/applicationread"/>
+          <SidebarButtons body={<MdGroups fontSize="3em"/>} link="/group"/>
+          <SidebarButtons body={<RiAdminFill fontSize="3em"/>} link="/adminpanel"/>
 
 
           {/* Permanent setup will be used to change types of button accessible to  users depending on account type */}
@@ -57,17 +57,19 @@ const sideNavigation={
 }
 const sidebarComponent={
   backgroundColor: PrimaryTemplate.blue,
-  width:"70px",
+  width:"75px",
   height: "auto",
   paddingBottom:"50px",
   borderRadius:"40px",
   margin: "0",
-  justifyContent: "center"
+  justifyContent: "center",
+
 }
 
 const sidebarButtonSet={
   paddingTop: "80%",
-  paddingLeft: "15%"
+  paddingLeft: "15%",
+  marginRight:"10px"
   
 }
 

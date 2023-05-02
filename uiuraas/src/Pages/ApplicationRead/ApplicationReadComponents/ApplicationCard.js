@@ -27,14 +27,16 @@ const ApplicationCard = (props) => {
   return (
     <HorizontalBlock style={appCardBody}>
       <HorizontalBlock  >  
-        <div style={profImg}><img src={userImg} /></div>
-        <ColumnBlock >
-            <button onClick={handleClick}style={cardButton} >
+        <button onClick={handleClick}style={cardButton} >
+          <HorizontalBlock>
+         <div style={profImg}><img src={userImg} /></div>
+         <ColumnBlock >
+           
               {/* shows data of form submittees */}
               <input type="text" value={props.application.topic} disabled readOnly style={profInfo}/>
               <input type="text" value={user.id} readOnly disabled style={profInfo}/>
-            </button>
-         </ColumnBlock>
+            
+         </ColumnBlock></HorizontalBlock> </button>
         </HorizontalBlock>
         {/* to check mark data */}
         <input style={checkbox} onChange={(e)=>{
@@ -59,14 +61,15 @@ export default ApplicationCard
 
 const appCardBody={
   display: "flex",
-    border: "1px solid"+PrimaryTemplate.blue,
+    border: "1px solid"+PrimaryTemplate.borders,
     margin: "2.5%",
     position: 'relative',
     height:"auto",
     alignItems:'left',
    justifyContent:'left',
    textAlign:'left',
-   justifyContent:"space-between"
+   justifyContent:"space-between",
+   backgroundColor:PrimaryTemplate.white
     
 }
 
@@ -79,13 +82,14 @@ const profImg={
 const profInfo={
   fontSize: "large",
   fontWeight: "600",
-  fontFamily: "'Inter', sans-serif",
+  fontFamily: "'Inder', sans-serif",
   width:"90%",
   border:"none",
+  background:"none"
 }
 
 const checkbox={
-  border:"1px solid"+PrimaryTemplate.yellow+"!important"
+  border:"1px solid"+PrimaryTemplate.borders+"!important"
 }
 
 const cardButton={

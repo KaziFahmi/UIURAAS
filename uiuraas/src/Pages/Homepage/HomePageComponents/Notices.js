@@ -5,14 +5,25 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import DataModal from '../../../Components/DataModal'
 //Holds the notices
 function Notices() {
+  const [notices,setNotices]=React.useState([])
+  React.useEffect(() => {
+    fetch('http://localhost:3001/notices/notices/')
+    .then(res=>res.json())
+    .then(data=>setNotices(data))
+  }, [notices])
+
+
   return (
+    
     <VerticalBlock style={body}>
-      <RowBlock style={{padding:"1%"}}>
-        <h2 style={{paddingLeft:"1%"}}>Notices</h2>
-      </RowBlock>
+      <h2 style={{paddingLeft:"2%"}}>Notices</h2>
+      <VerticalBlock style={noticeHolder}>
+         {notices.map(notice=>(
+          <DataModal name={notice.title} data={notice.detail}/>
+          ))}
+      </VerticalBlock>
       {/* Uses DataModal To display notice data */}
-      <DataModal name="Maintenance notice" data="hello world"/>
-      <DataModal name="Maintenance notice" data="hello world"/>
+     
    </VerticalBlock>
   )
 }
@@ -20,10 +31,17 @@ function Notices() {
 export default Notices
 
 const body={
-    width:"60%",
-    border:"1px solid"+PrimaryTemplate.yellow,
+    width:"23vw",
+    height:"250px",
+    border:"1px solid"+PrimaryTemplate.borders,
     fontFamily: "'Inder', sans-serif",
-    margin: "2.5%",
-    overflowY:"Scroll",
-    marginLeft:".5%"
+    marginLeft:".5%",
+    backgroundColor:PrimaryTemplate.white,
+    marginTop:"1.5%",
+    marginBottom:"5%"
+}
+
+const noticeHolder={
+  overflow:"auto",
+  height:"180px",
 }

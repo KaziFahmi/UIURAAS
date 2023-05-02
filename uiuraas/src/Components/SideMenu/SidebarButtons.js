@@ -19,6 +19,7 @@ const sidebarButtons={
     backgroundColor:"transparent",
     border:"none",
     color: PrimaryTemplate.white,
+    marginBottom:"10px"
     
 }
   
