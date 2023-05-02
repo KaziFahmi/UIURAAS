@@ -16,6 +16,7 @@ const MemberCard = (props) => {
           
             <input type="text" value={props.name} disabled readOnly style={profInfo}/>
             <input type="text" value={props.id} readOnly disabled style={profInfo} />
+            <input type="text" value={props.email} readOnly disabled style={profInfo} />
           
        </ColumnBlock></HorizontalBlock></Link>
       </HorizontalBlock>

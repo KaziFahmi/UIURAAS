@@ -5,24 +5,22 @@ const bodyParser = require("body-parser");
 const db = admin.firestore();
 router.use(bodyParser.json());
 
-router.get("/notices", async (req, res) => {
-    const noticesRef = db.collection("notices");
-    const snapshot = await noticesRef.get();
+router.get("/news", async (req, res) => {
+    const newsRef = db.collection("news");
+    const snapshot = await newsRef.get();
     if (snapshot.empty) {
-        res.status(404).send("No Notices found");
+        res.status(404).send("No News found");
     } else {
-        const notices = [];
+        const news = [];
         snapshot.forEach(doc => {
-            notices.push(doc.data());
+            news.push(doc.data());
         });
-        res.send(notices);
+        res.send(news);
     }
 });
-
 router.post("/create", async (req, res) => {
-    const notice = req.body;
-    const noticeRef = await db.collection("notices").add(notice);
+    const news = req.body;
+    const newsRef = await db.collection("news").add(news);
     res.send({success: true});
 });
-
 module.exports = router;

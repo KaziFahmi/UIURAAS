@@ -1,21 +1,54 @@
-import React from 'react'
+import React,{useState} from 'react'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 //used for creating news
 function CreateNews(props) {
+  const [title, setTitle] = useState('');
+  const [link, setLink] = useState('');
+  const onSubmit = (e) => {
+    // console.log(title)
+    // console.log(link)
+    e.preventDefault();
+    //Add paper function
+    fetch('http://localhost:3001/news/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: JSON.stringify({ title, link}),
+    })
+      .then(res => res.json())  
+      .then(data => {
+        // console.log(data)
+        if (data.success) {
+          alert('news added successfully');
+          window.location.reload();
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      }
+      )
+
+  }
+
   return (
+    
     <VerticalBlock style={profCardBody}>
         <VerticalBlock>
-        <form>
+        <form onSubmit={onSubmit}>
             <h2 style={{paddingLeft:"1%"}}>Create News</h2>
-           <label style={title} >Title</label>{/* Title of news*/}
+           <label style={titleStyle} >Title</label>{/* Title of news*/}
            <br/>
-           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} />{/* Title of news*/}
+           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} onChange={(e) => setTitle(e.target.value)} />{/* Title of news*/}
            <br/>
-           <label style={title} >Link</label>{/* Link of news*/}
+           <label style={titleStyle} >Link</label>{/* Link of news*/}
            <br/>
-           <input type="text" name="uname" placeholder='Enter Link '  style={inputField} />{/* Link of news*/}
+           <input type="text" name="uname" placeholder='Enter Link '  style={inputField} onChange={(e) => setLink(e.target.value)} />{/* Link of news*/}
            <br/>
            <button type="submit" style={saveButton}>Publish</button>
         </form>
@@ -54,7 +87,7 @@ const profCardBody={
     height:"50px"
   }
 
-  const title ={
+  const titleStyle ={
     fontSize: "20px",
     marginBottom: "20px",
     color:PrimaryTemplate.blue,

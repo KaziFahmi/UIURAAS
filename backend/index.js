@@ -20,6 +20,7 @@ const pastworkAPI = require("./routes/pastwork");
 const applicationAPI = require("./routes/application");
 const groupAPI = require('./routes/group')
 const noticesAPI=require('./routes/notices')
+const newsAPI=require('./routes/news')
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +33,7 @@ app.use("/pastwork", pastworkAPI);
 app.use("/application", applicationAPI);
 app.use("/groups",groupAPI);
 app.use("/notices",noticesAPI);
+app.use("/news",newsAPI);
 //Default route
 app.get("/", (req, res) => {
     res.send("Hello World!");

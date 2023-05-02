@@ -30,7 +30,7 @@ function FindCard() {
     function handleResize() {
       const windowWidth = window.innerWidth;
 
-          if (windowWidth < 900) {
+          if (windowWidth < 563) {
           setNumColumns(1);
         } else  {
           setNumColumns(2);

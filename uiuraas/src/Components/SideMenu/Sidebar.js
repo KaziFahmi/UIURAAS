@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { MdEditDocument , MdGroups} from 'react-icons/md'
 import { RiHome5Line } from 'react-icons/ri';
 import { IoDocumentTextSharp } from 'react-icons/io5';
@@ -6,9 +6,26 @@ import { IoMdChatbubbles } from 'react-icons/io';
 import PrimaryTemplate from '../ColorTemplates/PrimaryTemplate';
 import SidebarButtons from './SidebarButtons';
 import {RiAdminFill} from 'react-icons/ri'
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Sidebar = (props) => {
-  const [account, setAccount] = useState("Professor");
+  const [account, setAccount] = useState("");
+  const { id } = useParams();
+  const [user,setUser] = useState(useSelector((state) => state.auth.userInfo));
+  const {userInfo} = useSelector(state=>state.auth)
+  useEffect(() => {
+    if (id != null) {
+      console.log(id);
+      fetch("http://localhost:3001/user/querybyid/" + id)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setUser(data);
+          setAccount(user.type)
+        });
+    }
+  }, [id]);
   return ( 
     <div className="sideNavigation" style={sideNavigation}>
       <div className="sidebarComponent" style={sidebarComponent}>
@@ -23,7 +40,7 @@ const Sidebar = (props) => {
 
           {/* Permanent setup will be used to change types of button accessible to  users depending on account type */}
             
-          {/* {account =='Student' && (
+          {account =='Student' && (
             <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
             )} 
           {account =='Professor' && (
@@ -35,7 +52,7 @@ const Sidebar = (props) => {
           {account =='Admin' && (
             <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
             )}
-             */}
+            
           {/* Permanent setup */}
 
             

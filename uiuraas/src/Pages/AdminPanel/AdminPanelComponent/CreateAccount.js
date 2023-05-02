@@ -27,6 +27,14 @@ function CreateAccount(props) {
            <br/>
            <input type="text" name="uname" placeholder='Enter Password '  style={inputField} />
            <br/>
+           <label style={title} >Job Post (Only for Professor)</label>{/* Link of news*/}
+           <br/>
+           <input type="text" name="uname" placeholder='Enter Password '  style={inputField} />
+           <br/>
+           <label style={title} >Keyword (Only for Professor)</label>{/* Link of news*/}
+           <br/>
+           <input type="text" name="uname" placeholder='Enter Password '  style={inputField} />
+           <br/>
            <button type="submit" style={saveButton}>Create</button>
         </form>
         </VerticalBlock>

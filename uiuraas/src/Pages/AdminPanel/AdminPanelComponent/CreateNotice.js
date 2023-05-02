@@ -1,21 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 // used for creating notices
 function CreateNotice(props) {
+  const [title, setTitle] = useState('');
+  const [detail, setDetail] = useState('');
+  const onSubmit = (e) => {
+    console.log(title)
+    console.log(detail)
+    e.preventDefault();
+    //Add paper function
+    fetch('http://localhost:3001/notices/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: JSON.stringify({ title, detail}),
+    })
+      .then(res => res.json())  
+      .then(data => {
+        // console.log(data)
+        if (data.success) {
+          alert('news added successfully');
+          window.location.reload();
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      }
+      )
+
+  }
+
   return (
     <VerticalBlock style={profCardBody}>
         <VerticalBlock>
-        <form>
+        <form onSubmit={onSubmit}> 
             <h2 style={{paddingLeft:"1%"}}>Create Notice</h2>
-           <label style={title} >Title</label>{/* Title of Notice*/}
+           <label style={titleStyle} >Title</label>{/* Title of Notice*/}
            <br/>
-           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} />{/* Title of Notice*/}
+           <input type="text" name="uname" placeholder='Enter Title '  style={inputField} onChange={(e) => setTitle(e.target.value)}/>{/* Title of Notice*/}
            <br/>
-           <label style={title} >Detail</label>{/* Details of Notice*/}
+           <label style={titleStyle} >Detail</label>{/* Details of Notice*/}
            <br/>
-           <textarea name="postContent" className='details'placeholder='Enter Details' style={inputField} rows={4} cols={40}/>{/* Details of Notice*/}
+           <textarea name="postContent" className='details'placeholder='Enter Details' style={inputField} rows={4} cols={40} onChange={(e) => setDetail(e.target.value)}/>{/* Details of Notice*/}
            <br/>
            <button type="submit" style={saveButton}>Send</button>
         </form>
@@ -54,7 +86,7 @@ const profCardBody={
     height:"50px"
   }
 
-  const title ={
+  const titleStyle ={
     fontSize: "20px",
     marginBottom: "20px",
     color:PrimaryTemplate.blue,

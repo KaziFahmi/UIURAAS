@@ -3,16 +3,27 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import RowBlock from '../../../Components/BasicBlocks/RowBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import DataModal from '../../../Components/DataModal'
+import InfoCard from './InfoCard'
 //Displays news same way as Notices display noitices
 function WhatsNew() {
+  const [news,setNews]=React.useState([])
+  React.useEffect(() => {
+    fetch('http://localhost:3001/news/news/')
+    .then(res=>res.json())
+    .then(data=>setNews(data))
+  }, [news])
+
   return (
     <VerticalBlock style={body}>
-        <RowBlock style={{padding:"1%"}}>
-          <h2 style={{paddingLeft:"1%"}}>Whats New ?</h2>
-        </RowBlock>
-        <DataModal  name="InceptionV3 update" data="Hello world"/>
-        
+    <h2 style={{paddingLeft:"2%"}}>News</h2>
+    <VerticalBlock style={newsHolder}>
+       {news.map(newss=>(
+        <InfoCard title={newss.title} link={newss.link}/>
+        ))}
     </VerticalBlock>
+    {/* Uses DataModal To display notice data */}
+   
+ </VerticalBlock>
   )
 }
 
@@ -20,12 +31,16 @@ export default WhatsNew
 
 const body={
   width:"23vw",
+  height:"330px",
   border:"1px solid"+PrimaryTemplate.borders,
   fontFamily: "'Inder', sans-serif",
-  margin: "2.5%",
-  overflow:"auto",
   marginLeft:".5%",
-  marginTop:".5%",
   backgroundColor:PrimaryTemplate.white,
-  height:"328px"
+  marginTop:"1.5%",
+  marginBottom:"5%"
+}
+
+const newsHolder={
+overflow:"auto",
+height:"220px",
 }
