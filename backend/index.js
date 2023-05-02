@@ -4,10 +4,10 @@ require('dotenv').config();
 const app = express();
 const port = 3001;
 const admin = require('firebase-admin');
-const serviceAccount = require('../../service_account/uiuraas-6bfbc-firebase-adminsdk-1pybo-96784e1487.json');
+const serviceAccount = require('../../service_account/raasuiu-firebase-adminsdk-60w0k-e523f70d68.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://uiuraas-6bfbc.firebaseio.com"
+    databaseURL: "https://raasuiu-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 const authenticationMiddleware = require("./middlewares/authentication");
 const {integrityCheckMiddleware} = require("./middlewares/integrityVerifier");
@@ -25,6 +25,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //API routes
+app.use("/auth",authAPI);
 app.use("/user", userAPI);
 app.use("/email", integrityCheckMiddleware, emailAPI);
 app.use("/paper", paperAPI);
@@ -38,7 +39,7 @@ app.use("/news",newsAPI);
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
-app.use("/auth", authAPI);
+// app.use("/auth", authAPI);
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

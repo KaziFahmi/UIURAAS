@@ -21,6 +21,7 @@ const formOutput={
   const dataLabel={
     color: PrimaryTemplate.blue,
     marginLeft: "10%",
+    fontWeight: 600,
     fontFamily: "'Inder', sans-serif"
   }
   
@@ -30,5 +31,6 @@ const formOutput={
       border:'none',
       color: "#000000c2",
       fontSize: "18px",
-      marginLeft: "10%"
+      marginLeft: "10%",
+      borderLeft: "2px solid rgb(11, 128, 218)",
   }

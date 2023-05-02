@@ -10,7 +10,8 @@ import HomePage from "./Pages/Homepage/HomePage";
 import Group from "./Pages/Group/Group";
 import EditProfile from "./Pages/Profile/EditProfile";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 function App() {
   return (
     <div className="app" style={body}>

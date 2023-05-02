@@ -7,7 +7,7 @@ function UserInfo(props) {
   // const [account, setAccount] = useState("Student");
   return (
     <VerticalBlock style={body}>
-        <h2 style={{paddingLeft:"10%"}}>User Details</h2>
+        <h2 style={{paddingLeft: '10%',fontWeight: 500, borderBottom: '1px solid rgb(11, 128, 218)', paddingBottom: '10px'}}>User Details</h2>
         <br/>
         <UserDataOutput placeholder="Email" value={props.user.email}/>
         <br/>
@@ -31,8 +31,10 @@ function UserInfo(props) {
 export default UserInfo
 
 const body={
-    width:"25vw",
-    border:"1px solid"+PrimaryTemplate.borders,
+    width:"30%",
+    // border:"1px solid"+PrimaryTemplate.borders,
+    padding: "30px",
+    borderRadius:"10px",
     fontFamily: "'Inder', sans-serif",
     backgroundColor:PrimaryTemplate.white
 }

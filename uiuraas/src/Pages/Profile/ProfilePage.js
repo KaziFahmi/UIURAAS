@@ -29,9 +29,9 @@ function ProfilePage() {
   return (
     <VerticalBlock style={profileBody}>
       <ProfileCard name={user.name} id={user.id} isEditable={id==userInfo.id} />
-      <HorizontalBlock style={{ paddingLeft: "2.5%" }}>
+      <HorizontalBlock style={{}}>
         <UserInfo user={user} />
-        <PastExperience id={user.refId} location="profile" width="50vw" />
+        <PastExperience id={user.refId} location="profile" width="100%" />
       </HorizontalBlock>
       <br />
       <Papers id={user.refId} />
@@ -43,5 +43,6 @@ export default ProfilePage;
 
 const profileBody = {
   justifyContent: "center",
-  width: "77vw",
+  width: "80vw",
+  marginLeft: '2.5%',
 };

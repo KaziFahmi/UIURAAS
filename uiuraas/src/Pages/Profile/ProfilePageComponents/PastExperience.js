@@ -40,8 +40,8 @@ function PastExperience(props) {
   return (
     <>
       <VerticalBlock style={{...body,...props.style,width:props.width}}>
-      <h2 style={{paddingLeft:"2.5%"}}>Activities & Experience</h2>
-        <VerticalBlock style={{...experienceHolder,display: "grid", gridTemplateColumns: `repeat(${numColumns}, 1fr)`}}>
+      <h2 style={{padding:"10px",color: 'white', fontWeight: 500,borderRadius: '5px 5px 0 0', paddingLeft: '30px', paddingBottom: '20px', backgroundColor: 'rgb(11, 128, 218)'}}>Activities & Experience</h2>
+        <VerticalBlock style={{...experienceHolder,display: "grid", gridTemplateColumns: `repeat(${numColumns}, 1fr)`,borderTop: '1px solid white'}}>
       
           {
             experiences.map(experience=>(
@@ -62,8 +62,10 @@ export default PastExperience
 const body={
     height:"auto",
     marginLeft:"2.5%",
-    backgroundColor:PrimaryTemplate.white,
-    border:"1px solid"+PrimaryTemplate.borders,
+    backgroundColor: 'white',
+    // border:"1px solid"+PrimaryTemplate.borders,
+    borderRadius:"5px",
+    // padding: "10px",
 }
 const experienceHolder={
   overflow:"auto",

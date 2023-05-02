@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import FormInput from "./ApplicationWriteComponents/FormInput";
 import PrimaryTemplate from "../../Components/ColorTemplates/PrimaryTemplate";
 import MembersAW from "./ApplicationWriteComponents/MembersAW";
 
 function Application() {
+  const [members, setMembers] = React.useState([]);
+  const [changed, setChanged] = React.useState(false);
+  const onClickAdd = (e ) => {
+    e.preventDefault();
+    console.log(e.target, members);
+    setMembers([...members, {}]);
+  };
+  const onChange = (members) => {
+    // e.preventDefault();
+    setMembers(members);
+    setChanged(!changed);
+  };
+  useState(() => {
+    console.log(members);
+  }, [changed]);
   return (
     <div style={body}>
         <div ><h2 style={{marginTop:"11px",paddingLeft:"1%"}}>Application</h2></div>
@@ -16,8 +31,10 @@ function Application() {
           <FormInput placeholder="Field" />
           <FormInput placeholder="Topic" />
           <FormInput placeholder="Details" />
-          <MembersAW/>
-          <button className="add" style={add}>
+          {members.map((member, index) => (
+            <MembersAW key={index} onChange={onChange} members={members} />
+          ))}
+          <button className="add" style={add} onClick={onClickAdd}>
             <IoIosAddCircle />
             Add
           </button>

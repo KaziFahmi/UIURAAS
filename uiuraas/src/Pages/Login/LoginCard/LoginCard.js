@@ -38,10 +38,10 @@ const LoginCard = () => {
       {error && <Error>{error}</Error>}
        <label  style={title}>Log In</label>
        <div  style={inputContainer}>
-         <input type="text" name="uname" placeholder='Enter login Id '  style={inputField} required {...register('id')} />
+         <input type="text" name="uname" placeholder='Enter Login ID'  style={inputField} required {...register('id')} />
        </div>
        <div  style={inputContainer}>
-         <input type="password" name="pass" placeholder='Enter Password '  style={inputField} required   {...register('password')} />
+         <input type="password" name="pass" placeholder='Enter Password'  style={inputField} required   {...register('password')} />
        </div>
        <div  style={inputContainer}>
          <button type="submit" style={loginButton} disabled={loading} >  

@@ -6,9 +6,10 @@ import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import ProfileEditButton from './ProfileEditButton'
 import {FaUserEdit} from "react-icons/fa"
 import { Link } from 'react-router-dom'
+import { IoPersonCircleOutline } from 'react-icons/io5'
 //Holds user profile data
 function ProfileCard(props) {
-  const [labelFontSize, setLabelFontSize] = useState(40);
+  const [labelFontSize, setLabelFontSize] = useState(30);
 
   useEffect(() => {
     function handleResize() {
@@ -17,10 +18,10 @@ function ProfileCard(props) {
 
       if (screenWidth < 768) {
         // for mobile screens
-        setLabelFontSize(screenWidth <= 480 ? 30: 40);
+        setLabelFontSize(screenWidth <= 480 ? 30: 30);
       } else {
         // for desktop screens
-        setLabelFontSize(windowWidth >= 768 ? 40 : 30);
+        setLabelFontSize(windowWidth >= 768 ? 30 : 25);
       }
     }
 
@@ -32,15 +33,17 @@ function ProfileCard(props) {
 
   return (
     <HorizontalBlock style={profCardBody}>
-    <HorizontalBlock style={profItem}>  
-      <img src={userImg} style={{...profImg }} />
+    <HorizontalBlock style={{...profItem,justifyContent: 'start'}}>  
+      <IoPersonCircleOutline style={profImg} />
+      <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width: "100%"}}>
       <VerticalBlock style={profInfo}>
         <label style={{ fontSize: `${labelFontSize}px` }}>{props.name}</label>
         <br/>
         <label style={{ fontSize: `${labelFontSize}px` }}>{props.id}</label>
        </VerticalBlock>
        {props.isEditable &&
-       <div style={profileEdit}><Link to='/editprofile'><ProfileEditButton icon={<FaUserEdit/>} /></Link></div> }
+       <div style={profileEdit}><Link to='/editprofile'><ProfileEditButton icon={<FaUserEdit color='rgb(11, 128, 218)'/>} /></Link></div> }
+       </div>
       </HorizontalBlock>
      
   </HorizontalBlock>
@@ -51,29 +54,32 @@ export default ProfileCard
 
 const profCardBody={
     display: "flex",
-    border: "1px solid"+PrimaryTemplate.borders,
-    margin: "2.5%",
+    // border: "1px solid"+PrimaryTemplate.borders,
+    borderRadius: "10px",
+    padding: "2.5%",
+    margin: "2.5% 0 2.5% 0",
     position: 'relative',
-    height:"20vh",
-    width:"75vw",
+    // height:"20vh",
+    // width:"80vw",
     alignItems:'left',
     textAlign:'left',
-    justifyContent:"space-between", 
+    // justifyContent:"left", 
     backgroundColor:PrimaryTemplate.white
   }
   
   const profImg={
-    width: "10vw",
-    height:'20vh',
+    width: "100px",
+    height:'100px',
     position:"relative",
+    marginRight:"2.5%",
     
   }
   
   const profInfo={
-    fontSize: "4.5vh",
-    fontWeight: "600",
+    fontSize: "1.5rm",
+    // fontWeight: "300",
     color:PrimaryTemplate.blue,
-    width:"70%",
+    // width:"70%",
     border:"none",
   }
 
@@ -84,5 +90,6 @@ const profCardBody={
 
   const profItem={
     justifyContent:"space-between",
-    width:"90vw"
+    // width:"90vw"
+    width: "100%"
   }

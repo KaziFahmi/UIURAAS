@@ -15,7 +15,8 @@ function Papers(props) {
   }, [props.id])
   return (
    <VerticalBlock style={body}>
-     < h2 style={{paddingLeft:"2.5%"}}>Papers</h2>
+     < h2 style={{borderRadius: '5px 5px 0 0', color: 'white', fontWeight: 500,paddingLeft:"2.5%", paddingBottom: "10px", paddingTop: "10px", borderBottom: '1px solid rgb(11, 128, 218)', backgroundColor: 'rgb(11, 128, 218)'}}>Papers</h2>
+
       <VerticalBlock style={paperHolder} >
         <br/>
         {papers.map(paper=>(
@@ -32,16 +33,18 @@ function Papers(props) {
 export default Papers
 
 const body={
-    width:"75vw",
-    border:"1px solid"+PrimaryTemplate.borders,
+    width:"100%",
+    // border:"1px solid"+PrimaryTemplate.borders,
+    borderRadius:"5px",
     fontFamily: "'Inder', sans-serif",
-    margin: "1.5%",
-    marginLeft:"2.5%",
+    // margin: "1.5%",
+    // marginLeft:"2.5%",
+    // padding: "10px",
     height:"auto",
     backgroundColor:PrimaryTemplate.white
 }
 const paperHolder={
   overflow:"auto",
   backgroundColor:PrimaryTemplate.white,
-  height:"28vh",
+  minHeight:"28vh",
 }
