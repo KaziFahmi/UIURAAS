@@ -14,24 +14,27 @@ const Sidebar = (props) => {
   const { id } = useParams();
   const [user,setUser] = useState(useSelector((state) => state.auth.userInfo));
   const {userInfo} = useSelector(state=>state.auth)
-  useEffect(() => {
-    if (id != null) {
-      console.log(id);
-      fetch("http://localhost:3001/user/querybyid/" + id)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          setUser(data);
-          setAccount(user.type)
-        });
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id != null) {
+  //     console.log(id);
+  //     fetch("http://localhost:3001/user/querybyid/" + id)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log(data);
+  //         setUser(data);
+  //         setAccount(user.type)
+          
+  //       });
+  //   }
+  // }, [id]);
+
   return ( 
     <div className="sideNavigation" style={sideNavigation}>
       <div className="sidebarComponent" style={sidebarComponent}>
         <div className='sidebarButtonSet' style={sidebarButtonSet}>
 
           <SidebarButtons body={<RiHome5Line  fontSize="3em"/>} link="/home"/> 
+          
           <SidebarButtons body={<MdEditDocument  fontSize="3em"/>} link="/application"/>
           <SidebarButtons body={<IoDocumentTextSharp  fontSize="3em" />} link="/applicationread"/>
           <SidebarButtons body={<MdGroups fontSize="3em"/>} link="/group"/>
@@ -40,17 +43,17 @@ const Sidebar = (props) => {
 
           {/* Permanent setup will be used to change types of button accessible to  users depending on account type */}
             
-          {account =='Student' && (
-            <SidebarButtons body={<MdEditDocument  fontSize="2.5em"/>} link="/application"/>
+          {userInfo.type =='student' && (
+            <SidebarButtons body={<MdEditDocument  fontSize="3em"/>} link="/application"/>
             )} 
-          {account =='Professor' && (
-            <SidebarButtons body={<IoDocumentTextSharp  fontSize="2.5em" />} link="/applicationread"/>
+          {userInfo.type =='professor' && (
+            <SidebarButtons body={<IoDocumentTextSharp  fontSize="3em" />} link="/applicationread"/>
             )} 
-          {account =='Professor' && (
-            <SidebarButtons body={<MdGroups fontSize="2.5em"/>} link="/group"/>
+          {userInfo.type =='professor' && (
+            <SidebarButtons body={<MdGroups fontSize="3em"/>} link="/group"/>
             )} 
-          {account =='Admin' && (
-            <SidebarButtons body={<RiAdminFill fontSize="2.5em"/>} link="/adminpanel"/>
+          {userInfo.type =='admin' && (
+            <SidebarButtons body={<RiAdminFill fontSize="3em"/>} link="/adminpanel"/>
             )}
             
           {/* Permanent setup */}
@@ -89,4 +92,3 @@ const sidebarButtonSet={
   marginRight:"10px"
   
 }
-

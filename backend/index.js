@@ -4,10 +4,10 @@ require('dotenv').config();
 const app = express();
 const port = 3001;
 const admin = require('firebase-admin');
-const serviceAccount = require('../../service_account/uiuraas-6bfbc-firebase-adminsdk-1pybo-96784e1487.json');
+const serviceAccount = require('../../service_account/uiuraas-61029-firebase-adminsdk-1lyhs-7be94f86db.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://uiuraas-6bfbc.firebaseio.com"
+    databaseURL: "https://uiuraas-61029-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 const authenticationMiddleware = require("./middlewares/authentication");
 const {integrityCheckMiddleware} = require("./middlewares/integrityVerifier");

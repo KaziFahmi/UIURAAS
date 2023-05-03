@@ -7,6 +7,7 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
 //A block to get data of groups to be displayed in GroupMemberList
 const GroupCard = (props) => {
+  console.log(props.id)
   return (
     <HorizontalBlock style={groupBody}>
     <HorizontalBlock  > 
@@ -16,7 +17,6 @@ const GroupCard = (props) => {
       <ColumnBlock >
           
             <input type="text" value={props.name} disabled readOnly style={profInfo}/>
-            <input type="text" value={props.topic} readOnly disabled style={profInfo} />
           
        </ColumnBlock></HorizontalBlock>
        </button>
@@ -48,7 +48,7 @@ const groupBody={
   }
   
   const profInfo={
-    fontSize: "large",
+    fontSize: "25px",
     fontWeight: "600",
     fontFamily: "'Inder', sans-serif",
     width:"90%",

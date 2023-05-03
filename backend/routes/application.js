@@ -4,7 +4,7 @@ const admin = require("firebase-admin");
 const db = admin.firestore();
 router.post("/getApplications", async (req, res) => {
     const { id } = req.body;
-    const userRef = db.collection("applications").where("to", "==", id);
+    const userRef = db.collection("applications").where("researcherId", "==", id);
     const docs = await userRef.get();
     if (docs.empty) {
         res.status(404).send("User not found");
@@ -45,7 +45,12 @@ router.delete("/deleteApplications", async (req, res) => {
     
 
 });
-
+router.post("/create", async (req, res) => {
+    const applications = req.body;
+    const newsRef = await db.collection("applications").add(applications);
+    res.send({success: true});
+    console.log(applications);
+});
 
 
 

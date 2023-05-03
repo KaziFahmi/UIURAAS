@@ -4,6 +4,12 @@ import GroupCard from './GroupCard'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 //List holding all the group cards
 function GroupList({ onGroupSelect }) {
+  const [groups,setGroups]=React.useState([])
+  React.useEffect(() => {
+    fetch('http://localhost:3001/groups/all')
+    .then(res=>res.json())
+    .then(data=>setGroups(data))
+  }, [setGroups])
   // to pass data of groups to GroupMemberList
   const handleSelect = (group) => {
     onGroupSelect(group);
@@ -11,8 +17,9 @@ function GroupList({ onGroupSelect }) {
 
   return (
     <VerticalBlock style={groupBody}>
-      <GroupCard groupId='1' name="Group 1" topic="Computer Vision" onSelect={() => handleSelect({ name: "Group 1", topic: "Computer Vision",groupId:'1' })}/>
-      <GroupCard groupId='2' name="Group 2" topic="Computer Vision" onSelect={() => handleSelect({ name: "Group 2", topic: "Computer Vision",groupId:'2' })}/>
+      {groups.map(group=>(
+      <GroupCard id={group.id} name={group.name}  onSelect={() => handleSelect({ name: "Group 1", topic: "Computer Vision",groupId:'1' })}/>
+      ))}
     </VerticalBlock>
   )
 }

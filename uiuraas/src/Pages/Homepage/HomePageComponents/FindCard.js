@@ -54,9 +54,7 @@ function FindCard() {
             {filteredProfessors.map(professor=>(
               <ProfessorsCards id={professor.id} key={professor.id} name={professor.name} keywords={professor.keywords}/>
             ))}
-              {filteredProfessors.map(professor=>(
-              <ProfessorsCards id={professor.id} key={professor.id} name={professor.name} keywords={professor.keywords}/>
-            ))}
+           
             
           </RowBlock>
         </VerticalBlock>

@@ -1,7 +1,13 @@
 import React from 'react'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
-function MembersAW() {
+function MembersAW(props) {
+  const onChange = (e)=>{
+    let members = props.members;
+    members[props.id]=e.target.value;
+    props.onChange(members);
+    console.log(members);
+  }
   return (
     <div><div className="ap" style={ap}>
     <label>Applied by</label>
@@ -11,13 +17,8 @@ function MembersAW() {
     <br></br>
     <label>Student Id</label>
     <br></br>
-    <input className="student_id" style={AppliedInput} />
+    <input className="student_id" style={AppliedInput} onChange={onChange} />
     &nbsp;
-    <button className="button" style={buttonStyle}>Add Projects</button>
-    <br></br>
-    <label>Projects</label>
-    <br></br>
-    <textarea className="project" style={AppliedInput}/>
     <br />
   </div></div>
   )

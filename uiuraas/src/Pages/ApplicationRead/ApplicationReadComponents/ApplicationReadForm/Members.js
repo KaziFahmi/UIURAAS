@@ -8,6 +8,7 @@ const Members = (props) => {
     <form>
         <FormOutput placeholder="Name" value={props.member.name} />
         <FormOutput placeholder="Student Id" value={props.member.id} />
+        <FormOutput placeholder="Student Id" value={props.member.email} />
         <RowBlock  style={studentData}>
             <FormOutput placeholder="CGPA" value={props.member.cgpa} />
             <FormOutput placeholder="Trimester" value={props.member.current_trimester} style={{marginLeft:"30%"}} />

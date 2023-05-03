@@ -48,7 +48,7 @@ const ApplicationReadForm = (props) => {
           style={details}
           rows={4}
           cols={40}
-          value={props.applicationFormData.detail}
+          value={props.applicationFormData.details}
           readOnly
         />
         <br />
