@@ -40,7 +40,7 @@ router.post("/create", async (req, res) => {
         res.status(409).send("User already exists");
     } else {
         await userRef.set(user);
-        res.send("User created");
+        res.send({success: true});
     }
 });
 
@@ -108,7 +108,20 @@ router.get("/querybyid/:userId", async (req, res) => {
     }
 });
 
-
+router.get("/querybytoken/:userId", async (req, res) => {
+    const userId = req.params.userId;
+    // console.log(userId);
+    const doc = await db.collection("users").doc(userId).get();
+    // const doc = await userRef.get();
+    // console.log(doc)
+    if (doc.empty) {
+        res.status(404).send("User not found");
+    } else {
+        const data=doc.data();
+        // console.log(data);
+        res.send({...doc.data(),password: ''});
+    }
+});
 
 
 
