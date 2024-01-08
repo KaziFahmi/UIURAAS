@@ -7,7 +7,8 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 
 //A block to get data of groups to be displayed in GroupMemberList
 const GroupCard = (props) => {
-  console.log(props.id)
+  console.log(props.name)
+  console.log(props.members)
   return (
     <HorizontalBlock style={groupBody}>
     <HorizontalBlock  > 

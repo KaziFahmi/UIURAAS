@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import VerticalBlock from '../../../Components/BasicBlocks/VerticalBlock'
 import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import SendMail from './SendMail'
@@ -8,21 +8,29 @@ import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 
 function GroupMemberList(props) {
   //To get data from GroupCards
-  console.log(props.groupId)
+ // console.log(props.group.members)
   //Dummy data
-  const members = props.group ? [
-    { name: "Shahil Yasar Haque", id: "011201021" ,email:"shaque201021@bscse.uiu.ac.bd"},
-    { name: "Latin Chakma", id: "011201232" , email:"lchakma@bscse.uiu.ac.bd"},
-  ] : [];
+  // console.log(props.people)
+  const [members,setMembers] = useState([]);
+  useEffect(() => {
+    setMembers(props.people);
+  }, [props.people]);
+    // console.log("here");  
+    // console.log(mem);
+    // fetch("http://localhost:3001/user/querybyid/"+)
+  // useEffect(()=>{
+  //   console.log("ok");
+  //   console.log(members);
+  // },[members]);
 
   return (
     <VerticalBlock style={groupBody}>
-       <HoverBlock hover={{ color: PrimaryTemplate.lightBlue }}><SendMail groupId={props.group.groupId}/></HoverBlock>
+       {/* <HoverBlock hover={{ color: PrimaryTemplate.lightBlue }}><SendMail/></HoverBlock> */}
        {/* <div>{props.group && <p>Selected group ID: {props.group.groupId}</p>}</div> */}
        <HorizontalBlock>
         {/* To map data with component */}
          {members.map((member) => (
-          <MemberCard key={member.id} name={member.name} id={member.id} email={member.email} />
+          <MemberCard key={member} name={member} id={member.id} email={member.email} />
         ))}
        </HorizontalBlock>
     </VerticalBlock>

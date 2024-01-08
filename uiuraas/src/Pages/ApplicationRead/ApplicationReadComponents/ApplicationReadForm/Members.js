@@ -13,8 +13,6 @@ const Members = (props) => {
             <FormOutput placeholder="CGPA" value={props.member.cgpa} />
             <FormOutput placeholder="Trimester" value={props.member.current_trimester} style={{marginLeft:"30%"}} />
         </RowBlock>
-        <label  style={dataLabel}>Links</label><br/>
-        <textarea name="postContent" style={details} rows={4} cols={40} value={props.link} readOnly/>
         <br/>
         <br/>
         <hr/>

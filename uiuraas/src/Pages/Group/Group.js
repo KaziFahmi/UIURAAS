@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import ColumnBlock from '../../Components/BasicBlocks/ColumnBlock'
 import HorizontalBlock from '../../Components/BasicBlocks/HorizontalBlock'
 import GroupList from './GroupComponents/GroupList'
@@ -8,19 +8,21 @@ import GroupMemberList from './GroupComponents/GroupMemberList'
 
 function Group() {
   //To transfer selected group data from GroupList to GroupMemberList
-  const [selectedGroup, setSelectedGroup] = useState('');
-
-  const handleGroupSelect = (group) => {
-    console.log(group.id);
-    setSelectedGroup(group);
+  const [selectedGroup, setSelectedGroup] = useState([]);
+  
+  const handleGroupSelect = (people) => {
+    // console.log("in groups.js"+people)
+    setSelectedGroup(people);
   };
-
+  useEffect(()=>{
+    console.log(selectedGroup);
+  },[selectedGroup]);
   return (
     <ColumnBlock style={body}>
     <div ><h2>Group</h2></div>
     <HorizontalBlock style={listContainer}>
       <GroupList onGroupSelect={handleGroupSelect}/>
-      <GroupMemberList group={selectedGroup} />
+      <GroupMemberList people={selectedGroup} />
     </HorizontalBlock>
     </ColumnBlock>
   )

@@ -10,6 +10,7 @@ function CreateAccount(props) {
  const [password,setPassword]=useState('')
  const [jobPost,setJobPost]=useState('')
  const [keyword,setKeyword]=useState([])
+ const [email,setEmail]=useState('')
 
 
 
@@ -25,7 +26,7 @@ function CreateAccount(props) {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
       },
-      body: JSON.stringify({ type, name,id,password,jobPost,keyword}),
+      body: JSON.stringify({ type, name,id,password,jobPost,keyword,email}),
     })
       .then(res => res.json())  
       .then(data => {
@@ -57,7 +58,10 @@ function CreateAccount(props) {
            <br/>
            <input type="text" name="uname" placeholder='Enter Name '  style={inputField} onChange={(e) => setName(e.target.value)}/>
            <br/>
-           
+           <label style={title} >Email</label>{/* Title of news*/}
+           <br/>
+           <input type="text" name="uname" placeholder='Enter Email '  style={inputField} onChange={(e) => setEmail(e.target.value)}/>
+           <br/>
            <label style={title} >Id</label>{/* Link of news*/}
            <br/>
            <input type="text" name="uname" placeholder='Enter Id '  style={inputField} onChange={(e) => setId(e.target.value)} />

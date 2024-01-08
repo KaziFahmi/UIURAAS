@@ -115,7 +115,6 @@ const ApplicationRead = () => {
       </VerticalBlock>
       <div  style={applicationForm}>
         {/* ------application Form------ */}
-        <AddPeople selected={selected} />
         {
           applicationFormData && <ApplicationReadForm applicationFormData={applicationFormData} setCount={setCount} count={count}/>
         }

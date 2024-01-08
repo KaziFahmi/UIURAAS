@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect ,useState} from 'react'
 import HorizontalBlock from '../../../Components/BasicBlocks/HorizontalBlock'
 import ColumnBlock from '../../../Components/BasicBlocks/ColumnBlock'
 import groupImg from '../../../Images/userImg.png'
@@ -6,6 +6,11 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 import {Link} from 'react-router-dom'
 //Displays data of members
 const MemberCard = (props) => {
+  const [user,setUserData] = useState({});
+  useEffect(()=>{
+    fetch("http://localhost:3001/user/querybytoken/"+props.name).then((data)=>data.json()).then((data)=>setUserData(data));
+  },[props.name])
+  
   return (
     <HorizontalBlock style={groupBody}>
     <HorizontalBlock  > 
@@ -14,9 +19,9 @@ const MemberCard = (props) => {
       <img src={groupImg} style={profImg} />
       <ColumnBlock >
           
-            <input type="text" value={props.name} disabled readOnly style={profInfo}/>
-            <input type="text" value={props.id} readOnly disabled style={profInfo} />
-            <input type="text" value={props.email} readOnly disabled style={profInfo} />
+            <input type="text" value={user.name} disabled readOnly style={profInfo}/>
+            <input type="text" value={user.id} readOnly disabled style={profInfo} />
+            <input type="text" value={user.email} readOnly disabled style={profInfo} />
           
        </ColumnBlock></HorizontalBlock></Link>
       </HorizontalBlock>

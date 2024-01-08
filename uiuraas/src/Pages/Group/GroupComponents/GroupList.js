@@ -5,20 +5,22 @@ import PrimaryTemplate from '../../../Components/ColorTemplates/PrimaryTemplate'
 //List holding all the group cards
 function GroupList({ onGroupSelect }) {
   const [groups,setGroups]=React.useState([])
+  const [people,setPeople]=React.useState([])
   React.useEffect(() => {
     fetch('http://localhost:3001/groups/all')
     .then(res=>res.json())
     .then(data=>setGroups(data))
   }, [setGroups])
   // to pass data of groups to GroupMemberList
-  const handleSelect = (group) => {
-    onGroupSelect(group);
+  const handleSelect = (people) => {
+    console.log("In groupllist.js"+people)
+    onGroupSelect(people);
   };
-
+ 
   return (
     <VerticalBlock style={groupBody}>
       {groups.map(group=>(
-      <GroupCard id={group.id} name={group.name}  onSelect={() => handleSelect({ name: "Group 1", topic: "Computer Vision",groupId:'1' })}/>
+      <GroupCard id={group.id} name={group.name} members={group.members} onSelect={() => onGroupSelect(group.members )}/>
       ))}
     </VerticalBlock>
   )
